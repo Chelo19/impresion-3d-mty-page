@@ -9,7 +9,7 @@ function Display(){
                 <span className='display_subtitle'>Compare prices from top 3D printing services in seconds</span>
                 <span className='display_description'>Craftcloud makes sourcing custom parts easy and affordable. Upload a model and we'll do the rest!</span>
                 <div className='display_buttons'>
-                    <Link className='display_button_main'>Get instant Quotes</Link>
+                    <Link to={'/upload-file'} className='display_button_main'>Get instant Quotes</Link>
                     <Link className='display_button_second'>Try it Now</Link>
                 </div>
             </div>

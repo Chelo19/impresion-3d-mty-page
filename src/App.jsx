@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from '/src/pages/HomePage.jsx'
-import NavBar from './components/NavBar/NavBar'
+import HomePage from './pages/HomePage/HomePage.jsx';
+import UploadFile from './pages/UploadFile/UploadFile.jsx';
+import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<HomePage />}/>
+          <Route path="/upload-file" element={<UploadFile />}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

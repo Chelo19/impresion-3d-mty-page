@@ -1,0 +1,210 @@
+.file_input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.file_input_container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+    gap: 50px;
+}
+
+.file_input_presentation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.file_input_presentation_title{
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 40px;
+    color: var(--text_color);
+}
+
+.file_input_presentation_description{
+    font-weight: 400;
+    font-size: 14px;
+    color: #747892;
+}
+
+.file_input_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.file_input_button{
+    border: 2px dashed rgb(var(--primary_color));
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 15px;
+    text-align: left;
+    color: #747892;
+}
+
+.file_input_button span{
+    color: rgb(var(--primary_color));
+}
+
+.file_input_button span:hover{
+    transition: 0.1s;
+    border-bottom: 1px solid rgb(var(--primary_color));
+}
+
+.file_input_gallery{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.file_input_item{
+    width: calc(100% - 30px);
+    min-height: calc(100px - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 15px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.15), 0 0 15px 0 rgba(0,0,0,.05);
+    gap: 15px;
+}
+
+.file_input_item_top_belt{
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file_input_item_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.file_input_item_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.file_input_item_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    color: var(--text_color);
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 22.4px;
+    font-size: 16px;
+}
+
+.file_input_item_dimensions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 14px;
+    color: #747892;
+    gap: 10px;
+}
+
+.file_input_item_counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file_input_item_counter:hover button{
+    transition: 0.5s;
+    border-top: 1px solid rgba(var(--primary_color), 1);
+    border-bottom: 1px solid rgba(var(--primary_color), 1);
+}
+
+.file_input_item_counter:hover button:first-child{
+    transition: 0.5s;
+    border-left: 1px solid rgba(var(--primary_color), 1);
+}
+
+.file_input_item_counter:hover button:last-child{
+    transition: 0.5s;
+    border-right: 1px solid rgba(var(--primary_color), 1);
+}
+
+.file_input_item_counter:hover input{
+    transition: 0.5s;
+    border: 1px solid rgba(var(--primary_color), 1);
+}
+
+.file_input_item_counter button{
+    transition: 0.5s;
+    padding: 0 10px;
+    height: 22px;
+    border-top: 1px solid rgba(var(--primary_color), 0.5);
+    border-bottom: 1px solid rgba(var(--primary_color), 0.5);
+    color: var(--text_color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.file_input_item_counter button:first-child{
+    transition: 0.5s;
+    border-left: 1px solid rgba(var(--primary_color), 0.5);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.file_input_item_counter button:last-child{
+    transition: 0.5s;
+    border-right: 1px solid rgba(var(--primary_color), 0.5);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+.file_input_item_counter input{
+    transition: 0.5s;
+    width: 40px;
+    height: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(var(--primary_color), 0.5);
+}
+
+.file_input_item_counter input:focus{
+    outline: none;
+}
+
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
