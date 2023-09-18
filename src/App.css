@@ -1,0 +1,17 @@
+:root{
+  --primary_color: 0, 119, 182;
+  --secondary_color: 0, 180, 216;
+  --terciary_color: 144, 224, 239;
+  --background_color: #fff;
+  --text_color: 29, 41, 57;
+  --nav_bar_height: 80px;
+  background-color: var(--background_color);
+}
+
+body{
+  margin: 0;
+}
+
+.main_app{
+  font-family: Inter,sans-serif;
+}

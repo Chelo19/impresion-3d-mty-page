@@ -1,0 +1,122 @@
+.display{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.display_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(var(--text_color));
+}
+
+.display_title{
+    font-size: 48px;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+}
+
+.display_subtitle{
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.display_description{
+    font-size: 16px;
+    margin: 0 0 30px 0;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.display_buttons{ 
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.display_button_main{
+    transition: 0.5s;
+    background-color: rgb(var(--primary_color));
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: var(--background_color);
+    border: 1px transparent;
+    text-decoration: none;
+}
+
+.display_button_main:hover{
+    transition: 0.5s;
+    background-color: rgba(var(--primary_color), 0.8);
+}
+
+.display_button_second{
+    background-color: var(--background_color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(var(--text_color), 0.2);
+    text-decoration: none;
+    color: var(--text_color);
+}
+
+.display_gallery{
+    width: 330px;
+    height: 380px;
+    background-image: url('src/assets/chapoteo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.display_gallery img{
+    width: 100%;
+    height: 100%;
+}
+
+.display_features{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font: inherit;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.display_features_selection{
+    transition: 0.5s;
+    color: #667085;;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+.display_features_selection_active{
+    transition: 0.5s;
+    padding: 8px 12px;
+    color: rgb(var(--primary_color));
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.display_features_selection:hover{
+    transition: 0.5s;
+    background-color: rgba(0,0,0,0.15);
+}
+
+.display_features_selection_active:hover{
+    transition: 0.5s;
+    background-color: rgba(0,0,0,0.15);
+}
