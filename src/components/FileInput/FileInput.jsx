@@ -124,95 +124,101 @@ function FileInput() {
         }
     }
 
+    //
+
+
+
+
+
     return (
         <div className='file_input'>
-        <div className='file_input_container'>
-            <div className='file_input_presentation'>
-            <span className='file_input_presentation_title'>{files.length} model uploaded</span>
-            <span className='file_input_presentation_description'>
-                We support over 35 file formats including{' '}
-                <strong>STL, OBJ, STEP, ZIP</strong> files and many more! Please be
-                aware of our current maximum file size of 200 MB.
-            </span>
-            </div>
-            <div className='file_input_input' onDragOver={handleDragOver} onDrop={handleDrop}>
-                <Link className="file_input_button" onClick={handleFileButtonClick}>
-                    <span>Seleccionar Archivo</span> o arrastra el archivo
-                </Link>
-                <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept=".stl"
-                    multiple="false"
-                    onChange={handleFileChange}
-                    style={{ display: 'none' }}
-                />
-            </div>
-            {files.length > 0 &&
-                <div className='file_input_gallery'>
-                    {files.map((file) => {
-                        return(
-                            <div className='file_input_item' key={file[0].id}>
-                                <div className='file_input_item_top_belt'>
-                                    <div className='file_input_item_left'>
-                                        <div className='file_input_item_counter'>
-                                            <button onClick={() => handleDecrementQuantity(file[0].id)}>
-                                                -
-                                            </button>
-                                            <input
-                                                type="tel"
-                                                inputMode="numeric"
-                                                pattern="[0-9]*"
-                                                onKeyDown={(e) => {
-                                                    if (
-                                                    !(
-                                                        (e.key >= "0" && e.key <= "9") ||
-                                                        e.key === "Backspace" ||
-                                                        e.key === "Delete" ||
-                                                        e.key === "ArrowLeft" ||
-                                                        e.key === "ArrowRight" ||
-                                                        e.key === "Tab" ||
-                                                        e.key === "Enter"
-                                                    )
-                                                    ) {
-                                                    e.preventDefault();
-                                                    }
-                                                }}
-                                                onChange={(e) => handleInputChange(e.target.value, file[0].id)}
-                                                value={file[0].quantity}
-                                            />
-                                            {console.log(files)}
-                                            <button onClick={() => handleIncrementQuantity(file[0].id)}>
-                                                +
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className='file_input_item_right'>
-                                        <div>
-                                            Erase
-                                        </div>
-                                        <div>
-                                            Menu
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='file_input_item_content'>
-                                    {file[0].file.file.name}
-                                    <div className='file_input_item_dimensions'>
-                                        <span>{file[0].file.width.toFixed(2)}mm</span>
-                                        <span>x</span>
-                                        <span>{file[0].file.height.toFixed(2)}mm</span>
-                                        <span>x</span>
-                                        <span>{file[0].file.depth.toFixed(2)}mm</span>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })}
+            <div className='file_input_container'>
+                <div className='file_input_presentation'>
+                <span className='file_input_presentation_title'>{files.length} model uploaded</span>
+                <span className='file_input_presentation_description'>
+                    We support over 35 file formats including{' '}
+                    <strong>STL, OBJ, STEP, ZIP</strong> files and many more! Please be
+                    aware of our current maximum file size of 200 MB.
+                </span>
                 </div>
-            }
-            <div onClick={debug}>debug</div>
-        </div>
+                <div className='file_input_input' onDragOver={handleDragOver} onDrop={handleDrop}>
+                    <Link className="file_input_button" onClick={handleFileButtonClick}>
+                        <span>Seleccionar Archivo</span> o arrastra el archivo
+                    </Link>
+                    <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept=".stl"
+                        multiple={false}
+                        onChange={handleFileChange}
+                        style={{ display: 'none' }}
+                    />
+                </div>
+                {files.length > 0 &&
+                    <div className='file_input_gallery'>
+                        {files.map((file) => {
+                            return(
+                                <div className='file_input_item' key={file[0].id}>
+                                    <div className='file_input_item_top_belt'>
+                                        <div className='file_input_item_left'>
+                                            <div className='file_input_item_counter'>
+                                                <button onClick={() => handleDecrementQuantity(file[0].id)}>
+                                                    -
+                                                </button>
+                                                <input
+                                                    type="tel"
+                                                    inputMode="numeric"
+                                                    pattern="[0-9]*"
+                                                    onKeyDown={(e) => {
+                                                        if (
+                                                        !(
+                                                            (e.key >= "0" && e.key <= "9") ||
+                                                            e.key === "Backspace" ||
+                                                            e.key === "Delete" ||
+                                                            e.key === "ArrowLeft" ||
+                                                            e.key === "ArrowRight" ||
+                                                            e.key === "Tab" ||
+                                                            e.key === "Enter"
+                                                        )
+                                                        ) {
+                                                        e.preventDefault();
+                                                        }
+                                                    }}
+                                                    onChange={(e) => handleInputChange(e.target.value, file[0].id)}
+                                                    value={file[0].quantity}
+                                                />
+                                                {console.log(files)}
+                                                <button onClick={() => handleIncrementQuantity(file[0].id)}>
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className='file_input_item_right'>
+                                            <div>
+                                                Erase
+                                            </div>
+                                            <div>
+                                                Menu
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='file_input_item_content'>
+                                        {file[0].file.file.name}
+                                        <div className='file_input_item_dimensions'>
+                                            <span>{file[0].file.width.toFixed(2)}mm</span>
+                                            <span>x</span>
+                                            <span>{file[0].file.height.toFixed(2)}mm</span>
+                                            <span>x</span>
+                                            <span>{file[0].file.depth.toFixed(2)}mm</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                }
+                <div onClick={debug}>debug</div>
+            </div>
         </div>
     );
 }
