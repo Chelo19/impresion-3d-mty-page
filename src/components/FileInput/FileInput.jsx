@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import * as THREE from 'three';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
-function FileInput() {
-    const [files, setFiles] = useState([]);
+function FileInput({stlFiles, setStlFiles}) {
     const fileInputRef = React.createRef();
     const [nextId, setNextId] = useState(1);
 
@@ -38,7 +37,7 @@ function FileInput() {
 
                 const filesWithId = filesWithDimensions.map((file) => ({ file, quantity: 1, id: nextId }));
                 setNextId(nextId + 1);
-                setFiles([...files, filesWithId]);
+                setStlFiles([...stlFiles, filesWithId]);
             });
         });
     };
@@ -75,13 +74,13 @@ function FileInput() {
 
                 const filesWithId = filesWithDimensions.map((file) => ({ file, quantity: 1, id: nextId }));
                 setNextId(nextId + 1);
-                setFiles([...files, filesWithId]);
+                setStlFiles([...stlFiles, filesWithId]);
             });
         });
     };
 
     const debug = () => {
-        console.log(files);
+        setStlFiles(stlFiles);
     }
 
     const loader = new STLLoader();
@@ -98,33 +97,40 @@ function FileInput() {
     //
 
     const handleIncrementQuantity = (index) => {
-        const updatedFiles = [...files];
+        const updatedFiles = [...stlFiles];
         const foundObject = updatedFiles.flat().find((file) => file.id === index);
         if (foundObject) {
             foundObject.quantity += 1;
-            setFiles(updatedFiles);
+            setStlFiles(updatedFiles);
         }
     };
 
     const handleDecrementQuantity = (index) => {
-        const updatedFiles = [...files];
+        const updatedFiles = [...stlFiles];
         const foundObject = updatedFiles.flat().find((file) => file.id === index);
-        if (foundObject) {
+        if (foundObject && foundObject.quantity > 1) {
             foundObject.quantity -= 1;
-            setFiles(updatedFiles);
+            setStlFiles(updatedFiles);
         }
     };
 
     const handleInputChange = (value, index) => {
-        const updatedFiles = [...files];
+        const updatedFiles = [...stlFiles];
         const foundObject = updatedFiles.flat().find((file) => file.id === index);
-        if (foundObject) {
-            foundObject.quantity = value;
-            setFiles(updatedFiles);
+        if (foundObject && value > 0) {
+            foundObject.quantity = parseInt(value);
+            setStlFiles(updatedFiles);
         }
     }
 
     //
+
+    const deleteItem = (index) => {
+        const updatedFiles = [...stlFiles];
+        const indexToDelete = updatedFiles.flat().findIndex((file) => file.id === index);
+        updatedFiles.splice(indexToDelete, 1);
+        setStlFiles(updatedFiles);
+    }
 
 
 
@@ -134,7 +140,7 @@ function FileInput() {
         <div className='file_input'>
             <div className='file_input_container'>
                 <div className='file_input_presentation'>
-                <span className='file_input_presentation_title'>{files.length} model uploaded</span>
+                <span className='file_input_presentation_title'>{stlFiles.length} model uploaded</span>
                 <span className='file_input_presentation_description'>
                     We support over 35 file formats including{' '}
                     <strong>STL, OBJ, STEP, ZIP</strong> files and many more! Please be
@@ -154,9 +160,9 @@ function FileInput() {
                         style={{ display: 'none' }}
                     />
                 </div>
-                {files.length > 0 &&
+                {stlFiles.length > 0 &&
                     <div className='file_input_gallery'>
-                        {files.map((file) => {
+                        {stlFiles.map((file) => {
                             return(
                                 <div className='file_input_item' key={file[0].id}>
                                     <div className='file_input_item_top_belt'>
@@ -187,19 +193,18 @@ function FileInput() {
                                                     onChange={(e) => handleInputChange(e.target.value, file[0].id)}
                                                     value={file[0].quantity}
                                                 />
-                                                {console.log(files)}
                                                 <button onClick={() => handleIncrementQuantity(file[0].id)}>
                                                     +
                                                 </button>
                                             </div>
                                         </div>
                                         <div className='file_input_item_right'>
-                                            <div>
-                                                Erase
-                                            </div>
-                                            <div>
-                                                Menu
-                                            </div>
+                                            <Link className='file_input_item_icon' onClick={() => deleteItem(file[0].id)}>
+                                                <img src='src/assets/close.png'/>
+                                            </Link>
+                                            {/* <Link className='file_input_item_icon'>
+                                                <img src='src/assets/nav.png'/>
+                                            </Link> */}
                                         </div>
                                     </div>
                                     <div className='file_input_item_content'>
@@ -217,6 +222,7 @@ function FileInput() {
                         })}
                     </div>
                 }
+                <Link to={'/select-material'}>select-material</Link>
                 <div onClick={debug}>debug</div>
             </div>
         </div>

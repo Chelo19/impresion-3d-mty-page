@@ -1,0 +1,103 @@
+.material_display{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 40px;
+}
+
+.material_display_container{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    gap: 40px;
+}
+
+.material_display_item{
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 200px 400px;
+    gap: 50px;
+    justify-self: center;
+}
+
+.material_display_item img{
+    width: 200px;
+    height: 200px;
+    background: #f0f1f8;
+    border-radius: 8px;
+}
+
+.material_display_item_container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.material_display_name{
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(var(--text_color));
+}
+
+.material_display_description{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(var(--text_color));
+}
+
+.material_display_type{
+    background: #f0f1f8;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.material_display_extra{
+    font-size: 14px;
+    color: #747892;
+}
+
+.material_display_select{
+    transition: 0.5s;
+    background-color: rgb(var(--primary_color));
+    color: var(--background_color);
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.material_display_select:hover{
+    transition: 0.5s;
+    background-color: rgba(var(--primary_color), 0.8);
+}
+
+.material_display_colors{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.material_display_colors div{
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border: 0.1px solid #000;
+    border-radius: 100%;
+}

@@ -1,10 +1,11 @@
 import FileInput from '../../components/FileInput/FileInput';
 import './UploadFile.css';
 
-function UploadFile(){
+function UploadFile({stlFiles, setStlFiles}){
+
     return(
         <div className="upload_file">
-            <FileInput/>
+            <FileInput stlFiles={stlFiles} setStlFiles={setStlFiles}/>
         </div>
     )
 }
