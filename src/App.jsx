@@ -6,11 +6,16 @@ import UploadFile from './pages/UploadFile/UploadFile.jsx';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import SelectMaterial from './pages/SelectMaterial/SelectMaterial';
+import RequestUpload from './pages/RequestUpload/RequestUpload';
+import SelectInfill from './pages/SelectInfill/SelectInfill';
 
 function App() {
 
   const [stlFiles, setStlFiles] = useState([]);
-  console.log(stlFiles);
+  const [material, setMaterial] = useState('');
+  const [isSanded, setIsSanded] = useState(false);
+  const [infill, setInfill] = useState('');
+  const [color, setColor] = useState('');
 
   return (
     <div className='main_app'>
@@ -19,7 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/upload-file" element={<UploadFile stlFiles={stlFiles} setStlFiles={setStlFiles} />}/>
-          <Route path="/select-material" element={<SelectMaterial stlFiles={stlFiles}/>}/>
+          <Route path="/select-material" element={<SelectMaterial stlFiles={stlFiles} setMaterial={setMaterial}/>}/>
+          <Route path="/select-finish" element={<SelectInfill material={material} setIsSanded={setIsSanded} setInfill={setInfill} setColor={setColor}/>}/>
+          <Route path="/request-upload" element={<RequestUpload stlFiles={stlFiles} material={material} isSanded={isSanded} infill={infill} color={color}/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
