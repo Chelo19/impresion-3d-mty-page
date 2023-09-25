@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage.jsx';
@@ -17,6 +17,17 @@ function App() {
   const [infill, setInfill] = useState('');
   const [color, setColor] = useState('');
 
+  useEffect(() => {
+    const beforeUnloadHandler = (e) => {
+      e.preventDefault();
+      e.returnValue = true;
+    }
+    window.addEventListener("beforeunload", beforeUnloadHandler);
+    return () => {
+      window.removeEventListener("beforeunload", beforeUnloadHandler);
+    }
+  }, []);
+
   return (
     <div className='main_app'>
       <BrowserRouter>
@@ -25,7 +36,7 @@ function App() {
           <Route path="/" element={<HomePage />}/>
           <Route path="/upload-file" element={<UploadFile stlFiles={stlFiles} setStlFiles={setStlFiles} />}/>
           <Route path="/select-material" element={<SelectMaterial stlFiles={stlFiles} setMaterial={setMaterial}/>}/>
-          <Route path="/select-finish" element={<SelectInfill material={material} setIsSanded={setIsSanded} setInfill={setInfill} setColor={setColor}/>}/>
+          <Route path="/select-finish" element={<SelectInfill material={material} stlFiles={stlFiles} setIsSanded={setIsSanded} setInfill={setInfill} setColor={setColor}/>}/>
           <Route path="/request-upload" element={<RequestUpload stlFiles={stlFiles} material={material} isSanded={isSanded} infill={infill} color={color}/>}/>
         </Routes>
         <Footer/>

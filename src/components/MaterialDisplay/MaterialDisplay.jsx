@@ -1,12 +1,13 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './MaterialDisplay.css'
 
-function MaterialDisplay({setMaterial}){
+function MaterialDisplay({setMaterial, stlFiles}){
     const navigate = useNavigate();
 
     return(
         <div className="material_display">
             <span>Seleccionar material</span>
+            <div className='material_display_progress'><Link to={'/upload-file'}>Archivos ({stlFiles.length})</Link></div>
             <div className='material_display_container'>
                 <div className='material_display_item'>
                     <img src='src/assets/heroModel_tube.png'/>

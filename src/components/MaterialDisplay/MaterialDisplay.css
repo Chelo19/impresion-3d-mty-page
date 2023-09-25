@@ -9,6 +9,7 @@
     font-weight: 700;
     line-height: 1.2;
     font-size: 40px;
+    color: var(--text_color);
 }
 
 .material_display_container{
@@ -170,4 +171,18 @@
     height: 20px;
     border: 2px solid rgba(var(--primary_color), 1);
     border-radius: 100%;
+}
+
+.material_display_progress{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(var(--primary_color), 0.5);
+    text-align: left;
+    align-self: center;
+    width: 700px;
+}
+
+.material_display_progress a{
+    text-decoration: none;
+    color: rgba(var(--primary_color), 0.5);
 }

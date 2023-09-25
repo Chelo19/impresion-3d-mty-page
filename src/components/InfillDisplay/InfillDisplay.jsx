@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../MaterialDisplay/MaterialDisplay.css'
 import { useEffect, useState } from 'react';
 
-function InfillDisplay({material, setIsSanded, setInfill, setColor}){
+function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
     const navigate = useNavigate();
     const [standardActive, setStandardActive] = useState('');
     const [sandedActive, setSandedActive] = useState('');
@@ -11,16 +11,39 @@ function InfillDisplay({material, setIsSanded, setInfill, setColor}){
 
     const sendFinishes = (type) => {
         if(type == 1){
-            setIsSanded(false);
-            setInfill(parseInt(standardActive));
-            setColor(standardColorActive);
+            if(standardActive && standardColorActive){
+                setIsSanded(false);
+                setInfill(parseInt(standardActive));
+                setColor(standardColorActive);
+                navigate('/request-upload');
+            }
+            else if(!standardActive && standardColorActive){
+                alert('Selecciona relleno');
+            }
+            else if(standardActive && !standardColorActive){
+                alert('Selecciona color');
+            }
+            else if(!standardActive && !standardColorActive){
+                alert('Selecciona relleno y color')
+            }
         }
         else if(type == 2){
-            setIsSanded(true);
-            setInfill(parseInt(sandedActive));
-            setColor(sandedColorActive);
+            if(sandedActive && sandedColorActive){
+                setIsSanded(true);
+                setInfill(parseInt(sandedActive));
+                setColor(sandedColorActive);
+                navigate('/request-upload');
+            }
+            else if(!sandedActive && sandedColorActive){
+                alert('Selecciona relleno');
+            }
+            else if(sandedActive && !sandedColorActive){
+                alert('Selecciona color');
+            }
+            else if(!sandedActive && !sandedColorActive){
+                alert('Selecciona relleno y color')
+            }
         }
-        navigate('/request-upload');
     }
 
     useEffect(() => {
@@ -30,6 +53,7 @@ function InfillDisplay({material, setIsSanded, setInfill, setColor}){
     return(
         <div className="material_display">
             <span>Seleccionar acabado para {material}</span>
+            <div className='material_display_progress'><Link to={'/upload-file'}>Archivos ({stlFiles.length})</Link> &gt; <Link to={'/select-material'}>{material}</Link></div>
             <div className='material_display_container'>
                 <div className='material_display_item'>
                     <img src='src/assets/chapoteo.png'/>

@@ -207,14 +207,17 @@ function FileInput({stlFiles, setStlFiles}) {
                                             </Link> */}
                                         </div>
                                     </div>
-                                    <div className='file_input_item_content'>
-                                        {file[0].file.file.name}
-                                        <div className='file_input_item_dimensions'>
-                                            <span>{file[0].file.width.toFixed(2)}mm</span>
-                                            <span>x</span>
-                                            <span>{file[0].file.height.toFixed(2)}mm</span>
-                                            <span>x</span>
-                                            <span>{file[0].file.depth.toFixed(2)}mm</span>
+                                    <div className='file_input_item_all'>
+                                        <img src='src/assets/impresion-3d-logo.png'/>
+                                        <div className='file_input_item_content'>
+                                            {file[0].file.file.name}
+                                            <div className='file_input_item_dimensions'>
+                                                <span>{file[0].file.width.toFixed(2)}mm</span>
+                                                <span>x</span>
+                                                <span>{file[0].file.height.toFixed(2)}mm</span>
+                                                <span>x</span>
+                                                <span>{file[0].file.depth.toFixed(2)}mm</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -222,8 +225,7 @@ function FileInput({stlFiles, setStlFiles}) {
                         })}
                     </div>
                 }
-                <Link to={'/select-material'}>select-material</Link>
-                <div onClick={debug}>debug</div>
+                <Link to={'/select-material'} className='display_button_main'>Get instant Quotes</Link>
             </div>
         </div>
     );
