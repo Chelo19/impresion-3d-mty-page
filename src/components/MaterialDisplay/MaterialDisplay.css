@@ -1,6 +1,6 @@
 .material_display{
     width: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,6 +10,7 @@
     line-height: 1.2;
     font-size: 40px;
     color: var(--text_color);
+    /* margin-bottom: 200px; */
 }
 
 .material_display_container{

@@ -1,5 +1,5 @@
 .display{
-    padding: 50px;
+    padding: 50px 50px 0px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,6 +7,7 @@
 }
 
 .display_text{
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,9 +73,9 @@
 }
 
 .display_gallery{
-    width: 330px;
+    width: 380px;
     height: 380px;
-    background-image: url('src/assets/chapoteo.png');
+    background-image: url('src/assets/mancha.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -97,10 +98,19 @@
 
 .display_features_selection{
     transition: 0.5s;
-    color: #667085;;
+    padding: 8px 12px;
+    color: #667085;
     border-radius: 10px;
     text-decoration: none;
-    padding: 8px 12px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.display_features_selection img{
+    width: 18px;
+    height: 18px;
 }
 
 .display_features_selection_active{
@@ -109,6 +119,15 @@
     color: rgb(var(--primary_color));
     border-radius: 10px;
     text-decoration: none;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.display_features_selection_active img{
+    width: 18px;
+    height: 18px;
 }
 
 .display_features_selection:hover{

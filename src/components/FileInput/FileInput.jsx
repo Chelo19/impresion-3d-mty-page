@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './FileInput.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import * as THREE from 'three';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
 function FileInput({stlFiles, setStlFiles}) {
+    const navigate = useNavigate();
     const fileInputRef = React.createRef();
     const [nextId, setNextId] = useState(1);
 
@@ -132,7 +134,14 @@ function FileInput({stlFiles, setStlFiles}) {
         setStlFiles(updatedFiles);
     }
 
-
+    const checkLength = () => {
+        if(stlFiles.length > 0){
+            navigate('/select-material');
+        }
+        else{
+            alert('Ingresa tus archivos');
+        }
+    }
 
 
 
@@ -225,7 +234,7 @@ function FileInput({stlFiles, setStlFiles}) {
                         })}
                     </div>
                 }
-                <Link to={'/select-material'} className='display_button_main'>Get instant Quotes</Link>
+                <button onClick={checkLength} className='display_button_main'>Get instant Quotes</button>
             </div>
         </div>
     );

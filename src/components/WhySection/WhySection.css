@@ -3,12 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
 .why_section_left{
-    width: 30%;
-    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,8 +19,8 @@
 }
 
 .why_section_left img{
-    width: 540px;
-    height: 326px;
+    width: 550px;
+    height: 550px;
 }
 
 .why_section_list{

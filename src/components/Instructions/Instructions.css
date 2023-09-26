@@ -5,12 +5,22 @@
     gap: 40px;
 }
 
+.instructions_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 .instructions_item{
     width: 350px;
     height: 500px;
     border-radius: 16px;
     border: 1px solid #d0d5dd;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .instructions_item_number{
@@ -38,10 +48,12 @@
 .instructions_item_img{
     width: 100%;
     height: 232px;
+    object-fit: contain;
+    padding: 30px 40px 20px 40px;
 }
 
 .instructions_item_description{
-    padding: 32px;
+    padding: 20px 40px 30px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;

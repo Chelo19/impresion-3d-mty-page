@@ -4,26 +4,26 @@ function WhySection(){
     return(
         <div className='why_section'>
             <div className='why_section_left'>
-                <span>Why Us</span>
-                <img src='src/assets/heroModel_tube.png'/>
+                {/* <span>Why Us</span> */}
+                <img src='src/assets/impresion-3d-logo.png'/>
             </div>
             <ol className='why_section_list'>
                 <li className='why_section_list_item'>
                     <div className='why_section_list_item_content'>
-                        <span className='why_section_list_item_title'>Transparent pricing with no minimum order required</span>
-                        <span className='why_section_list_item_description'>Unlike other 3d printing services, we will never charge you a service fee or require minimum order amounts.</span>
+                        <span className='why_section_list_item_title'>Entregas rápidas y seguras</span>
+                        <span className='why_section_list_item_description'>Tu pedido será creado y entregado de la manera más profesional y eficiente posible.</span>
                     </div>
                 </li>
                 <li className='why_section_list_item'>
                     <div className='why_section_list_item_content'>
-                        <span className='why_section_list_item_title'>Instant price comparison of 3D printing services worldwide</span>
-                        <span className='why_section_list_item_description'>Unlike other 3d printing services, we will never charge you a service fee or require minimum order amounts.</span>
+                        <span className='why_section_list_item_title'>Servicio personalizado</span>
+                        <span className='why_section_list_item_description'>En la secciónde comentarios puedes agregar cualquier solicitud a tu gusto para tus piezas.</span>
                     </div>
                 </li>
                 <li className='why_section_list_item'>
                     <div className='why_section_list_item_content'>
-                        <span className='why_section_list_item_title'>A wide range of technologies including FDM, SLA, SLS, DMLS & MJF</span>
-                        <span className='why_section_list_item_description'>Unlike other 3d printing services, we will never charge you a service fee or require minimum order amounts.</span>
+                        <span className='why_section_list_item_title'>Gran soporte</span>
+                        <span className='why_section_list_item_description'>Contamos con una línea de chat de messenger para poder contestar todas tus dudas relacionadas a tu pedido.</span>
                     </div>
                 </li>
             </ol>
