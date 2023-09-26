@@ -58,10 +58,10 @@ function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
                 <div className='material_display_item'>
                     <img src='src/assets/chapoteo.png'/>
                     <div className='material_display_item_container'>
-                        <span className='material_display_name'>Standard</span>
-                        <span className='material_display_description'>Standard layered finish in various colors.</span>
+                        <span className='material_display_name'>Estándar</span>
+                        <span className='material_display_description'>Acabado estándar como sale de la máquina.</span>
                         <span className='material_display_type'>FDM</span>
-                        <span className='material_display_extra'><strong>Selecciona relleno:</strong></span>
+                        <span className='material_display_extra'>Selecciona relleno:</span>
                         <div className='material_display_infills'>
                             <button id='20' className={standardActive === '20' ? 'selected_standard' : 'material_display_infills_button'} onClick={(e) => setStandardActive(e.target.id)}>20%</button>
                             <button id='40' className={standardActive === '40' ? 'selected_standard' : 'material_display_infills_button'} onClick={(e) => setStandardActive(e.target.id)}>40%</button>
@@ -70,7 +70,7 @@ function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
                             <button id='95' className={standardActive === '95' ? 'selected_standard' : 'material_display_infills_button'} onClick={(e) => setStandardActive(e.target.id)}>95%</button>
                             <button id='100' className={standardActive === '100' ? 'selected_standard' : 'material_display_infills_button'} onClick={(e) => setStandardActive(e.target.id)}>100%</button>
                         </div>
-                        <span className='material_display_extra'><strong>Selecciona color:</strong></span>
+                        <span className='material_display_extra'>Selecciona color:</span>
                         <div className='material_display_colors_select'>
                             <div/>
                             <button id='00000' className={standardColorActive === '00000' ? 'selected_color_standard' : 'material_display_colors_select_button'} onClick={(e) => setStandardColorActive(e.target.id)} style={{backgroundColor: '#000'}}/>
@@ -87,9 +87,9 @@ function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
                     <img src='src/assets/chapoteo.png'/>
                     <div className='material_display_item_container'>
                         <span className='material_display_name'>Suavizado</span>
-                        <span className='material_display_description'>Smooth sanded finish in various colors.</span>
+                        <span className='material_display_description'>Acabado suavizado con lija para mejorar bordes.</span>
                         <span className='material_display_type'>FDM</span>
-                        <span className='material_display_extra'><strong>Selecciona relleno:</strong></span>
+                        <span className='material_display_extra'>Selecciona relleno:</span>
                         <div className='material_display_infills'>
                             <button id='20' className={sandedActive === '20' ? 'selected_sanded' : 'material_display_infills_button'} onClick={(e) => setSandedActive(e.target.id)}>20%</button>
                             <button id='40' className={sandedActive === '40' ? 'selected_sanded' : 'material_display_infills_button'} onClick={(e) => setSandedActive(e.target.id)}>40%</button>
@@ -98,7 +98,7 @@ function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
                             <button id='95' className={sandedActive === '95' ? 'selected_sanded' : 'material_display_infills_button'} onClick={(e) => setSandedActive(e.target.id)}>95%</button>
                             <button id='100' className={sandedActive === '100' ? 'selected_sanded' : 'material_display_infills_button'} onClick={(e) => setSandedActive(e.target.id)}>100%</button>
                         </div>
-                        <span className='material_display_extra'><strong>Selecciona color:</strong></span>
+                        <span className='material_display_extra'>Selecciona color:</span>
                         <div className='material_display_colors_select'>
                             <div/>
                             <button id='00000' className={sandedColorActive === '00000' ? 'selected_color_standard' : 'material_display_colors_select_button'} onClick={(e) => setSandedColorActive(e.target.id)} style={{backgroundColor: '#000'}}/>

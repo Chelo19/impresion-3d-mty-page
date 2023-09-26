@@ -109,7 +109,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                     </div>
                     <span className='form_faq'>* obligatorio</span>
                     <button onClick={handleSubmit}>Enviar</button>
-                    <span className='form_faq'>Si tienes alguna duda, haz click <Link>aquí</Link></span>
+                    <span className='form_faq'>Si tienes alguna duda, haz click <Link to={'/preguntas-frecuentes'} target='_blank'>aquí</Link></span>
                 </form>
             </div>
         </div>

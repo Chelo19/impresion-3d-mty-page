@@ -3,10 +3,10 @@ import './Display.css'
 import { useState } from 'react';
 
 function Display(){
-    const [display1Class, setDisplay1Class] = useState('display_features_selection');
-    const [display2Class, setDisplay2Class] = useState('display_features_selection_active');
+    const [display1Class, setDisplay1Class] = useState('display_features_selection_active');
+    const [display2Class, setDisplay2Class] = useState('display_features_selection');
     const [display3Class, setDisplay3Class] = useState('display_features_selection');
-    const [displayActive, setDisplayActive] = useState('');
+    const [displayActive, setDisplayActive] = useState(1);
 
     const selectDisplay = (display) => {
         setDisplay1Class('display_features_selection');
@@ -31,9 +31,9 @@ function Display(){
             <div className='display_text'>
                 <span className='display_title'>¡Imprímelo en 3D!</span>
                 <span className='display_subtitle'>¿Necesitas un gran servicio de impresión en 3D?</span>
-                <span className='display_description'>Contáctanos para cotizar las piezas que necesites, desde piezas de ingeniería hasta tus figuras favoritas</span>
+                <span className='display_description'>Contáctanos para cotizar las piezas que necesites, desde piezas de ingeniería hasta tus figuras favoritas.</span>
                 <div className='display_buttons'>
-                    <Link to={'/upload-file'} className='display_button_main'>Get instant Quotes</Link>
+                    <Link to={'/upload-file'} className='display_button_main'>Imprime ya</Link>
                     {/* <Link className='display_button_second'>Try it Now</Link> */}
                 </div>
             </div>

@@ -149,11 +149,9 @@ function FileInput({stlFiles, setStlFiles}) {
         <div className='file_input'>
             <div className='file_input_container'>
                 <div className='file_input_presentation'>
-                <span className='file_input_presentation_title'>{stlFiles.length} model uploaded</span>
+                <span className='file_input_presentation_title'>{stlFiles.length} modelo(s) cargados</span>
                 <span className='file_input_presentation_description'>
-                    We support over 35 file formats including{' '}
-                    <strong>STL, OBJ, STEP, ZIP</strong> files and many more! Please be
-                    aware of our current maximum file size of 200 MB.
+                    Ingresa tus archivos aquí para tener una referencia de tus necesidades, recuerda que todos estos archivos se trabajan de manera <strong>confidencial</strong>.
                 </span>
                 </div>
                 <div className='file_input_input' onDragOver={handleDragOver} onDrop={handleDrop}>
@@ -177,6 +175,7 @@ function FileInput({stlFiles, setStlFiles}) {
                                     <div className='file_input_item_top_belt'>
                                         <div className='file_input_item_left'>
                                             <div className='file_input_item_counter'>
+                                                Cantidad: &nbsp;
                                                 <button onClick={() => handleDecrementQuantity(file[0].id)}>
                                                     -
                                                 </button>
@@ -234,7 +233,7 @@ function FileInput({stlFiles, setStlFiles}) {
                         })}
                     </div>
                 }
-                <button onClick={checkLength} className='display_button_main'>Get instant Quotes</button>
+                <button onClick={checkLength} className='display_button_main'>Seleccionar material</button>
             </div>
         </div>
     );

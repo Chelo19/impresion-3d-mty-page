@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer';
 import SelectMaterial from './pages/SelectMaterial/SelectMaterial';
 import RequestUpload from './pages/RequestUpload/RequestUpload';
 import SelectInfill from './pages/SelectInfill/SelectInfill';
+import Contact from './pages/Contact/Contact';
+import FAQ from './pages/FAQ/FAQ';
 
 function App() {
 
@@ -34,6 +36,8 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<HomePage />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="/preguntas-frecuentes" element={<FAQ />}/>
           <Route path="/upload-file" element={<UploadFile stlFiles={stlFiles} setStlFiles={setStlFiles} />}/>
           <Route path="/select-material" element={<SelectMaterial stlFiles={stlFiles} setMaterial={setMaterial}/>}/>
           <Route path="/select-finish" element={<SelectInfill material={material} stlFiles={stlFiles} setIsSanded={setIsSanded} setInfill={setInfill} setColor={setColor}/>}/>

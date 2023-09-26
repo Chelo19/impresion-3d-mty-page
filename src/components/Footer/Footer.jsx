@@ -7,35 +7,33 @@ function Footer(){
             <div className='footer_display'>
                 <div className='footer_general'>
                     <div className='footer_references'>
-                        Referencias
+                        {/* Referencias */}
                     </div>
                     <div className='footer_container'>
                         <div className='footer_item'>
-                            <span className='footer_item_title'>More</span>
-                            <Link>About</Link>
-                            <Link>About</Link>
-                            <Link>About</Link>
+                            <span className='footer_item_title'>Más</span>
+                            <div className='footer_item_wrapper'><Link to={'/'}>Inicio</Link></div>
+                            <div className='footer_item_wrapper'><Link to={'/contact'}>Contacto</Link></div>
+                            <div className='footer_item_wrapper'><Link to={'/upload-file'}>Imprimir ahora</Link></div>
                         </div>
                         <div className='footer_item'>
-                            <span className='footer_item_title'>Social</span>
-                            <Link>About</Link>
-                            <Link>About</Link>
-                            <Link>About</Link>
-                            <Link>About</Link>
-                            <Link>About</Link>
-                            <Link>About</Link>
+                            <span className='footer_item_title'>Redes sociales</span>
+                            <div className='footer_item_wrapper'><img src='src/assets/messenger.png'/><Link to={'https://www.facebook.com/people/Impresión-3D-Monterrey/100094563984724/'} target='_blank'>Impresión 3D Monterrey</Link></div>
+                            <div className='footer_item_wrapper'><img src='src/assets/instagram.png'/><Link to={'https://www.instagram.com/impresion_3d_mty/'} target='_blank'>impresion_3d_mty</Link></div>
+                            <div className='footer_item_wrapper'><img src='src/assets/whatsapp.png'/><Link to={'https://wa.me/8672207801'} target='_blank'>+52 (867) 2207801</Link></div>
+                            <div className='footer_item_wrapper'><img src='src/assets/email.png'/><Link>impresion3dmonterreymx@gmail.com</Link></div>
                         </div>
                     </div>
                 </div>
                 <div className='footer_botom_links'>
                     <div className='footer_botom_links_wrapper'>
-                        <Link>Terms and Conditions</Link>
-                        <Link>Terms of Use</Link>
-                        <Link>Terms and Conditions</Link>
-                        <Link>Terms of Use</Link>
-                        <Link>Terms and Conditions</Link>
+                        <Link>2023</Link>
+                        <Link>Impresión 3D Monterrey</Link>
+                        <Link>Monterrey</Link>
+                        <Link>Nuevo León</Link>
+                        <Link>México</Link>
                     </div>
-                    <span>Impresion 3D Monterrey</span>
+                    <span>Desarrollado por <Link to={'https://github.com/Chelo19'} target='_blank' id='developer'>Marcelo De León</Link></span>
                 </div>
             </div>
         </div>
