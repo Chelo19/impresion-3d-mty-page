@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import emailjs from 'emailjs-com';
 
 function RequestForm({stlFiles, material, isSanded, infill, color}){
 
@@ -48,11 +48,44 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
         }
         if(!errorBool){
             console.log('Bien');
+            sendAdminEmail();
+            sendClientEmail();
+            alert('¡Revisa tu email!');
         }
         else{
             alert('Favor de corregir los datos');
         }
     };
+
+    const sendAdminEmail = async () => {
+        emailjs.send("service_kmyfgfk", "template_ytn1ffa",{
+        user_name: userName,
+        user_email: userEmail,
+        user_phone: userPhone,
+        user_comments: userComments},
+        'k27Yr9noc7Y8QOyoC')
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+    }
+
+    const sendClientEmail = async () => {
+        emailjs.send("service_kmyfgfk", "template_d0dxmik",{
+        user_name: userName,
+        user_email: userEmail},
+        'k27Yr9noc7Y8QOyoC')
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+    }
+
+    function timeout(number) {
+        return new Promise( res => setTimeout(res, number) );
+    }
 
     return(
         <div className="request_form">
@@ -105,7 +138,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                     </div>
                     <div className='form_wrapper'>
                         <span>Comentarios</span>
-                        <textarea value={userComments} id='form_input' placeholder='(Opcional)' onChange={(e) => setUserComments(e.target.value)}/>
+                        <textarea value={userComments} id='form_input' placeholder='(Medidas, comentarios, solicitudes)' onChange={(e) => setUserComments(e.target.value)}/>
                     </div>
                     <span className='form_faq'>* obligatorio</span>
                     <button onClick={handleSubmit}>Enviar</button>
