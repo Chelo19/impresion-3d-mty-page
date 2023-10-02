@@ -108,3 +108,36 @@
     border-radius: 100%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+@media (max-width: 440px) {
+    .request_form{
+        display: flex;
+        flex-direction: column;
+        flex-flow: column-reverse;
+        width: 80%;
+    }
+
+    .request_form_personal_data{
+        width: 100%;
+    }
+
+    .request_form_display{
+        width: 100%;
+    }
+
+    .request_form_item{
+        width: 100%;
+    }
+
+    .request_form_item img{
+        display: none;
+    }
+
+    .request_form_item_specs{
+        margin-top: 10px;
+    }
+
+    .request_form_item_content{
+        /* overflow: scroll; */
+    }
+}

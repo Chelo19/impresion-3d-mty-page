@@ -242,3 +242,38 @@ button {
     padding: 0;
     margin: 0;
   }
+
+@media (max-width: 440px) {
+    .file_input_container{
+        width: 80%;
+    }
+
+    .file_input_gallery{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file_input_item_all img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .file_input_item{
+        width: 320px;
+    }
+    
+    .file_input_item_all{
+        width: 100%;
+    }
+
+    .file_input_item_content{
+        width: 100%;
+        font-size: 14px;
+        overflow: scroll;
+    }
+
+    .file_input_item_dimensions{
+        width: 100%;
+        gap: 3px;
+    }
+}

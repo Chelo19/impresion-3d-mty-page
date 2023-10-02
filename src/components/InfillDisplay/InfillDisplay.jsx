@@ -52,7 +52,7 @@ function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
 
     return(
         <div className="material_display">
-            <span>Seleccionar acabado para {material}</span>
+            <span id='material_display_title'>Selecciona el acabado para {material}</span>
             <div className='material_display_progress'><Link to={'/upload-file'}>Archivos ({stlFiles.length})</Link> &gt; <Link to={'/select-material'}>{material}</Link></div>
             <div className='material_display_container'>
                 <div className='material_display_item'>

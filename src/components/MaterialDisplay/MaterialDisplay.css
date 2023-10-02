@@ -187,3 +187,39 @@
     text-decoration: none;
     color: rgba(var(--primary_color), 0.5);
 }
+
+@media (max-width: 440px) {
+
+    .material_display{
+        font-size: 30px;
+    }
+
+    #material_display_title{
+        width: 80vw;
+        text-align: center;
+    }
+
+    .material_display_progress{
+        width: fit-content;
+    }
+
+    .material_display_item{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap: 10px;
+    }
+
+    .material_display_item img{
+        align-self: center;
+    }
+
+    .material_display_container{
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .material_display_infills{
+        flex-wrap: wrap;
+    }
+}

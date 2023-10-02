@@ -64,7 +64,8 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 1.33;
-    color: var(--text_color);
+    /* color: var(--text_color); */
+    color: rgba(var(--text_color), 0.8);
 }
 
 .instructions_item_description_description{
@@ -73,4 +74,24 @@
     line-height: 1.5;
     color: #667085;
     margin: 0;
+}
+
+@media (max-width: 440px) {
+
+    .instructions_wrapper{
+        width: 80%;
+    }
+
+    .instructions_item{
+        width: 80%;
+    }
+
+    .instructions{
+        gap: 30px;
+    }
+
+    .display_title{
+        font-size: 34px;
+        text-align: center;
+    }
 }

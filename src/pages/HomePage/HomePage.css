@@ -6,3 +6,10 @@
     align-items: center;
     gap: 80px;
 }
+
+@media (max-width: 440px) {
+
+    .home_page{
+        gap: 40px;
+    }
+}

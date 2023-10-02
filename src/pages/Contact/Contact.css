@@ -54,3 +54,24 @@
 
 .contact_link{
 }
+
+@media (max-width: 440px) {
+    .contact{
+        width: 100vw;
+        margin: calc(var(--nav_bar_height) + 40px) 0;
+    }
+
+    .instructions_wrapper{
+        width: 100%;
+    }
+
+    .instructions{
+        flex-direction: column;
+        /* gap: 10px; */
+    }
+
+    .instructions_item{
+        height: auto;
+    }
+    
+}

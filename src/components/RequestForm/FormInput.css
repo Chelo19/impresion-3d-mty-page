@@ -66,3 +66,9 @@
     color: rgba(var(--primary_color), 0.9);
     border-bottom: 1px solid rgb(var(--primary_color));
 }
+
+@media (max-width: 440px) {
+    .form_container{
+        width: 100%;
+    }
+}

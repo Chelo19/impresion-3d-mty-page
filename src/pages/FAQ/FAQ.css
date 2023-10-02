@@ -17,6 +17,13 @@
     gap: 50px;
 }
 
+.faq_title{
+    font-size: 46px;
+    font-weight: 700;
+    text-align: center;
+    color: rgba(var(--text_color), 0.8);
+}
+
 .faq_container img{
     opacity: 0.8;
     width: 34px;
@@ -46,4 +53,15 @@
 .faq_answer{
     font-size: 20px;
     color: rgba(var(--text_color), 0.5);
+}
+
+@media (max-width: 440px) {
+    .faq{
+        width: 100vw;
+        margin: calc(var(--nav_bar_height) + 40px) 0;
+    }
+
+    .faq_container{
+        width: 80%;
+    }
 }

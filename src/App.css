@@ -5,6 +5,7 @@
   --background_color: #fff;
   --text_color: 29, 41, 57;
   --nav_bar_height: 80px;
+  --mobile_width: 440px;
   background-color: var(--background_color);
 }
 

@@ -33,7 +33,7 @@ function Display(){
                 <span className='display_subtitle'>¿Necesitas un gran servicio de impresión en 3D?</span>
                 <span className='display_description'>Contáctanos para cotizar las piezas que necesites, desde piezas de ingeniería hasta tus figuras favoritas.</span>
                 <div className='display_buttons'>
-                    <Link to={'/upload-file'} className='display_button_main'>Imprime ya</Link>
+                    <Link to={'/upload-file'} className='display_button_main' id='display_button_print_now'>Imprime ya</Link>
                     {/* <Link className='display_button_second'>Try it Now</Link> */}
                 </div>
             </div>

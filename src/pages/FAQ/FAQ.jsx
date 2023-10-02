@@ -5,6 +5,7 @@ function FAQ(){
     return(
         <div className='faq'>
             <div className='faq_container'>
+                <span className='faq_title'>Preguntas frecuentes</span>
                 <div className='faq_item'>
                     <img src='src/assets/gear.png'/>
                     <div className='faq_qa_container'>

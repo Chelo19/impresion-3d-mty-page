@@ -62,6 +62,7 @@
     padding: 5px 15px;
     font-weight: 400;
     border-radius: 10px;
+    text-wrap: nowrap;
 }
 
 .nav_bar_right a:hover{
@@ -74,8 +75,56 @@
     color: var(--background_color);
     background-color: rgba(var(--primary_color), 1);
     border: 1px solid rgba(var(--primary_color), 1);
+    animation: shrinkButtonNavBar 2s infinite;
 }
 
 #nav_bar_print:hover{
     background-color: rgba(var(--primary_color), 0.8);
+}
+
+@media (max-width: 440px) {
+    .nav_bar {
+        width: 100vw;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .nav_bar_left{
+        font-size: 18px;
+        text-wrap: nowrap;
+        justify-self: start;
+        align-items: start;
+        padding: 10px;
+    }
+
+    .nav_bar_left span{
+        display: none;
+    }
+
+    .nav_bar_right{
+        padding: 0;
+        padding-right: 20px;
+    }
+
+    .nav_bar_right a{
+        font-size: 14px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-wrap: nowrap;
+    }
+}
+
+@keyframes shrinkButtonNavBar {
+
+    0% {
+        transform: translateX(2px) rotate(2deg);
+    }
+    50% {
+        transform: translateX(-2px) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(2px) rotate(2deg);
+    }
 }

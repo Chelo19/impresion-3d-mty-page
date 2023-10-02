@@ -66,3 +66,27 @@
     line-height: 1.5;
     color: #667085;
 }
+
+@media (max-width: 440px) {
+
+    .why_section{
+        width: 100%;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .why_section_left{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .why_section_left img{
+        width: 80%;
+        height: auto;
+    }
+
+    .why_section_list{
+        width: 80%;
+    }
+}

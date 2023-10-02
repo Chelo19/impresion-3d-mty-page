@@ -7,3 +7,9 @@
     gap: 80px;
     min-height: 80vh;
 }
+
+@media (max-width: 440px) {
+    .select_material{
+        width: 100vw;
+    }
+}

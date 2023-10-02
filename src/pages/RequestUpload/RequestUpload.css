@@ -7,3 +7,10 @@
     gap: 80px;
     min-height: 80vh;
 }
+
+@media (max-width: 440px) {
+    .request_upload{
+        width: 100vw;
+        margin: calc(var(--nav_bar_height) + 40px) 0;
+    }
+}
