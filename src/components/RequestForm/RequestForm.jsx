@@ -7,6 +7,8 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import emailjs from 'emailjs-com';
 
+import impresion3dLogo from '../../assets/impresion-3d-logo.png';
+
 function RequestForm({stlFiles, material, isSanded, infill, color}){
 
     const [userName, setUserName] = useState('');
@@ -96,7 +98,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                         return(
                         <>
                             <div className='request_form_item'>
-                                <img src='src/assets/impresion-3d-logo.png'/>
+                                <img src={impresion3dLogo}/>
                                 <div className='request_form_item_container' id='request_form_stl' key={stl[0].id}>
                                     <div className='request_form_item_content'>
                                         {stl[0].file.file.name}
@@ -142,7 +144,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                     </div>
                     <span className='form_faq'>* obligatorio</span>
                     <button onClick={handleSubmit}>Enviar</button>
-                    <span className='form_faq'>Si tienes alguna duda, haz click <Link to={'/preguntas-frecuentes'} target='_blank'>aquí</Link></span>
+                    <span className='form_faq'>Si tienes alguna duda, haz click <Link to={'/preguntas-frecuentes'}>aquí</Link></span>
                 </form>
             </div>
         </div>

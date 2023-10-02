@@ -2,6 +2,14 @@ import { Link } from 'react-router-dom';
 import './Display.css'
 import { useState } from 'react';
 
+import mudkipImg from '../../assets/mudkip_sombra.png';
+import tubeImg from '../../assets/heroModel_tube.png';
+import screwImg from '../../assets/heroModel_screwClamp.png';
+import gear from '../../assets/gear.png';
+import escultura from '../../assets/escultura.png';
+import llaveInglesa from '../../assets/llave-inglesa.png';
+
+
 function Display(){
     const [display1Class, setDisplay1Class] = useState('display_features_selection_active');
     const [display2Class, setDisplay2Class] = useState('display_features_selection');
@@ -38,15 +46,15 @@ function Display(){
                 </div>
             </div>
             <div className='display_gallery'>
-                {displayActive == 1 && <img src='src/assets/heroModel_tube.png'/>}
-                {displayActive == 2 && <img src='src/assets/mudkip_sombra.png'/>}
-                {displayActive == 3 && <img src='src/assets/heroModel_screwClamp.png'/>}
+                {displayActive == 1 && <img src={tubeImg}/>}
+                {displayActive == 2 && <img src={mudkipImg}/>}
+                {displayActive == 3 && <img src={screwImg}/>}
                 
             </div>
             <div className='display_features'>
-                <Link className={`${display1Class}`} onClick={() => selectDisplay(1)}><img src='src/assets/gear.png'/><span>Piezas de ingeniería</span></Link>
-                <Link className={`${display2Class}`} onClick={() => selectDisplay(2)}><img src='src/assets/escultura.png'/><span>Figuras y modelos</span></Link>
-                <Link className={`${display3Class}`} onClick={() => selectDisplay(3)}><img src='src/assets/llave-inglesa.png'/><span>Piezas útiles</span></Link>
+                <Link className={`${display1Class}`} onClick={() => selectDisplay(1)}><img src={gear}/><span>Piezas de ingeniería</span></Link>
+                <Link className={`${display2Class}`} onClick={() => selectDisplay(2)}><img src={escultura}/><span>Figuras y modelos</span></Link>
+                <Link className={`${display3Class}`} onClick={() => selectDisplay(3)}><img src={llaveInglesa}/><span>Piezas útiles</span></Link>
             </div>
         </div>
     )

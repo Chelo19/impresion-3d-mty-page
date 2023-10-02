@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import * as THREE from 'three';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
+import close from '../../assets/close.png';
+import impresion3dLogo from '../../assets/impresion-3d-logo.png';
+
 function FileInput({stlFiles, setStlFiles}) {
     const navigate = useNavigate();
     const fileInputRef = React.createRef();
@@ -208,7 +211,7 @@ function FileInput({stlFiles, setStlFiles}) {
                                         </div>
                                         <div className='file_input_item_right'>
                                             <Link className='file_input_item_icon' onClick={() => deleteItem(file[0].id)}>
-                                                <img src='src/assets/close.png'/>
+                                                <img src={close}/>
                                             </Link>
                                             {/* <Link className='file_input_item_icon'>
                                                 <img src='src/assets/nav.png'/>
@@ -216,7 +219,7 @@ function FileInput({stlFiles, setStlFiles}) {
                                         </div>
                                     </div>
                                     <div className='file_input_item_all'>
-                                        <img src='src/assets/impresion-3d-logo.png'/>
+                                        <img src={impresion3dLogo}/>
                                         <div className='file_input_item_content'>
                                             {file[0].file.file.name}
                                             <div className='file_input_item_dimensions'>

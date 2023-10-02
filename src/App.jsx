@@ -36,6 +36,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<HomePage />}/>
+          <Route path="/impresion-3d-mty-page/" element={<HomePage />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/preguntas-frecuentes" element={<FAQ />}/>
           <Route path="/upload-file" element={<UploadFile stlFiles={stlFiles} setStlFiles={setStlFiles} />}/>

@@ -1,11 +1,13 @@
 import './WhySection.css';
 
+import impresion3dLogo from '../../assets/impresion-3d-logo.png';
+
 function WhySection(){
     return(
         <div className='why_section'>
             <div className='why_section_left'>
                 {/* <span>Why Us</span> */}
-                <img src='src/assets/impresion-3d-logo.png'/>
+                <img src={impresion3dLogo}/>
             </div>
             <ol className='why_section_list'>
                 <li className='why_section_list_item'>

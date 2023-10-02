@@ -35,7 +35,7 @@
 .material_display_item img{
     width: 200px;
     height: 200px;
-    background: #f0f1f8;
+    /* background: #f0f1f8; */
     border-radius: 8px;
 }
 

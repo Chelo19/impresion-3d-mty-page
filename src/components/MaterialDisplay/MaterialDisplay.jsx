@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './MaterialDisplay.css'
 
+import tubeImg from '../../assets/heroModel_tube.png';
+
 function MaterialDisplay({setMaterial, stlFiles}){
     const navigate = useNavigate();
 
@@ -10,7 +12,7 @@ function MaterialDisplay({setMaterial, stlFiles}){
             <div className='material_display_progress'><Link to={'/upload-file'}>Archivos ({stlFiles.length})</Link></div>
             <div className='material_display_container'>
                 <div className='material_display_item'>
-                    <img src='src/assets/heroModel_tube.png'/>
+                    <img src={tubeImg}/>
                     <div className='material_display_item_container'>
                         <span className='material_display_name'>PLA</span>
                         <span className='material_display_description'>El PLA es un plástico de bajo costo, perfecto para prototipos y piezas funcionales.</span>
