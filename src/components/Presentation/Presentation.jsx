@@ -1,4 +1,5 @@
 import './Presentation.css';
+import spool from '../../assets/spool.png';
 
 function Presentation(){
     return(
@@ -11,259 +12,259 @@ function Presentation(){
                     </div>
                     <div className='presentation_container_right'>
                         <div className='presentation_animated_container'>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img className='rotating_spool' src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
-                            <img src='src/assets/spool.png'></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
+                            <img className='rotating_spool' src={spool}></img>
+                            <img src={spool}></img>
+                            <img src={spool}></img>
                         </div>
                     </div>
                 </div>
