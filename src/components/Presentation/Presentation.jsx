@@ -6,10 +6,17 @@ function Presentation(){
         <div className="presentation">
             <div className='presentation_container'>
                 <div className='presentation_container_items'>
-                    <div className='presentation_container_text'>
-                        <span className='presentation_title'>¡Bienvenido a Impresión 3D Monterrey!</span>
-                        <span className='presentation_text'>Aqui puedes imprimir lo que necesites sin costo alguno por cotizar</span>
-                    </div>
+                    {/* <div className='presentation_container_text'>
+                        <div className='presentation_actual_text'>
+                            <span className='presentation_title'>Impresión 3D Monterrey</span>
+                            <span className='presentation_text'>Materializa lo que tienes en mente</span>
+                        </div>
+                        <div className='presentation_container_separator'/>
+                        <div className='presentation_buttons'>
+                            <span className='presentation_text' style={{fontStyle: 'normal'}}></span>
+                            <button className='presentation_button'>Probar ahora</button>
+                        </div>
+                    </div> */}
                     <div className='presentation_container_right'>
                         <div className='presentation_animated_container'>
                             <img src={spool}></img>
