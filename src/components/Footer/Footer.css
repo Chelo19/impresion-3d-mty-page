@@ -130,6 +130,10 @@
         width: 100%;
     }
 
+    .footer_references{
+        display: none;
+    }
+
     .footer_general{
         width: 80%;
         background-color: transparent;

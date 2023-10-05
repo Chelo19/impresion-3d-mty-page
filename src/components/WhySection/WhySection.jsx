@@ -19,7 +19,7 @@ function WhySection(){
                 <li className='why_section_list_item'>
                     <div className='why_section_list_item_content'>
                         <span className='why_section_list_item_title'>Servicio personalizado</span>
-                        <span className='why_section_list_item_description'>En la secciónde comentarios puedes agregar cualquier solicitud a tu gusto para tus piezas.</span>
+                        <span className='why_section_list_item_description'>En la sección de comentarios puedes agregar cualquier solicitud a tu gusto para tus piezas.</span>
                     </div>
                 </li>
                 <li className='why_section_list_item'>

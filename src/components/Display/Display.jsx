@@ -8,6 +8,7 @@ import screwImg from '../../assets/heroModel_screwClamp.png';
 import gear from '../../assets/gear.png';
 import escultura from '../../assets/escultura.png';
 import llaveInglesa from '../../assets/llave-inglesa.png';
+import mancha from '../../assets/mancha.png';
 
 
 function Display(){
@@ -37,7 +38,7 @@ function Display(){
     return(
         <div className="display">
             <div className='display_text'>
-                <span className='display_title'>¡Imprímelo en 3D!</span>
+                <span className='display_title' id='display_title_id'>¡Imprímelo en 3D!</span>
                 <span className='display_subtitle'>¿Necesitas un gran servicio de impresión en 3D?</span>
                 <span className='display_description'>Contáctanos para cotizar las piezas que necesites, desde piezas de ingeniería hasta tus figuras favoritas.</span>
                 <div className='display_buttons'>
@@ -46,10 +47,11 @@ function Display(){
                 </div>
             </div>
             <div className='display_gallery'>
+                <img className='display_bg' src={mancha}>
+                </img>
                 {displayActive == 1 && <img src={tubeImg}/>}
                 {displayActive == 2 && <img src={mudkipImg}/>}
                 {displayActive == 3 && <img src={screwImg}/>}
-                
             </div>
             <div className='display_features'>
                 <Link className={`${display1Class}`} onClick={() => selectDisplay(1)}><img src={gear}/><span>Piezas de ingeniería</span></Link>

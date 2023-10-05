@@ -20,6 +20,10 @@
     color: rgb(var(--text_color));
 }
 
+#display_title_id{
+    text-align: left;
+}
+
 .display_title{
     font-size: 48px;
     margin: 0 0 15px 0;
@@ -87,15 +91,27 @@
 .display_gallery{
     width: 380px;
     height: 380px;
-    background-image: url('src/assets/mancha.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display_bg{
+    position: absolute;
+}
+
+.display_gallery img:first-child{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 .display_gallery img{
+    position: absolute;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
 .display_features{
@@ -173,8 +189,8 @@
     }
 
     .display_gallery{
-        width: auto;
-        height: auto;
+        width: 300px;
+        height: 300px;
     }
 
     .display_gallery img{

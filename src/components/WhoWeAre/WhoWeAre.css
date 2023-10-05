@@ -1,0 +1,65 @@
+.who_we_are{
+    height: 700px;
+    width: 100%;
+    display: flex;
+    background-color: rgba(var(--primary_color), 0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 100px;
+}
+
+.who_we_are_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.who_we_are_img{
+    transition: 0.5s;
+    width: 800px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.who_we_are_img img{
+    transition: 0.5s;
+    width: auto;
+    /* height: calc(100% - 200px); */
+    height: 100%;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.who_we_are_img img:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.who_we_are_presentation{
+    /* width: 100%; */
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.who_we_are_title{
+    text-align: left;
+    font-size: 60px;
+    line-height: 1.5;
+    color: var(--background_color);
+}
+
+.who_we_are_text{
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--background_color);
+}
