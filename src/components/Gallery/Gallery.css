@@ -45,3 +45,19 @@
     transition: 0.5s;
     transform: scale(1.2);
 }
+
+@media (max-width: 440px) {
+    .gallery{
+        width: 100%;
+    }
+
+    .gallery_container{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .gallery_item{
+        width: calc(100% - 40px);
+        height: auto;
+    }
+}

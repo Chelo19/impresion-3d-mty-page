@@ -63,3 +63,24 @@
     line-height: 1.5;
     color: var(--background_color);
 }
+
+@media (max-width: 440px) {
+    .who_we_are{
+        padding: 40px 20px;
+        height: auto;
+    }
+
+    .who_we_are_container{
+        width: 100%;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .who_we_are_presentation{
+        width: 100%;
+    }
+
+    .who_we_are_img{
+        width: 100%;
+    }
+}
