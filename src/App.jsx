@@ -10,6 +10,7 @@ import RequestUpload from './pages/RequestUpload/RequestUpload';
 import SelectInfill from './pages/SelectInfill/SelectInfill';
 import Contact from './pages/Contact/Contact';
 import FAQ from './pages/FAQ/FAQ';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/" element={<HomePage />}/>
           <Route path="/impresion-3d-mty-page/" element={<HomePage />}/>
           <Route path="/contact" element={<Contact />}/>
+          <Route path="/not-found" element={<NotFound />}/>
           <Route path="/preguntas-frecuentes" element={<FAQ />}/>
           <Route path="/upload-file" element={<UploadFile stlFiles={stlFiles} setStlFiles={setStlFiles} />}/>
           <Route path="/select-material" element={<SelectMaterial stlFiles={stlFiles} setMaterial={setMaterial}/>}/>
