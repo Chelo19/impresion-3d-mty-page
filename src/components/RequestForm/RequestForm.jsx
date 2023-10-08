@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './RequestForm.css'
 import './FormInput.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -11,6 +11,7 @@ import { supabase } from '../../supabase/client';
 import impresion3dLogo from '../../assets/impresion-3d-logo.png';
 
 function RequestForm({stlFiles, material, isSanded, infill, color}){
+    const navigate = useNavigate();
 
     const [orderId] = useState(createId());
 
@@ -57,6 +58,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
             sendClientEmail();
             uploadSupabaseBucket();
             alert('¡Revisa tu email!');
+            navigate('/');
         }
         else{
             alert('Favor de corregir los datos');
@@ -130,6 +132,10 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
         return new Promise( res => setTimeout(res, number) );
     }
 
+    function navigateFaq(){
+        navigate('/preguntas-frecuentes');
+    }
+
     return(
         <div className="request_form">
             <div className='request_form_display'>
@@ -185,7 +191,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                     </div>
                     <span className='form_faq'>* obligatorio</span>
                     <button onClick={handleSubmit}>Enviar</button>
-                    <span className='form_faq'>Si tienes alguna duda acerca de tu impresión, haz click <Link to={'/preguntas-frecuentes'}>aquí</Link></span>
+                    <span className='form_faq'>Si tienes alguna duda acerca de tu impresión, haz click <a onClick={navigateFaq}>aquí</a></span>
                 </form>
             </div>
         </div>
