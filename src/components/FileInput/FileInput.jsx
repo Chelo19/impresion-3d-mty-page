@@ -156,10 +156,13 @@ function FileInput({stlFiles, setStlFiles}) {
                 <span className='file_input_presentation_description'>
                     Ingresa tus archivos aquí para tener una referencia de tus necesidades, recuerda que todos estos archivos se trabajan de manera <strong>confidencial</strong>.
                 </span>
+                <span className='file_input_presentation_description'>
+                    Aceptamos únicamente modelos .stl de máximo 50mb, si tienes algún problema con el tamaño de tu archivo, puedes ponerte en contacto con nosotros por diferentes medios para solucionar eso dando click <Link to={'/contact'}><strong>aquí</strong></Link>.
+                </span>
                 </div>
                 <div className='file_input_input' onDragOver={handleDragOver} onDrop={handleDrop}>
                     <Link className="file_input_button" onClick={handleFileButtonClick}>
-                        <span>Seleccionar Archivo</span> o arrastra el archivo
+                        <span>Seleccionar archivo</span> o arrastra tu archivo aquí
                     </Link>
                     <input
                         ref={fileInputRef}
@@ -236,7 +239,7 @@ function FileInput({stlFiles, setStlFiles}) {
                         })}
                     </div>
                 }
-                <button onClick={checkLength} className='display_button_main'>Seleccionar material</button>
+                <button onClick={checkLength} className='display_button_main'>Continuar</button>
             </div>
         </div>
     );

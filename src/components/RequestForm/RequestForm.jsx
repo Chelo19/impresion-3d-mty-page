@@ -2,14 +2,17 @@ import { Link } from 'react-router-dom';
 import './RequestForm.css'
 import './FormInput.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import emailjs from 'emailjs-com';
+import { supabase } from '../../supabase/client';
 
 import impresion3dLogo from '../../assets/impresion-3d-logo.png';
 
 function RequestForm({stlFiles, material, isSanded, infill, color}){
+
+    const [orderId] = useState(createId());
 
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
@@ -52,6 +55,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
             console.log('Bien');
             sendAdminEmail();
             sendClientEmail();
+            uploadSupabaseBucket();
             alert('¡Revisa tu email!');
         }
         else{
@@ -64,7 +68,13 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
         user_name: userName,
         user_email: userEmail,
         user_phone: userPhone,
-        user_comments: userComments},
+        user_comments: userComments,
+        material: material,
+        is_sanded: isSanded,
+        infill: infill,
+        color: color,
+        stl_files: stlFilesListed,
+        order_id: orderId},
         'k27Yr9noc7Y8QOyoC')
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
@@ -72,6 +82,10 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
             console.log('FAILED...', error);
         });
     }
+
+    const stlFilesListed = stlFiles.map((stl) => {
+        return `Nombre: ${stl[0].file.file.name}, X: ${stl[0].file.width.toFixed(2)}, Y: ${stl[0].file.height.toFixed(2)}, Z: ${stl[0].file.depth.toFixed(2)}, Cantidad: ${stl[0].quantity}`;
+    }).join('\n');
 
     const sendClientEmail = async () => {
         emailjs.send("service_kmyfgfk", "template_d0dxmik",{
@@ -83,6 +97,33 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
         }, function(error) {
             console.log('FAILED...', error);
         });
+    }
+
+    const uploadSupabaseBucket = async () => {
+        stlFiles.map(async (stl) => {
+            const { data, error } = await supabase
+            .storage
+            .from('stls')
+            .upload(`${orderId}/${stl[0].file.file.name}`, stl[0].file.file, {
+                cacheControl: '3600',
+                upsert: false
+            })
+            if(error) console.log(error);
+            else console.log(data);
+        });
+    }
+
+    function createId() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const size = 24;
+        let id = '';
+      
+        for (let i = 0 ; i < size ; i++) {
+            const index = Math.floor(Math.random() * characters.length);
+            id += characters.charAt(index);
+        }
+
+        return id;
     }
 
     function timeout(number) {
@@ -144,7 +185,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                     </div>
                     <span className='form_faq'>* obligatorio</span>
                     <button onClick={handleSubmit}>Enviar</button>
-                    <span className='form_faq'>Si tienes alguna duda, haz click <Link to={'/preguntas-frecuentes'}>aquí</Link></span>
+                    <span className='form_faq'>Si tienes alguna duda acerca de tu impresión, haz click <Link to={'/preguntas-frecuentes'}>aquí</Link></span>
                 </form>
             </div>
         </div>

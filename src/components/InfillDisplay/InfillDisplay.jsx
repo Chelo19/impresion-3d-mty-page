@@ -3,6 +3,8 @@ import '../MaterialDisplay/MaterialDisplay.css'
 import { useEffect, useState } from 'react';
 
 import chapoteo from '../../assets/chapoteo.png';
+import lijado from '../../assets/lijado.png';
+import sin_lijar from '../../assets/sin_lijar.png';
 
 function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
     const navigate = useNavigate();
@@ -58,7 +60,7 @@ function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
             <div className='material_display_progress'><Link to={'/upload-file'}>Archivos ({stlFiles.length})</Link> &gt; <Link to={'/select-material'}>{material}</Link></div>
             <div className='material_display_container'>
                 <div className='material_display_item'>
-                    <img src={chapoteo}/>
+                    <img src={sin_lijar}/>
                     <div className='material_display_item_container'>
                         <span className='material_display_name'>Estándar</span>
                         <span className='material_display_description'>Acabado estándar como sale de la máquina.</span>
@@ -86,7 +88,7 @@ function InfillDisplay({material, stlFiles, setIsSanded, setInfill, setColor}){
                     </div>
                 </div>
                 <div className='material_display_item'>
-                    <img src={chapoteo}/>
+                    <img src={lijado}/>
                     <div className='material_display_item_container'>
                         <span className='material_display_name'>Suavizado</span>
                         <span className='material_display_description'>Acabado suavizado con lija para mejorar bordes.</span>

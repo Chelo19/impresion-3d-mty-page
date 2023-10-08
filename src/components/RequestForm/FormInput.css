@@ -58,6 +58,7 @@
     margin-top: -20px;
     font-size: 12px;
     color: rgba(var(--primary_color), 0.7);
+    text-align: center;
 }
 
 .form_faq a{

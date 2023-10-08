@@ -4,6 +4,7 @@ import './Contact.css'
 import messenger from '../../assets/messenger_color.png';
 import instagram from '../../assets/instagram_color.png';
 import whatsapp from '../../assets/whatsapp_color.png';
+import gmail_color from '../../assets/gmail_color.png';
 
 function Contact(){
     return(
@@ -33,6 +34,14 @@ function Contact(){
                             <span className='instructions_item_description_title'>Contáctanos por mensaje en Whatsapp</span>
                             <p className='instructions_item_description_description'>Puedes enviarnos un mensaje que responderemos rápidamente por Whatsapp</p>
                             <Link to={'https://wa.me/8672207801'} target='_blank' className='contact_link' id='whatsapp'>Ir a Whatsapp</Link>
+                        </div>
+                    </div>
+                    <div className='instructions_item'>
+                        <img className='instructions_item_img' src={gmail_color} alt='350px X 232px'/>
+                        <div className='instructions_item_description'>
+                            <span className='instructions_item_description_title'>Contáctanos por Correo Electrónico</span>
+                            <p className='instructions_item_description_description'>Puedes enviarnos un correo para responderte eficientemente a impresion3dmonterreymx@gmail.com</p>
+                            <Link to={'mailto:impresion3dmonterreymx@gmail.com'} target='_blank' className='contact_link' id='gmail'>Ir a Correo</Link>
                         </div>
                     </div>
                 </div>

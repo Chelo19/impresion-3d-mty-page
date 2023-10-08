@@ -1,0 +1,2 @@
+export const REACT_APP_SUPABASE_URL = 'https://dpecitckuoshfndkfixv.supabase.co';
+export const REACT_APP_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwZWNpdGNrdW9zaGZuZGtmaXh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY3NDY0ODEsImV4cCI6MjAxMjMyMjQ4MX0.7A55T9LODwFmQQQ7fPzAHOfGuu8nM4RVO8c4k4uvW2U';
