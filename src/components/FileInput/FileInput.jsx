@@ -15,7 +15,19 @@ function FileInput({stlFiles, setStlFiles}) {
     const fileInputRef = React.createRef();
     const [nextId, setNextId] = useState(1);
     const [isOverlay, setIsOverlay] = useState(false);
+
     const [scalingItem, setScalingItem] = useState(null);
+    const [scalingItemCurrentWidth, setScalingItemCurrentWidth] = useState(null);
+    const [scalingItemCurrentHeight, setScalingItemCurrentHeight] = useState(null);
+    const [scalingItemCurrentDepth, setScalingItemCurrentDepth] = useState(null);
+
+    useEffect(() => {
+        flattenStlFiles(stlFiles);
+    }, []);
+
+    const flattenStlFiles = (stlArray) => {
+        setStlFiles(stlArray.flat());
+    };
 
     const handleFileButtonClick = () => {
         fileInputRef.current.click();
@@ -33,19 +45,25 @@ function FileInput({stlFiles, setStlFiles}) {
                 const width = bbox.max.x.toFixed(2) - bbox.min.x.toFixed(2);
                 const height = bbox.max.y.toFixed(2) - bbox.min.y.toFixed(2);
                 const depth = bbox.max.z.toFixed(2) - bbox.min.z.toFixed(2);
+                const original_width = width;
+                const original_height = height;
+                const original_depth = depth;
 
                 const fileWithDimensions = {
                     file: selectedFile,
                     width,
                     height,
                     depth,
+                    original_width,
+                    original_height,
+                    original_depth
                 };
 
                 filesWithDimensions.push(fileWithDimensions);
 
-                const filesWithId = filesWithDimensions.map((file) => ({ file, quantity: 1, id: nextId }));
+                const filesWithId = filesWithDimensions.map((file) => ({ file, quantity: 1, id: nextId, aspectRatio: 100}));
                 setNextId(nextId + 1);
-                setStlFiles([...stlFiles, filesWithId]);
+                flattenStlFiles([...stlFiles, filesWithId]);
             });
         });
     };
@@ -82,25 +100,22 @@ function FileInput({stlFiles, setStlFiles}) {
 
                 const filesWithId = filesWithDimensions.map((file) => ({ file, quantity: 1, id: nextId }));
                 setNextId(nextId + 1);
-                setStlFiles([...stlFiles, filesWithId]);
+                flattenStlFiles([...stlFiles, filesWithId]);
             });
         });
     };
 
     const debug = () => {
-        setStlFiles(stlFiles);
+        console.log(scalingItemCurrentWidth);
+        console.log(stlFiles);
+    };
+
+    const handleScalingItem = (file) => {
+        setScalingItem(file);
+        setScalingItemCurrentWidth(file.file.width);
+        setScalingItemCurrentHeight(file.file.height);
+        setScalingItemCurrentDepth(file.file.depth);
     }
-
-    const loader = new STLLoader();
-
-    const stlFilePath = 'src/assets/wrapping_paper_cutter_min_double.stl';
-
-    loader.load(stlFilePath, (geometry) => {
-        const bbox = new THREE.Box3().setFromObject(new THREE.Mesh(geometry));
-        const width = bbox.max.x - bbox.min.x;
-        const height = bbox.max.y - bbox.min.y;
-        const depth = bbox.max.z - bbox.min.z;
-    });
 
     //
 
@@ -131,15 +146,32 @@ function FileInput({stlFiles, setStlFiles}) {
         }
     }
 
-    const handleScalingChange = (value, index) => {
+    const handleScalingChange = (value, index, type) => {
         const updatedFiles = [...stlFiles];
-        const foundObject = updatedFiles.flat().find((file) => file.id === index);
-        console.log(foundObject.file);
-        if (foundObject && value > 0) {
-            foundObject.file.width = parseFloat(value);
-            console.log(foundObject.file);
-            setStlFiles(updatedFiles);
+        var foundObject = updatedFiles.flat().find((file) => file.id === index);
+        if(value < 0 || !foundObject || value == '') return;
+        switch(type){
+            case 1:     // width
+                foundObject.aspectRatio = parseFloat((value * 100 / scalingItem.file.original_width).toFixed(2));
+                foundObject.file.width = parseFloat(value);
+                foundObject = getAspectRatioValues(foundObject);
+                break;
+            case 2:     // height
+                foundObject.file.height = parseFloat(value);
+                break;
+            case 3:     // depth
+                foundObject.file.depth = parseFloat(value);
+                break;
         }
+        setStlFiles(updatedFiles);
+    }
+
+    const getAspectRatioValues = (foundObject) => {
+        foundObject.file.width = parseFloat((foundObject.file.original_width * foundObject.aspectRatio / 100).toFixed(2));
+        foundObject.file.height = parseFloat((foundObject.file.original_height * foundObject.aspectRatio / 100).toFixed(2));
+        foundObject.file.depth = parseFloat((foundObject.file.original_depth * foundObject.aspectRatio / 100).toFixed(2));
+        handleScalingItem(foundObject)
+        return foundObject;
     }
 
     //
@@ -191,12 +223,12 @@ function FileInput({stlFiles, setStlFiles}) {
                     <div className='file_input_gallery'>
                         {stlFiles.map((file) => {
                             return(
-                                <div className='file_input_item' key={file[0].id}>
+                                <div className='file_input_item' key={file.id}>
                                     <div className='file_input_item_top_belt'>
                                         <div className='file_input_item_left'>
                                             <div className='file_input_item_counter'>
                                                 Cantidad: &nbsp;
-                                                <button onClick={() => handleDecrementQuantity(file[0].id)}>
+                                                <button onClick={() => handleDecrementQuantity(file.id)}>
                                                     -
                                                 </button>
                                                 <input
@@ -218,19 +250,19 @@ function FileInput({stlFiles, setStlFiles}) {
                                                         e.preventDefault();
                                                         }
                                                     }}
-                                                    onChange={(e) => handleInputChange(e.target.value, file[0].id)}
-                                                    value={file[0].quantity}
+                                                    onChange={(e) => handleInputChange(e.target.value, file.id)}
+                                                    value={file.quantity}
                                                 />
-                                                <button onClick={() => handleIncrementQuantity(file[0].id)}>
+                                                <button onClick={() => handleIncrementQuantity(file.id)}>
                                                     +
                                                 </button>
                                             </div>
                                         </div>
                                         <div className='file_input_item_right'>
                                             <Link className='file_input_item_icon'>
-                                                <img src={scale} onClick={() => {setScalingItem(file[0]); setIsOverlay(true)}}/>
+                                                <img src={scale} onClick={() => {handleScalingItem(file); setIsOverlay(true)}}/>
                                             </Link>
-                                            <Link className='file_input_item_icon' onClick={() => deleteItem(file[0].id)}>
+                                            <Link className='file_input_item_icon' onClick={() => deleteItem(file.id)}>
                                                 <img src={close}/>
                                             </Link>
                                             {/* <Link className='file_input_item_icon'>
@@ -241,13 +273,13 @@ function FileInput({stlFiles, setStlFiles}) {
                                     <div className='file_input_item_all'>
                                         <img src={impresion3dLogo}/>
                                         <div className='file_input_item_content'>
-                                            {file[0].file.file.name}
+                                            {file.file.file.name}
                                             <div className='file_input_item_dimensions'>
-                                                <span>{file[0].file.width.toFixed(2)}mm</span>
+                                                <span>{file.file.width.toFixed(2)}mm</span>
                                                 <span>x</span>
-                                                <span>{file[0].file.height.toFixed(2)}mm</span>
+                                                <span>{file.file.height.toFixed(2)}mm</span>
                                                 <span>x</span>
-                                                <span>{file[0].file.depth.toFixed(2)}mm</span>
+                                                <span>{file.file.depth.toFixed(2)}mm</span>
                                             </div>
                                         </div>
                                     </div>
@@ -263,10 +295,59 @@ function FileInput({stlFiles, setStlFiles}) {
                     <div className='file_input_overlay'>
                         <div className='file_input_overlay_container'>
                             <button onClick={() => setIsOverlay(false)}>Salir</button>
-                            {console.log(scalingItem)}
-                            <input type='text' value={scalingItem.file.width.toFixed(2)} onChange={(e) => handleScalingChange(e.target.value, scalingItem.id)}/>
-                            <input type='text' value={scalingItem.file.height.toFixed(2)}/>
-                            <input type='text' value={scalingItem.file.depth.toFixed(2)}/>
+                            <input type='text'
+                            onKeyDown={(e) => {
+                                if (
+                                !(
+                                    (e.key >= "0" && e.key <= "9") ||
+                                    e.key === "Backspace" ||
+                                    e.key === "Delete" ||
+                                    e.key === "ArrowLeft" ||
+                                    e.key === "ArrowRight" ||
+                                    e.key === "Tab" ||
+                                    e.key === "Enter" ||
+                                    e.key === "."
+                                )
+                                ) {
+                                e.preventDefault();
+                                }
+                            }} value={scalingItemCurrentWidth} onChange={(e) => setScalingItemCurrentWidth(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 1)}/>
+                            <input type='text'
+                            onKeyDown={(e) => {
+                                if (
+                                !(
+                                    (e.key >= "0" && e.key <= "9") ||
+                                    e.key === "Backspace" ||
+                                    e.key === "Delete" ||
+                                    e.key === "ArrowLeft" ||
+                                    e.key === "ArrowRight" ||
+                                    e.key === "Tab" ||
+                                    e.key === "Enter" ||
+                                    e.key === "."
+                                )
+                                ) {
+                                e.preventDefault();
+                                }
+                            }} value={scalingItemCurrentHeight} onChange={(e) => setScalingItemCurrentHeight(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 2)}/>
+                            <input type='text'
+                            onKeyDown={(e) => {
+                                if (
+                                !(
+                                    (e.key >= "0" && e.key <= "9") ||
+                                    e.key === "Backspace" ||
+                                    e.key === "Delete" ||
+                                    e.key === "ArrowLeft" ||
+                                    e.key === "ArrowRight" ||
+                                    e.key === "Tab" ||
+                                    e.key === "Enter" ||
+                                    e.key === "."
+                                )
+                                ) {
+                                e.preventDefault();
+                                }
+                            }} value={scalingItemCurrentDepth} onChange={(e) => setScalingItemCurrentDepth(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 3)}/>
+                            <span>{scalingItem.aspectRatio}%</span>
+                            <button onClick={debug}>debug</button>
                         </div>
                     </div>
                 </div>
