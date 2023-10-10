@@ -248,7 +248,15 @@ button {
     cursor: pointer;
     padding: 0;
     margin: 0;
-  }
+}
+
+.file_input_overlay{
+    width: 700px;
+    height: 300px;
+    background-color: var(--background_color);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 @media (max-width: 440px) {
 

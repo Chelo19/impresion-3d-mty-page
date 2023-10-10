@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import * as THREE from 'three';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
+import scale from '../../assets/scale.png';
 import close from '../../assets/close.png';
 import impresion3dLogo from '../../assets/impresion-3d-logo.png';
 
@@ -13,6 +14,8 @@ function FileInput({stlFiles, setStlFiles}) {
     const navigate = useNavigate();
     const fileInputRef = React.createRef();
     const [nextId, setNextId] = useState(1);
+    const [isOverlay, setIsOverlay] = useState(false);
+    const [scalingItem, setScalingItem] = useState(null);
 
     const handleFileButtonClick = () => {
         fileInputRef.current.click();
@@ -27,9 +30,9 @@ function FileInput({stlFiles, setStlFiles}) {
 
             loader.load(URL.createObjectURL(selectedFile), (geometry) => {
                 const bbox = new THREE.Box3().setFromObject(new THREE.Mesh(geometry));
-                const width = bbox.max.x - bbox.min.x;
-                const height = bbox.max.y - bbox.min.y;
-                const depth = bbox.max.z - bbox.min.z;
+                const width = bbox.max.x.toFixed(2) - bbox.min.x.toFixed(2);
+                const height = bbox.max.y.toFixed(2) - bbox.min.y.toFixed(2);
+                const depth = bbox.max.z.toFixed(2) - bbox.min.z.toFixed(2);
 
                 const fileWithDimensions = {
                     file: selectedFile,
@@ -64,9 +67,9 @@ function FileInput({stlFiles, setStlFiles}) {
 
             loader.load(URL.createObjectURL(droppedFile), (geometry) => {
                 const bbox = new THREE.Box3().setFromObject(new THREE.Mesh(geometry));
-                const width = bbox.max.x - bbox.min.x;
-                const height = bbox.max.y - bbox.min.y;
-                const depth = bbox.max.z - bbox.min.z;
+                const width = bbox.max.x.toFixed(2) - bbox.min.x.toFixed(2);
+                const height = bbox.max.y.toFixed(2) - bbox.min.y.toFixed(2);
+                const depth = bbox.max.z.toFixed(2) - bbox.min.z.toFixed(2);
 
                 const fileWithDimensions = {
                     file: droppedFile,
@@ -124,6 +127,17 @@ function FileInput({stlFiles, setStlFiles}) {
         const foundObject = updatedFiles.flat().find((file) => file.id === index);
         if (foundObject && value > 0) {
             foundObject.quantity = parseInt(value);
+            setStlFiles(updatedFiles);
+        }
+    }
+
+    const handleScalingChange = (value, index) => {
+        const updatedFiles = [...stlFiles];
+        const foundObject = updatedFiles.flat().find((file) => file.id === index);
+        console.log(foundObject.file);
+        if (foundObject && value > 0) {
+            foundObject.file.width = parseFloat(value);
+            console.log(foundObject.file);
             setStlFiles(updatedFiles);
         }
     }
@@ -213,6 +227,9 @@ function FileInput({stlFiles, setStlFiles}) {
                                             </div>
                                         </div>
                                         <div className='file_input_item_right'>
+                                            <Link className='file_input_item_icon'>
+                                                <img src={scale} onClick={() => {setScalingItem(file[0]); setIsOverlay(true)}}/>
+                                            </Link>
                                             <Link className='file_input_item_icon' onClick={() => deleteItem(file[0].id)}>
                                                 <img src={close}/>
                                             </Link>
@@ -241,6 +258,19 @@ function FileInput({stlFiles, setStlFiles}) {
                 }
                 <button onClick={checkLength} className='display_button_main'>Continuar</button>
             </div>
+            {isOverlay && 
+                <div className='overlay'>
+                    <div className='file_input_overlay'>
+                        <div className='file_input_overlay_container'>
+                            <button onClick={() => setIsOverlay(false)}>Salir</button>
+                            {console.log(scalingItem)}
+                            <input type='text' value={scalingItem.file.width.toFixed(2)} onChange={(e) => handleScalingChange(e.target.value, scalingItem.id)}/>
+                            <input type='text' value={scalingItem.file.height.toFixed(2)}/>
+                            <input type='text' value={scalingItem.file.depth.toFixed(2)}/>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     );
 }

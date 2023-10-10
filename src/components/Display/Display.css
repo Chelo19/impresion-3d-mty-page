@@ -1,4 +1,5 @@
 .display{
+    min-width: 1400px;
     padding: 60px 100px;
     display: flex;
     justify-content: center;
@@ -170,6 +171,7 @@
 
 @media (max-width: 440px) {
     .display{
+        min-width: auto;
         width: 80%;
         margin: calc(var(--nav_bar_height) + 40px) 0;
         flex-direction: column;

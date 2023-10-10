@@ -16,3 +16,13 @@ body{
 .main_app{
   font-family: Inter,sans-serif;
 }
+
+.overlay{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

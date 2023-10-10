@@ -1,13 +1,15 @@
 .who_we_are{
     height: 700px;
-    width: 100%;
+    width: 1400px;
     display: flex;
     background-color: rgba(var(--primary_color), 0.9);
+    /* background-color: #1d2939; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
     padding: 100px;
+    border-radius: 20px;
 }
 
 .who_we_are_container{
@@ -68,6 +70,8 @@
     .who_we_are{
         padding: 40px 20px;
         height: auto;
+        width: auto;
+        border-radius: 0;
     }
 
     .who_we_are_container{
