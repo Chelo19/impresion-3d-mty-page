@@ -57,8 +57,6 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
             sendAdminEmail();
             sendClientEmail();
             uploadSupabaseBucket();
-            alert('¡Revisa tu email!');
-            navigate('/');
         }
         else{
             alert('Favor de corregir los datos');
@@ -86,7 +84,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
     }
 
     const stlFilesListed = stlFiles.map((stl) => {
-        return `Nombre: ${stl[0].file.file.name}, X: ${stl[0].file.width.toFixed(2)}, Y: ${stl[0].file.height.toFixed(2)}, Z: ${stl[0].file.depth.toFixed(2)}, Cantidad: ${stl[0].quantity}`;
+        return `Nombre: ${stl.file.file.name}, X: ${stl.file.width.toFixed(2)}, Y: ${stl.file.height.toFixed(2)}, Z: ${stl.file.depth.toFixed(2)}, ${stl.aspectRatio.toFixed(2)}%, Cantidad: ${stl.quantity}`;
     }).join('\n');
 
     const sendClientEmail = async () => {
@@ -106,12 +104,16 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
             const { data, error } = await supabase
             .storage
             .from('stls')
-            .upload(`${orderId}/${stl[0].file.file.name}`, stl[0].file.file, {
+            .upload(`${orderId}/${stl.file.file.name}`, stl.file.file, {
                 cacheControl: '3600',
                 upsert: false
             })
             if(error) console.log(error);
-            else console.log(data);
+            else{
+                console.log(data);
+                alert('¡Revisa tu email!');
+                navigate('/');
+            }
         });
     }
 
@@ -144,20 +146,21 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                     {stlFiles.map((stl) => {
                         return(
                         <>
-                            <div className='request_form_item'>
+                            <div className='request_form_item' key={stl.id}>
                                 <img src={impresion3dLogo}/>
-                                <div className='request_form_item_container' id='request_form_stl' key={stl[0].id}>
+                                <div className='request_form_item_container' id='request_form_stl'>
                                     <div className='request_form_item_content'>
-                                        {stl[0].file.file.name}
+                                        {stl.file.file.name}
+                                        {console.log(stl.file)}
                                         <div className='file_input_item_dimensions'>
-                                            <span>{stl[0].file.width.toFixed(2)}mm</span>
+                                            <span>{stl.file.width.toFixed(2)}mm</span>
                                             <span>x</span>
-                                            <span>{stl[0].file.height.toFixed(2)}mm</span>
+                                            <span>{stl.file.height.toFixed(2)}mm</span>
                                             <span>x</span>
-                                            <span>{stl[0].file.depth.toFixed(2)}mm</span>
+                                            <span>{stl.file.depth.toFixed(2)}mm</span>
                                         </div>
                                         <div className='request_form_item_specs'>
-                                            <div className='request_form_material'>Cantidad {stl[0].quantity}</div>
+                                            <div className='request_form_material'>Cantidad {stl.quantity}</div>
                                             <div className='request_form_color' style={{backgroundColor: `#${color}`}}></div>
                                             <div className='request_form_material'>{material}</div>
                                             <div className='request_form_material'>{isSanded ? <>Suavizado</> : <>Estándar</>}</div>
@@ -187,7 +190,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                     </div>
                     <div className='form_wrapper'>
                         <span>Comentarios</span>
-                        <textarea value={userComments} id='form_input' placeholder='(Medidas, comentarios, solicitudes)' onChange={(e) => setUserComments(e.target.value)}/>
+                        <textarea value={userComments} id='form_input' placeholder='(Comentarios, solicitudes, etc...)' onChange={(e) => setUserComments(e.target.value)}/>
                     </div>
                     <span className='form_faq'>* obligatorio</span>
                     <button onClick={handleSubmit}>Enviar</button>

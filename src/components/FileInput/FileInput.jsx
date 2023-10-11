@@ -20,6 +20,7 @@ function FileInput({stlFiles, setStlFiles}) {
     const [scalingItemCurrentWidth, setScalingItemCurrentWidth] = useState(null);
     const [scalingItemCurrentHeight, setScalingItemCurrentHeight] = useState(null);
     const [scalingItemCurrentDepth, setScalingItemCurrentDepth] = useState(null);
+    const [scalingItemCurrentAspectRatio, setScalingItemCurrentAspectRatio] = useState(null);
 
     useEffect(() => {
         flattenStlFiles(stlFiles);
@@ -115,6 +116,7 @@ function FileInput({stlFiles, setStlFiles}) {
         setScalingItemCurrentWidth(file.file.width);
         setScalingItemCurrentHeight(file.file.height);
         setScalingItemCurrentDepth(file.file.depth);
+        setScalingItemCurrentAspectRatio(file.aspectRatio);
     }
 
     //
@@ -157,10 +159,18 @@ function FileInput({stlFiles, setStlFiles}) {
                 foundObject = getAspectRatioValues(foundObject);
                 break;
             case 2:     // height
+                foundObject.aspectRatio = parseFloat((value * 100 / scalingItem.file.original_height).toFixed(2));
                 foundObject.file.height = parseFloat(value);
+                foundObject = getAspectRatioValues(foundObject);
                 break;
             case 3:     // depth
+                foundObject.aspectRatio = parseFloat((value * 100 / scalingItem.file.original_depth).toFixed(2));
                 foundObject.file.depth = parseFloat(value);
+                foundObject = getAspectRatioValues(foundObject);
+                break;
+            case 4:     // ratio
+                foundObject.aspectRatio = parseFloat(value);
+                foundObject = getAspectRatioValues(foundObject);
                 break;
         }
         setStlFiles(updatedFiles);
@@ -172,6 +182,17 @@ function FileInput({stlFiles, setStlFiles}) {
         foundObject.file.depth = parseFloat((foundObject.file.original_depth * foundObject.aspectRatio / 100).toFixed(2));
         handleScalingItem(foundObject)
         return foundObject;
+    }
+
+    const resetScaling = (index) => {
+        const updatedFiles = [...stlFiles];
+        var foundObject = updatedFiles.flat().find((file) => file.id === index);
+        foundObject.file.width = foundObject.file.original_width;
+        foundObject.file.height = foundObject.file.original_height;
+        foundObject.file.depth = foundObject.file.original_depth;
+        foundObject.aspectRatio = 100;
+        handleScalingItem(foundObject);
+        setStlFiles(updatedFiles);
     }
 
     //
@@ -294,60 +315,102 @@ function FileInput({stlFiles, setStlFiles}) {
                 <div className='overlay'>
                     <div className='file_input_overlay'>
                         <div className='file_input_overlay_container'>
-                            <button onClick={() => setIsOverlay(false)}>Salir</button>
-                            <input type='text'
-                            onKeyDown={(e) => {
-                                if (
-                                !(
-                                    (e.key >= "0" && e.key <= "9") ||
-                                    e.key === "Backspace" ||
-                                    e.key === "Delete" ||
-                                    e.key === "ArrowLeft" ||
-                                    e.key === "ArrowRight" ||
-                                    e.key === "Tab" ||
-                                    e.key === "Enter" ||
-                                    e.key === "."
-                                )
-                                ) {
-                                e.preventDefault();
-                                }
-                            }} value={scalingItemCurrentWidth} onChange={(e) => setScalingItemCurrentWidth(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 1)}/>
-                            <input type='text'
-                            onKeyDown={(e) => {
-                                if (
-                                !(
-                                    (e.key >= "0" && e.key <= "9") ||
-                                    e.key === "Backspace" ||
-                                    e.key === "Delete" ||
-                                    e.key === "ArrowLeft" ||
-                                    e.key === "ArrowRight" ||
-                                    e.key === "Tab" ||
-                                    e.key === "Enter" ||
-                                    e.key === "."
-                                )
-                                ) {
-                                e.preventDefault();
-                                }
-                            }} value={scalingItemCurrentHeight} onChange={(e) => setScalingItemCurrentHeight(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 2)}/>
-                            <input type='text'
-                            onKeyDown={(e) => {
-                                if (
-                                !(
-                                    (e.key >= "0" && e.key <= "9") ||
-                                    e.key === "Backspace" ||
-                                    e.key === "Delete" ||
-                                    e.key === "ArrowLeft" ||
-                                    e.key === "ArrowRight" ||
-                                    e.key === "Tab" ||
-                                    e.key === "Enter" ||
-                                    e.key === "."
-                                )
-                                ) {
-                                e.preventDefault();
-                                }
-                            }} value={scalingItemCurrentDepth} onChange={(e) => setScalingItemCurrentDepth(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 3)}/>
-                            <span>{scalingItem.aspectRatio}%</span>
-                            <button onClick={debug}>debug</button>
+                            <span className='file_input_overlay_title'>Escalar modelo 3D</span>
+                            <div className='file_input_overlay_wrapper'>
+                                {/* <button onClick={() => setIsOverlay(false)}>Salir</button> */}
+                                <div className='file_input_overlay_item'>
+                                    <span>X</span>
+                                    <input type='text'
+                                    onKeyDown={(e) => {
+                                        if (
+                                        !(
+                                            (e.key >= "0" && e.key <= "9") ||
+                                            e.key === "Backspace" ||
+                                            e.key === "Delete" ||
+                                            e.key === "ArrowLeft" ||
+                                            e.key === "ArrowRight" ||
+                                            e.key === "Tab" ||
+                                            e.key === "Enter" ||
+                                            e.key === "."
+                                        )
+                                        ) {
+                                        e.preventDefault();
+                                        }
+                                    }} value={scalingItemCurrentWidth} onChange={(e) => setScalingItemCurrentWidth(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 1)}/>
+                                    <span>mm</span>
+                                </div>
+                                <div className='file_input_overlay_item'>
+                                    <span>Y</span>
+                                    <input type='text'
+                                    onKeyDown={(e) => {
+                                        if (
+                                        !(
+                                            (e.key >= "0" && e.key <= "9") ||
+                                            e.key === "Backspace" ||
+                                            e.key === "Delete" ||
+                                            e.key === "ArrowLeft" ||
+                                            e.key === "ArrowRight" ||
+                                            e.key === "Tab" ||
+                                            e.key === "Enter" ||
+                                            e.key === "."
+                                        )
+                                        ) {
+                                        e.preventDefault();
+                                        }
+                                    }} value={scalingItemCurrentHeight} onChange={(e) => setScalingItemCurrentHeight(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 2)}/>
+                                    <span>mm</span>
+                                </div>
+                                <div className='file_input_overlay_item'>
+                                    <span>Z</span>
+                                    <input type='text'
+                                    onKeyDown={(e) => {
+                                        if (
+                                        !(
+                                            (e.key >= "0" && e.key <= "9") ||
+                                            e.key === "Backspace" ||
+                                            e.key === "Delete" ||
+                                            e.key === "ArrowLeft" ||
+                                            e.key === "ArrowRight" ||
+                                            e.key === "Tab" ||
+                                            e.key === "Enter" ||
+                                            e.key === "."
+                                        )
+                                        ) {
+                                        e.preventDefault();
+                                        }
+                                    }} value={scalingItemCurrentDepth} onChange={(e) => setScalingItemCurrentDepth(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 3)}/>
+                                    <span>mm</span>
+                                </div>
+                                <div className='file_input_overlay_item'>
+                                    <input type='text'
+                                    onKeyDown={(e) => {
+                                        if (
+                                        !(
+                                            (e.key >= "0" && e.key <= "9") ||
+                                            e.key === "Backspace" ||
+                                            e.key === "Delete" ||
+                                            e.key === "ArrowLeft" ||
+                                            e.key === "ArrowRight" ||
+                                            e.key === "Tab" ||
+                                            e.key === "Enter" ||
+                                            e.key === "."
+                                        )
+                                        ) {
+                                        e.preventDefault();
+                                        }
+                                    }} value={scalingItemCurrentAspectRatio} onChange={(e) => setScalingItemCurrentAspectRatio(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 4)}/>
+                                    <span>%</span>
+                                </div>
+                                {/* <button onClick={debug}>debug</button> */}
+                            </div>
+                            <div className='file_input_overlay_buttons'>
+                                <button className='file_input_overlay_button' onClick={() => resetScaling(scalingItem.id)}>
+                                    Reiniciar
+                                </button>
+                                <button className='file_input_overlay_button' id='file_input_overlay_button_send' onClick={() => setIsOverlay(false)}>
+                                    Continuar
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
