@@ -317,7 +317,6 @@ function FileInput({stlFiles, setStlFiles}) {
                         <div className='file_input_overlay_container'>
                             <span className='file_input_overlay_title'>Escalar modelo 3D</span>
                             <div className='file_input_overlay_wrapper'>
-                                {/* <button onClick={() => setIsOverlay(false)}>Salir</button> */}
                                 <div className='file_input_overlay_item'>
                                     <span>X</span>
                                     <input type='text'
@@ -401,7 +400,6 @@ function FileInput({stlFiles, setStlFiles}) {
                                     }} value={scalingItemCurrentAspectRatio} onChange={(e) => setScalingItemCurrentAspectRatio(e.target.value)} onBlur={(e) => handleScalingChange(e.target.value, scalingItem.id, 4)}/>
                                     <span>%</span>
                                 </div>
-                                {/* <button onClick={debug}>debug</button> */}
                             </div>
                             <div className='file_input_overlay_buttons'>
                                 <button className='file_input_overlay_button' onClick={() => resetScaling(scalingItem.id)}>

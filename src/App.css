@@ -21,8 +21,18 @@ body{
   position: fixed;
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
   background-color: rgba(0,0,0,.3);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 440px) {
+  .overlay{
+    width: 100vw;
+    height: calc(100vh - var(--nav_bar_height));
+    top: var(--nav_bar_height);
+  }
 }

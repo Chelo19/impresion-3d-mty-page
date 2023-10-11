@@ -375,4 +375,30 @@ button {
         width: 100%;
         gap: 3px;
     }
+
+    .file_input_overlay{
+        width: calc(100% - 100px);
+        height: auto;
+        overflow: hidden;
+    }
+
+    .file_input_overlay_container{
+        gap: 20px;
+    }
+
+    .file_input_overlay_title{
+        height: auto;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .file_input_overlay_wrapper{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .file_input_overlay_buttons{
+        justify-content: center;
+    }
 }
