@@ -3,7 +3,8 @@ import './Display.css'
 import { useState } from 'react';
 
 import mudkipImg from '../../assets/mudkip_sombra.png';
-import tubeImg from '../../assets/heroModel_tube.png';
+import figureImg from '../../assets/monstruo-morado.png';
+import tubeImg from '../../assets/petg-cf-engrane.png';
 import screwImg from '../../assets/heroModel_screwClamp.png';
 import gear from '../../assets/gear.png';
 import escultura from '../../assets/escultura.png';
@@ -50,7 +51,7 @@ function Display(){
                 <img className='display_bg' src={mancha}>
                 </img>
                 {displayActive == 1 && <img src={tubeImg}/>}
-                {displayActive == 2 && <img src={mudkipImg}/>}
+                {displayActive == 2 && <img src={figureImg}/>}
                 {displayActive == 3 && <img src={screwImg}/>}
             </div>
             <div className='display_features'>

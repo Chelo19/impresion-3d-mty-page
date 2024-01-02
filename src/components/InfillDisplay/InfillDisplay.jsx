@@ -3,8 +3,6 @@ import '../MaterialDisplay/MaterialDisplay.css'
 import { useEffect, useState } from 'react';
 import { supabase } from '../../supabase/client';
 
-import chapoteo from '../../assets/chapoteo.png';
-import lijado from '../../assets/lijado.png';
 import sin_lijar from '../../assets/sin_lijar.png';
 
 function InfillDisplay({material, stlFiles, setInfill, setColor}){
@@ -58,7 +56,8 @@ function InfillDisplay({material, stlFiles, setInfill, setColor}){
             <div className='material_display_progress'><Link to={'/upload-file'}>Archivos ({stlFiles.length})</Link> &gt; <Link to={'/select-material'}>{material}</Link></div>
             <div className='material_display_container'>
                 <div className='material_display_item'>
-                    <img src={sin_lijar}/>
+                    {/* <img src={sin_lijar}/> */}
+                    <img src={`https://dpecitckuoshfndkfixv.supabase.co/storage/v1/object/public/material_imgs/${material}.png`}/>
                     <div className='material_display_item_container'>
                         {/* <span className='material_display_name'>{material}</span> */}
                         {/* <span className='material_display_description'>Acabado estándar como sale de la máquina.</span> */}
@@ -91,66 +90,71 @@ function InfillDisplay({material, stlFiles, setInfill, setColor}){
                         </div>
                     </div>
                 </div>
-                <div>
+                <>
                     {
                         specs ?
-                        <div className='specs_display'>
-                            <div className='specs_table'>
-                                <span className='specs_li_title'>
-                                    Propiedades Físicas
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Densidad</span>
-                                    <span>{specs.density} g/cm³</span>
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Temperatura de ablandamiento</span>
-                                    <span>{specs.softening_temperature} C°</span>
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Temperatura de distorsión térmica</span>
-                                    <span>{specs.deflection_temperature} C°</span>
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Temperatura de fusión</span>
-                                    <span>{specs.melting_temperature} C°</span>
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Índice de fusión</span>
-                                    <span>{specs.melt_index} C°</span>
-                                </span>
+                        <>
+                            <div className='specs_description'>
+                                {specs.description}
                             </div>
-                            <div className='specs_table'>
-                                <span className='specs_li_title'>
-                                    Propiedades Mecánicas
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Fuerza de tensión</span>
-                                    <span>{specs.tensile_strength} g/cm³</span>
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Tasa de alargamiento de rotura</span>
-                                    <span>{specs.breaking_elongation_rate} C°</span>
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Módulo de flexión</span>
-                                    <span>{specs.bending_modulus} C°</span>
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Resistencia a la flexión</span>
-                                    <span>{specs.bending_strength} C°</span>
-                                </span>
-                                <span className='specs_li'>
-                                    <span>Fuerza de impacto</span>
-                                    <span>{specs.impact_strength} C°</span>
-                                </span>
+                            <div className='specs_display'>
+                                <div className='specs_table'>
+                                    <span className='specs_li_title'>
+                                        Propiedades Físicas
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Densidad</span>
+                                        <span>{specs.density} g/cm³</span>
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Temperatura de ablandamiento</span>
+                                        <span>{specs.softening_temperature} C°</span>
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Temperatura de distorsión térmica</span>
+                                        <span>{specs.deflection_temperature} C°</span>
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Temperatura de fusión</span>
+                                        <span>{specs.melting_temperature} C°</span>
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Índice de fusión</span>
+                                        <span>{specs.melt_index} C°</span>
+                                    </span>
+                                </div>
+                                <div className='specs_table'>
+                                    <span className='specs_li_title'>
+                                        Propiedades Mecánicas
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Fuerza de tensión</span>
+                                        <span>{specs.tensile_strength} g/cm³</span>
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Tasa de alargamiento de rotura</span>
+                                        <span>{specs.breaking_elongation_rate} C°</span>
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Módulo de flexión</span>
+                                        <span>{specs.bending_modulus} C°</span>
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Resistencia a la flexión</span>
+                                        <span>{specs.bending_strength} C°</span>
+                                    </span>
+                                    <span className='specs_li'>
+                                        <span>Fuerza de impacto</span>
+                                        <span>{specs.impact_strength} C°</span>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        </>
                         :
                         <>
                         </>
                     }
-                </div>
+                </>
             </div>
         </div>
     )

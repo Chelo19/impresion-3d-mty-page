@@ -31,11 +31,14 @@
     gap: 50px;
     justify-self: center;
     margin-top: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .material_display_item img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    justify-self: center;
     /* background: #f0f1f8; */
     border-radius: 8px;
 }
@@ -179,11 +182,18 @@
     color: rgba(var(--primary_color), 0.5);
 }
 
+.specs_description{
+    width: 950px;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 300;
+}
+
 .specs_display{
     width: 950px;
     font-size: 20px;
     font-weight: 400;
-    margin-top: 100px;
+    margin-top: 20px;
     display: flex;
     gap: 10px;
 }
@@ -239,6 +249,10 @@
         align-self: center;
     }
 
+    .material_display_item_container{
+        padding: 0 30px;
+    }
+
     .material_display_container{
         box-shadow: none;
         padding: 0;
@@ -246,5 +260,31 @@
 
     .material_display_infills{
         flex-wrap: wrap;
+    }
+
+    .specs_display{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .specs_description{
+        width: 100%;
+        padding: 0 30px;
+        font-size: 22px;
+    }
+
+    .specs_table{
+        width: 90%;
+    }
+
+    .specs_li_title{
+        font-size: 18px;
+    }
+
+    .specs_li{
+        font-size: 14px;
     }
 }

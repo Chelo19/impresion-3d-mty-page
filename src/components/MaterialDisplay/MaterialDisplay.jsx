@@ -2,7 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './MaterialDisplay.css'
 import { supabase } from '../../supabase/client';
 
-import filamento_pla from '../../assets/filamento_pla.png';
+import filamento_pla from '../../assets/monstruo-morado.png';
+import filamento_abs from '../../assets/abs.png';
 import filamento_petg_cf from '../../assets/petg-cf-engrane.png';
 import { useEffect, useState } from 'react';
 
@@ -52,8 +53,8 @@ function MaterialDisplay({setMaterial, stlFiles}){
                     <div className='material_display_item_container'>
                         <span className='material_display_name'>PLA</span>
                         <span className='material_display_description'>El PLA es un plástico de bajo costo, perfecto para prototipos y piezas funcionales.</span>
-                        <span className='material_display_type'>FDM</span>
-                        <span className='material_display_extra'>Acabados disponibles: Estándar, Suavizado</span>
+                        <span className='material_display_type'>Tecnología FDM</span>
+                        <span className='material_display_extra'>Colores disponibles:</span>
                         <div className='material_display_colors'>
                             {
                                 plaColors.length > 0 ?
@@ -73,12 +74,12 @@ function MaterialDisplay({setMaterial, stlFiles}){
                     </div>
                 </div>
                 <div className='material_display_item'>
-                    <img src={filamento_pla}/>
+                    <img src={filamento_abs}/>
                     <div className='material_display_item_container'>
                         <span className='material_display_name'>ABS</span>
                         <span className='material_display_description'>El ABS es un polímero económico, ideal para piezas que requieran resistencia mecánica.</span>
-                        <span className='material_display_type'>FDM</span>
-                        <span className='material_display_extra'>Acabados disponibles: Estándar</span>
+                        <span className='material_display_type'>Tecnología FDM</span>
+                        <span className='material_display_extra'>Colores disponibles:</span>
                         <div className='material_display_colors'>
                             {
                                 absColors.length > 0 ?
@@ -102,8 +103,8 @@ function MaterialDisplay({setMaterial, stlFiles}){
                     <div className='material_display_item_container'>
                         <span className='material_display_name'>PETG-CF</span>
                         <span className='material_display_description'>El PETG-CF es un polímero endurecido con Fibra de Carbono, ideal para piezas que requieran resistencia mecánica y térmica.</span>
-                        <span className='material_display_type'>FDM</span>
-                        <span className='material_display_extra'>Acabados disponibles: Estándar</span>
+                        <span className='material_display_type'>Tecnología FDM</span>
+                        <span className='material_display_extra'>Colores disponibles:</span>
                         <div className='material_display_colors'>
                             {
                                 petgCfColors.length > 0 ?

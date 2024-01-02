@@ -7,7 +7,7 @@ function WhoWeAre(){
             <div className='who_we_are_container'>
                 <div className='who_we_are_presentation'>
                     <span className='who_we_are_title'>
-                        Nosotros
+                        ¿Quiénes somos?
                     </span>
                     <span className='who_we_are_text'>
                         En Impresión 3D Monterrey, estamos apasionados por la tecnología de impresión 3D y estamos comprometidos en brindar soluciones innovadoras a estudiantes, creativos y entusiastas de Monterrey y sus alrededores. Somos un emprendimiento local que se enorgullece de ofrecer impresiones 3D de alta calidad a precios accesibles.
