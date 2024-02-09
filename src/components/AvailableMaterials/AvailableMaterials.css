@@ -1,0 +1,93 @@
+.available_materials{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.available_materials_title{
+    font-size: 48px;
+    margin-bottom: -50px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    color: rgba(var(--text_color), 0.8);
+    text-align: center;
+}
+
+.available_materials_spec_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.available_materials_specs_description{
+    width: 1300px;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.available_materials_specs_display{
+    width: 1300px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.available_materials_specs_table{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.available_materials_specs_li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.available_materials_specs_li_title{
+    width: 100%;
+    text-align: center;
+    background-color: #6a6a6a;
+    color: #fff;
+    padding: 10px;
+    font-weight: 700;
+}
+
+@media (max-width: 440px) {
+
+    .available_materials_specs_display{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .available_materials_specs_description{
+        width: 100%;
+        padding: 0 30px;
+        font-size: 22px;
+    }
+
+    .available_materials_specs_table{
+        width: 90%;
+    }
+
+    .available_materials_specs_li_title{
+        font-size: 18px;
+    }
+
+    .available_materials_specs_li{
+        font-size: 14px;
+    }
+}

@@ -4,6 +4,7 @@ import Instructions from "../../components/Instructions/Instructions";
 import Presentation from "../../components/Presentation/Presentation";
 import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
 import WhySection from "../../components/WhySection/WhySection";
+import AvailableMaterials from "../../components/AvailableMaterials/AvailableMaterials.jsx";
 import './HomePage.css'
 
 function HomePage(){
@@ -14,6 +15,7 @@ function HomePage(){
             <Instructions/>
             <WhySection/>
             <Gallery/>
+            <AvailableMaterials/>
             <WhoWeAre/>
         </div>
     )

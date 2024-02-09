@@ -3,7 +3,7 @@ import './Display.css'
 import { useState } from 'react';
 
 import mudkipImg from '../../assets/mudkip_sombra.png';
-import figureImg from '../../assets/monstruo-morado.png';
+import figureImg from '../../assets/heroModel_tube.png';
 import tubeImg from '../../assets/petg-cf-engrane.png';
 import screwImg from '../../assets/heroModel_screwClamp.png';
 import gear from '../../assets/gear.png';
