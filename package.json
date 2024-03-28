@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@supabase/supabase-js": "^2.38.0",
+    "@supabase/supabase-js": "^2.41.1",
     "aws-sdk": "^2.1460.0",
     "bootstrap": "^5.3.2",
     "emailjs-com": "^3.2.0",
