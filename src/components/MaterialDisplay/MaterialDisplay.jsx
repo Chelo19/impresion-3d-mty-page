@@ -6,6 +6,7 @@ import filamento_pla from '../../assets/monstruo-morado.png';
 import filamento_abs from '../../assets/abs.png';
 import filamento_petg_cf from '../../assets/petg-cf-engrane.png';
 import filamento_petg from '../../assets/heroModel_tube.png';
+import filamento_tpu from '../../assets/tpu.jpg';
 import { useEffect, useState } from 'react';
 
 function MaterialDisplay({setMaterial, stlFiles}){
@@ -14,6 +15,7 @@ function MaterialDisplay({setMaterial, stlFiles}){
     const [absColors, setAbsColors] = useState([]);
     const [petgCfColors, setPetgCfColors] = useState([]);
     const [petgColors, setPetgColors] = useState([]);
+    const [tpuColors, setTpuColors] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,6 +23,7 @@ function MaterialDisplay({setMaterial, stlFiles}){
             fetchAbs();
             fetchPetgCf();
             fetchPetg();
+            fetchTpu();
         }
         fetchData();
     }, []);
@@ -51,6 +54,13 @@ function MaterialDisplay({setMaterial, stlFiles}){
         .from('PETG')
         .select('*');
         setPetgColors(data);
+    };
+
+    const fetchTpu = async () => {
+        const { data, error } = await supabase
+        .from('TPU')
+        .select('*');
+        setTpuColors(data);
     };
 
     return(
@@ -155,6 +165,31 @@ function MaterialDisplay({setMaterial, stlFiles}){
                         </div>
                         <div className='material_display_item_container'>
                             <button className='material_display_select' onClick={() => {setMaterial('PETG-CF'); navigate('/select-finish')}}>Seleccionar material</button>
+                        </div>
+                    </div>
+                </div>
+                <div className='material_display_item'>
+                    <img src={filamento_tpu}/>
+                    <div className='material_display_item_container'>
+                        <span className='material_display_name'>TPU</span>
+                        <span className='material_display_description'>El TPU también llamado Poliuretano Termoplástico es un polímero excelente para aplicaciones que requieran de elasticidad, debido a que permite que la pieza se estire y regrese a su forma original.</span>
+                        <span className='material_display_type'>Tecnología FDM</span>
+                        <span className='material_display_extra'>Colores disponibles:</span>
+                        <div className='material_display_colors'>
+                            {
+                                tpuColors.length > 0 ?
+                                <>
+                                    {tpuColors.map((color) => {
+                                        return(<div style={{backgroundColor: `#${color.hex}`}} key={color.name}/>);
+                                    })}
+                                </>
+                                :
+                                <>
+                                </>
+                            }
+                        </div>
+                        <div className='material_display_item_container'>
+                            <button className='material_display_select' onClick={() => {setMaterial('TPU'); navigate('/select-finish')}}>Seleccionar material</button>
                         </div>
                     </div>
                 </div>
