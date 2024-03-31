@@ -43,7 +43,7 @@ function App() {
           <Route path="/contact" element={<Contact />}/>
           <Route path="/not-found" element={<NotFound />}/>
           <Route path="/materiales" element={<Materials />}/>
-          <Route path="/materiales/:material" element={<IndividualMaterial />}/>
+          <Route path="/material-individual/:material" element={<IndividualMaterial />}/>
           <Route path="/preguntas-frecuentes" element={<FAQ />}/>
           <Route path="/upload-file" element={<UploadFile stlFiles={stlFiles} setStlFiles={setStlFiles} />}/>
           <Route path="/select-material" element={<SelectMaterial stlFiles={stlFiles} setMaterial={setMaterial}/>}/>
