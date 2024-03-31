@@ -1,17 +1,17 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './IndividualMaterial.css';
-import { supabase } from '../../../supabase/client';
+import { supabase } from '../../supabase/client';
 
-import mancha from '../../../assets/individual-material/mancha.png';
-import ablandamiento from '../../../assets/individual-material/ablandamiento.png';
-import density from '../../../assets/individual-material/densidad.png';
-import distorsion from '../../../assets/individual-material/distorsion.png';
-import fusion from '../../../assets/individual-material/fusion.png';
-import tension from '../../../assets/individual-material/tension.png';
-import rotura from '../../../assets/individual-material/rotura.png';
-import flexion from '../../../assets/individual-material/flexion.png';
-import impacto from '../../../assets/individual-material/impacto.png';
+import mancha from '../../assets/individual-material/mancha.png';
+import ablandamiento from '../../assets/individual-material/ablandamiento.png';
+import density from '../../assets/individual-material/densidad.png';
+import distorsion from '../../assets/individual-material/distorsion.png';
+import fusion from '../../assets/individual-material/fusion.png';
+import tension from '../../assets/individual-material/tension.png';
+import rotura from '../../assets/individual-material/rotura.png';
+import flexion from '../../assets/individual-material/flexion.png';
+import impacto from '../../assets/individual-material/impacto.png';
 
 function IndividualMaterial(){
     let { material } = useParams();
