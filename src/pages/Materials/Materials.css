@@ -3,6 +3,7 @@
   --card-width: calc(var(--card-height) / 1.5);
   --card-border-radius: 10px
 }
+
 .materials {
   margin-top: var(--nav_bar_height);
   display: flex;

@@ -120,7 +120,7 @@ function InfillDisplay({material, stlFiles, setInfill, setColor}){
                                     </span>
                                     <span className='specs_li'>
                                         <span>Índice de fusión</span>
-                                        <span>{specs.melt_index} C°</span>
+                                        <span>{specs.melt_index} g/10 min</span>
                                     </span>
                                 </div>
                                 <div className='specs_table'>
@@ -129,23 +129,23 @@ function InfillDisplay({material, stlFiles, setInfill, setColor}){
                                     </span>
                                     <span className='specs_li'>
                                         <span>Fuerza de tensión</span>
-                                        <span>{specs.tensile_strength} g/cm³</span>
+                                        <span>{specs.tensile_strength} MPa</span>
                                     </span>
                                     <span className='specs_li'>
                                         <span>Tasa de alargamiento de rotura</span>
-                                        <span>{specs.breaking_elongation_rate} C°</span>
+                                        <span>{specs.breaking_elongation_rate} %</span>
                                     </span>
                                     <span className='specs_li'>
                                         <span>Módulo de flexión</span>
-                                        <span>{specs.bending_modulus} C°</span>
+                                        <span>{specs.bending_modulus} MPa</span>
                                     </span>
                                     <span className='specs_li'>
                                         <span>Resistencia a la flexión</span>
-                                        <span>{specs.bending_strength} C°</span>
+                                        <span>{specs.bending_strength} MPa</span>
                                     </span>
                                     <span className='specs_li'>
                                         <span>Fuerza de impacto</span>
-                                        <span>{specs.impact_strength} C°</span>
+                                        <span>{specs.impact_strength} kJ/m²</span>
                                     </span>
                                 </div>
                             </div>

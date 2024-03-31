@@ -29,6 +29,10 @@
     font-weight: 400;
 }
 
+.available_materials_specs_description strong{
+    color: rgba(var(--primary_color), 1);
+}
+
 .available_materials_specs_display{
     width: 1300px;
     font-size: 20px;
@@ -63,6 +67,22 @@
     font-weight: 700;
 }
 
+.available_materials_see_more_button{
+    margin-top: 40px;
+    width: 1400px;
+    background-color: rgba(var(--primary_color), 1);
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 10px 0;
+    animation: 2s available_materials_button infinite ease-in-out;
+}
+
 @media (max-width: 440px) {
 
     .available_materials_specs_display{
@@ -90,4 +110,11 @@
     .available_materials_specs_li{
         font-size: 14px;
     }
+}
+
+@keyframes
+available_materials_button {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.025);}
+    100% {transform: scale(1);}
 }

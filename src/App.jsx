@@ -3,6 +3,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage.jsx';
 import Materials from './pages/Materials/Materials.jsx';
+import IndividualMaterial from './pages/Materials/IndividualMaterial/IndividualMaterial.jsx';
 import UploadFile from './pages/UploadFile/UploadFile.jsx';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
@@ -42,6 +43,7 @@ function App() {
           <Route path="/contact" element={<Contact />}/>
           <Route path="/not-found" element={<NotFound />}/>
           <Route path="/materiales" element={<Materials />}/>
+          <Route path="/materiales/:material" element={<IndividualMaterial />}/>
           <Route path="/preguntas-frecuentes" element={<FAQ />}/>
           <Route path="/upload-file" element={<UploadFile stlFiles={stlFiles} setStlFiles={setStlFiles} />}/>
           <Route path="/select-material" element={<SelectMaterial stlFiles={stlFiles} setMaterial={setMaterial}/>}/>

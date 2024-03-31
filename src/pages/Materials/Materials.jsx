@@ -15,7 +15,7 @@ function Materials(){
     return(
         <div className="materials">
             <div className='materials_page_display'>
-                <Link to={`/materials/pla`} alt="PLA" target="_blank">
+                <Link to={`/materiales/pla`} alt="PLA" target="_blank">
                     <div class="materials_card">
                         <div class="materials_wrapper">
                             <img src={materials_before_pla} class="materials_cover_image" />
@@ -25,7 +25,7 @@ function Materials(){
                         <a className='materials_see_more'>Ver más</a>
                     </div>
                 </Link>
-                <Link to={`/materials/abs`} alt="ABS" target="_blank">
+                <Link to={`/materiales/abs`} alt="ABS" target="_blank">
                     <div class="materials_card">
                         <div class="materials_wrapper">
                             <img src={materials_before_abs} class="materials_cover_image" />
@@ -35,7 +35,7 @@ function Materials(){
                         <a className='materials_see_more'>Ver más</a>
                     </div>
                 </Link>
-                <Link to={`/materials/petg`} alt="PETG" target="_blank">
+                <Link to={`/materiales/petg`} alt="PETG" target="_blank">
                     <div class="materials_card">
                         <div class="materials_wrapper">
                             <img src={materials_before_petg} class="materials_cover_image" />
@@ -45,7 +45,7 @@ function Materials(){
                         <a className='materials_see_more'>Ver más</a>
                     </div>
                 </Link>
-                <Link to={`/materials/petgcf`} alt="PETG-CF" target="_blank">
+                <Link to={`/materiales/petg-cf`} alt="PETG-CF" target="_blank">
                     <div class="materials_card">
                         <div class="materials_wrapper">
                             <img src={materials_before_petgcf} class="materials_cover_image" />
@@ -55,7 +55,7 @@ function Materials(){
                         <a className='materials_see_more'>Ver más</a>
                     </div>
                 </Link>
-                <Link to={`/materials/tpu`} alt="TPU" target="_blank">
+                <Link to={`/materiales/tpu`} alt="TPU" target="_blank">
                     <div class="materials_card">
                         <div class="materials_wrapper">
                             <img src={materials_before_abs} class="materials_cover_image" />

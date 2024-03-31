@@ -10,6 +10,7 @@ function NavBar(){
                 <Link to={'/'} className='nav_bar_left'><img src={impresion3dLogo}/><span>Impresión 3D Monterrey</span></Link>
                 {/* <div className='nav_bar_center'>Precios</div> */}
                 <div className='nav_bar_right'>
+                    <Link to={'/materiales'}>Materiales</Link>
                     <Link to={'/contact'}>Contáctanos</Link>
                     <Link to={'/upload-file'} id='nav_bar_print'>Imprime ya</Link>
                 </div>
