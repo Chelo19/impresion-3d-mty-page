@@ -3,9 +3,9 @@ import './Display.css'
 import { useState } from 'react';
 
 import mudkipImg from '../../assets/mudkip_sombra.png';
-import figureImg from '../../assets/heroModel_tube.png';
-import tubeImg from '../../assets/petg-cf-engrane.png';
-import screwImg from '../../assets/heroModel_screwClamp.png';
+import figureImg from '../../assets/home-display-2.png';
+import tubeImg from '../../assets/home-display-1.png';
+import screwImg from '../../assets/home-display-3.png';
 import gear from '../../assets/gear.png';
 import escultura from '../../assets/escultura.png';
 import llaveInglesa from '../../assets/llave-inglesa.png';

@@ -2,11 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import './MaterialDisplay.css'
 import { supabase } from '../../supabase/client';
 
-import filamento_pla from '../../assets/monstruo-morado.png';
-import filamento_abs from '../../assets/abs.png';
-import filamento_petg_cf from '../../assets/petg-cf-engrane.png';
-import filamento_petg from '../../assets/heroModel_tube.png';
-import filamento_tpu from '../../assets/tpu.jpg';
+import filamento_pla from '../../assets/MaterialDisplay/pla.png';
+import filamento_abs from '../../assets/MaterialDisplay/abs.png';
+import filamento_petg from '../../assets/MaterialDisplay/petg.png';
+import filamento_petg_cf from '../../assets/MaterialDisplay/petgcf.png';
+import filamento_tpu from '../../assets/MaterialDisplay/tpu.png';
 import { useEffect, useState } from 'react';
 
 function MaterialDisplay({setMaterial, stlFiles}){

@@ -25,7 +25,7 @@ function Footer(){
                             <span className='footer_item_title'>Redes sociales</span>
                             <div className='footer_item_wrapper'><img src={messenger}/><Link to={'https://www.facebook.com/people/Impresión-3D-Monterrey/100094563984724/'} target='_blank'>Impresión 3D Monterrey</Link></div>
                             <div className='footer_item_wrapper'><img src={instagram}/><Link to={'https://www.instagram.com/impresion_3d_mty/'} target='_blank'>impresion_3d_mty</Link></div>
-                            <div className='footer_item_wrapper'><img src={whatsapp}/><Link to={'https://wa.me/8672207801'} target='_blank'>+52 (867) 2207801</Link></div>
+                            <div className='footer_item_wrapper'><img src={whatsapp}/><Link to={'https://wa.me/8120515415'} target='_blank'>+52 (81) 20515415</Link></div>
                             <div className='footer_item_wrapper'><img src={email}/><Link>impresion3dmonterreymx@gmail.com</Link></div>
                         </div>
                     </div>

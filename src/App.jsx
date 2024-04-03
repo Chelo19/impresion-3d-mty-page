@@ -41,6 +41,7 @@ function App() {
           <Route path="/" element={<HomePage />}/>
           <Route path="/impresion-3d-mty-page/" element={<HomePage />}/>
           <Route path="/contact" element={<Contact />}/>
+          <Route path="/contacto" element={<Contact />}/>
           <Route path="/not-found" element={<NotFound />}/>
           <Route path="/materiales" element={<Materials />}/>
           <Route path="/materiales/:material" element={<IndividualMaterial />}/>

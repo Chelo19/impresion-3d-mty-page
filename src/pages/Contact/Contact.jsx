@@ -33,7 +33,7 @@ function Contact(){
                         <div className='instructions_item_description'>
                             <span className='instructions_item_description_title'>Contáctanos por mensaje en Whatsapp</span>
                             <p className='instructions_item_description_description'>Puedes enviarnos un mensaje que responderemos rápidamente por Whatsapp</p>
-                            <Link to={'https://wa.me/8672207801'} target='_blank' className='contact_link' id='whatsapp'>Ir a Whatsapp</Link>
+                            <Link to={'https://wa.me/8120515415'} target='_blank' className='contact_link' id='whatsapp'>Ir a Whatsapp</Link>
                         </div>
                     </div>
                     <div className='instructions_item'>
