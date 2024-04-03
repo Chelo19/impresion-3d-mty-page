@@ -48,8 +48,8 @@ function Display(){
                 </div>
             </div>
             <div className='display_gallery'>
-                <img className='display_bg' src={mancha}>
-                </img>
+                {/* <img className='display_bg' src={mancha}/> */}
+                <div className='display_bg'></div>
                 {displayActive == 1 && <img src={tubeImg}/>}
                 {displayActive == 2 && <img src={figureImg}/>}
                 {displayActive == 3 && <img src={screwImg}/>}
