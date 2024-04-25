@@ -13,6 +13,7 @@ import SelectInfill from './pages/SelectInfill/SelectInfill';
 import Contact from './pages/Contact/Contact';
 import FAQ from './pages/FAQ/FAQ';
 import NotFound from './pages/NotFound/NotFound';
+import HomePage2 from './pages/HomePage2/HomePage2.jsx';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<HomePage />}/>
+          <Route path="/home" element={<HomePage2 />}/>
           <Route path="/impresion-3d-mty-page/" element={<HomePage />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/contacto" element={<Contact />}/>
