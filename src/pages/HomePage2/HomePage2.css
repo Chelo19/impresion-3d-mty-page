@@ -1,78 +1,105 @@
-.home_page{
+.home{
     margin: var(--nav_bar_height) 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    font-family: "League Spartan", sans-serif;
 }
 
-.home_page_carrousel{
-    width: 99.5vw;
-    height: 750px;
-    background-color: red;
-    position: relative;
+#home-title-separator{
+    font-weight: 600;
+    font-size: 80px;
+    text-align: center;
+    margin: 100px 0;
 }
 
-.home_page_carrousel img{
-    position: absolute;
+.home-separator-top{
+    width: 80vw;
+    height: 5px;
+    border-top: 2px dashed rgba(0, 0, 0, 0.4);
+    margin-top: 100px;
+}
+
+.home-carousel{
+    margin-top: 50px;
+    width: 100%;
+}
+
+.carousel{
+    object-fit: cover;
+}
+
+.carousel-item{
+    width: 100px;
+    height: 700px;
+}
+
+.home-img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
+    filter: brightness(0.6);
 }
 
-.home_page_carrousel_gradient{
+.home-carousel h3{
+    font-size: 80px;
+}
+
+.home-carousel p{
+    font-size: 40px;
+}
+
+.home-materials{
+    width: 80%;
+}
+
+.card img{
+    width: 100%;
+    height: 300px;
+    transition: 1.5s;
+}
+
+.card img:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-clients{
+    position: relative;
+    width: 100%;
+    min-height: 340px;
+    background-color: rgba(var(--primary_color), 0.1);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+#home-clients-bg{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(270deg, rgba(0,0,0,0.76234243697479) 0%, rgba(0,119,182,0.6082808123249299) 27%);
-    z-index: 2;
+    z-index: 10;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  linear-gradient(rgba(var(--primary_color), 0.2) 2px, transparent 2px), linear-gradient(90deg, rgba(var(--primary_color), 0.2) 2px, transparent 2px), linear-gradient(rgba(var(--primary_color), 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--primary_color), 0.2) 1px, #e5e5f7 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
-.home_page_carrousel_wrapper{
-    width: 900px;
-    height: 550px;
-    right: 100px;
-    top: 0;
-    bottom: 0; 
-    margin-top: auto;
-    margin-bottom: auto;
+.home-clients-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    z-index: 3;
-    border-radius: 10px;
-    border: 5px solid rgba(255, 255, 255, 1);
-}
-
-.home_page_carrousel_wrapper h1{
-    font-size: 150px;
-    font-weight: 600;
-    color: #fff;
-    line-height: 130px;
-}
-
-.home_page_carrousel_wrapper h2{
-    font-size: 50px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.home_page_carrousel_wrapper_container{
-    width: 100px;
-    height: 150px;
-    display: flex;
+    padding: 100px 0;
+    gap: 100px;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-
-.home_page_carrousel_wrapper_container span{
-    font-size: 20px;
-    color: rgba(255, 255, 255, 1);
-}
-
-.home_page_carrousel_wrapper_container img{
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+    z-index: 20;
 }

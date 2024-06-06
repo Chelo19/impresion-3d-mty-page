@@ -1,476 +1,156 @@
 import './HomePage2.css'
 import './bootstrap.css'
-import './responsive.css'
-import './style.css'
-import './font-awesome.css'
-import homePageCarrouselSliderImg from '../../assets/homePage/slider-img.png';
-import homePageCarrouselS1 from '../../assets/homePage/s1.png';
-import homePageCarrouselS2 from '../../assets/homePage/s2.png';
-import homePageCarrouselS3 from '../../assets/homePage/s3.png';
-import homePageCarrouselS4 from '../../assets/homePage/s4.png';
-import homePageCarrouselAboutImg from '../../assets/homePage/about-img.png';
-import homePageCarrouselCase1 from '../../assets/homePage/case-1.jpg';
-import homePageCarrouselCase2 from '../../assets/homePage/case-2.jpg';
-import homePageCarrouselClient from '../../assets/homePage/client.jpg';
 import { Link } from 'react-router-dom'
+
+import Carousel from 'react-bootstrap/Carousel';
+import CarouselImg1 from '../../assets/homePage/p1s-farm.png';
+import CarouselImg2 from '../../assets/homePage/p1s-inside.jpg';
+import CarouselImg3 from '../../assets/homePage/carousel3.jpg';
+
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import MaterialDisplay1 from '../../assets/homePage/pla.jpg';
+import MaterialDisplay2 from '../../assets/homePage/abs.jpg';
+import MaterialDisplay3 from '../../assets/homePage/petgcf.jpg';
+import MaterialDisplay4 from '../../assets/homePage/petg.jpg';
+import MaterialDisplay5 from '../../assets/homePage/tpu.jpg';
+
+import Client1 from '../../assets/homePage/clients/fis.png';
+import Client2 from '../../assets/homePage/clients/maquinso.png';
+import Client3 from '../../assets/homePage/clients/otomatiqa.jpg';
+import Client4 from '../../assets/homePage/clients/hemaq.jpg';
+import Client5 from '../../assets/homePage/clients/sertecpro.png';
+import HomeClientsBg from '../../assets/homePage/bg.jpg';
+
+
+// import home_img from '../../assets/homePage/p1s-farm.png';
 
 function HomePage2(){
     return (
-    <body>
-        <div className="hero_area">
-            <section className="slider_section ">
-            <div id="customCarousel1" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <div className="container ">
-                    <div className="row">
-                        <div className="col-md-6">
-                        <div className="img-box">
-                            <img src={homePageCarrouselSliderImg} alt=""/>
-                        </div>
-                        </div>
-                        <div className="col-md-6">
-                        <div className="detail-box">
-                            <h1>
-                            Imprimimos tus piezas
-                            </h1>
-                            <p>
-                            Impresión 3D es un negocio que proporciona un servicio de impresión 3D de alta calidad para todo tipo de piezas
-                            </p>
-                            <div className="btn-box">
-                            <Link to={'/materiales'} className="btn1">
-                               Materiales
-                            </Link>
-                            <Link to={'/upload-file'} className="btn1" id='cotizar'>
-                                Cotizar ahora
-                            </Link>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div className="carousel-item ">
-                    <div className="container ">
-                    <div className="row">
-                        <div className="col-md-6">
-                        <div className="img-box">
-                            <img src={homePageCarrouselSliderImg} alt=""/>
-                        </div>
-                        </div>
-                        <div className="col-md-6">
-                        <div className="detail-box">
-                            <h1>
-                            Digital Marketing Experts
-                            </h1>
-                            <p>
-                            Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
-                            </p>
-                            <div className="btn-box">
-                            <a href="" className="btn1">
-                                Contact Us
-                            </a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div className="carousel-item ">
-                    <div className="container ">
-                    <div className="row">
-                        <div className="col-md-6">
-                        <div className="img-box">
-                            <img src={homePageCarrouselSliderImg} alt=""/>
-                        </div>
-                        </div>
-                        <div className="col-md-6">
-                        <div className="detail-box">
-                            <h1>
-                            Digital Marketing Experts
-                            </h1>
-                            <p>
-                            Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
-                            </p>
-                            <div className="btn-box">
-                            <a href="" className="btn1">
-                                Contact Us
-                            </a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                {/* <ol className="carousel-indicators">
-                <li data-target="#customCarousel1" data-slide-to="0" className="active"></li>
-                <li data-target="#customCarousel1" data-slide-to="1"></li>
-                <li data-target="#customCarousel1" data-slide-to="2"></li>
-                </ol> */}
+        <body className='home'>
+            <div className='home-carousel'>
+                <Carousel fade>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100 home-img"
+                            src={CarouselImg1}
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                        <h3>Impresión 3D Monterrey</h3>
+                        <p>Servicio de impresión 3d en diversos materiales como PLA, ABS, PETG, PETG-CF y TPU.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100 home-img"
+                            src={CarouselImg2}
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                        <h3>Servicio personalizado</h3>
+                        <p>Ofrecemos un servicio personalizado y rápido.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100 home-img"
+                            src={CarouselImg3}
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                        <h3>Orgullosamente Regios</h3>
+                        <p>
+                            Negocio 100% Regio, orgullosos de ser de Monterrey, Nuevo León, México.
+                        </p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
             </div>
 
-            </section>
-        </div>
+            <h1 id='home-title-separator'>Nuestros materiales</h1>
 
-        <section className="service_section layout_padding">
-            <div className="container">
-            <div className="heading_container">
-                <h2>
-                Our Services
-                </h2>
-                <p>
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+            <div className='home-materials'>
+                <Row xs={1} md={2} className="g-4">
+                    <Col>
+                        <Card>
+                            <Card.Img variant="top" src={MaterialDisplay1} />
+                            <Card.Body>
+                            <Card.Title>PLA</Card.Title>
+                            <Card.Text>
+                                El PLA es un plástico de bajo costo, perfecto para prototipos y piezas funcionales.
+                            </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        </Col>
+                    <Col>
+                        <Card>
+                            <Card.Img variant="top" src={MaterialDisplay2} />
+                            <Card.Body>
+                            <Card.Title>ABS</Card.Title>
+                            <Card.Text>
+                                El ABS es un polímero económico, ideal para piezas que requieran resistencia mecánica.
+                            </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        </Col>
+                    <Col>
+                        <Card>
+                            <Card.Img variant="top" src={MaterialDisplay3} />
+                            <Card.Body>
+                            <Card.Title>PETG-CF</Card.Title>
+                            <Card.Text>
+                                El PETG-CF es un polímero endurecido con Fibra de Carbono, ideal para piezas que requieran resistencia mecánica y térmica.
+                            </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col>
+                        <Card>
+                            <Card.Img variant="top" src={MaterialDisplay4} />
+                            <Card.Body>
+                            <Card.Title>PETG</Card.Title>
+                            <Card.Text>
+                                El PETG es un polímero perfecto para desarrollar piezas que requieran de una gran fuerza de impacto y condiciones al aire libre.
+                            </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        </Col>
+                    <Col>
+                        <Card>
+                            <Card.Img variant="top" src={MaterialDisplay5} />
+                            <Card.Body>
+                            <Card.Title>TPU</Card.Title>
+                            <Card.Text>
+                                El TPU también llamado Poliuretano Termoplástico es un polímero excelente para aplicaciones que requieran de elasticidad, debido a que permite que la pieza se estire y regrese a su forma original.
+                            </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
             </div>
-            <div className="row">
-                <div className="col-md-6 col-lg-3">
-                <div className="box">
-                    <div className="img-box">
-                    <img src={homePageCarrouselS1} alt=""/>
-                    </div>
-                    <div className="detail-box">
-                    <h5>
-                        Link Building
-                    </h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    </p>
-                    <a href="">
-                        <span>
-                        Read More
-                        </span>
-                        <i className="fa" aria-hidden="true"></i>
-                    </a>
-                    </div>
-                </div>
-                </div>
-                <div className="col-md-6 col-lg-3">
-                <div className="box">
-                    <div className="img-box">
-                    <img src={homePageCarrouselS2} alt=""/>
-                    </div>
-                    <div className="detail-box">
-                    <h5>
-                        On page SEO
-                    </h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    </p>
-                    <a href="">
-                        <span>
-                        Read More
-                        </span>
-                        <i className="fa" aria-hidden="true"></i>
-                    </a>
-                    </div>
-                </div>
-                </div>
-                <div className="col-md-6 col-lg-3">
-                <div className="box">
-                    <div className="img-box">
-                    <img src={homePageCarrouselS3} alt=""/>
-                    </div>
-                    <div className="detail-box">
-                    <h5>
-                        Online Marketing
-                    </h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    </p>
-                    <a href="">
-                        <span>
-                        Read More
-                        </span>
-                        <i className="fa" aria-hidden="true"></i>
-                    </a>
-                    </div>
-                </div>
-                </div>
-                <div className="col-md-6 col-lg-3">
-                <div className="box">
-                    <div className="img-box">
-                    <img src={homePageCarrouselS4} alt=""/>
-                    </div>
-                    <div className="detail-box">
-                    <h5>
-                        Email Marketing
-                    </h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    </p>
-                    <a href="">
-                        <span>
-                        Read More
-                        </span>
-                        <i className="fa" aria-hidden="true"></i>
-                    </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div className="btn-box">
-                <a href="">
-                View More
-                </a>
-            </div>
-            </div>
-        </section>
 
-        <section className="about_section layout_padding">
-            <div className="container  ">
-            <div className="row">
-                <div className="col-md-6">
-                <div className="detail-box">
-                    <div className="heading_container">
-                    <h2>
-                        About Us
-                    </h2>
-                    </div>
-                    <p>
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                    in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                    are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                    the middle of text. All
-                    </p>
-                    <a href="">
-                    Read More
-                    </a>
-                </div>
-                </div>
-                <div className="col-md-6 ">
-                <div className="img-box">
-                    <img src={homePageCarrouselAboutImg} alt=""/>
-                </div>
-                </div>
+            <h1 id='home-title-separator'>Nuestros clientes</h1>
 
+            <div className='home-clients'>
+                <div id='home-clients-bg'/>
+                <div className='home-clients-container'>
+                    <img src={Client1}/>
+                    <img src={Client2}/>
+                    <img src={Client3}/>
+                    <img src={Client4}/>
+                    <img src={Client5}/>
+                </div>
             </div>
-            </div>
-        </section>
 
-        <section className="case_section layout_padding">
-            <div className="container">
-            <div className="heading_container">
-                <h2>
-                Our Case Studies
-                </h2>
-            </div>
-            <div className="row">
-                <div className="col-md-6">
-                <div className="box">
-                    <div className="img-box">
-                    <img src={homePageCarrouselCase1} alt=""/>
-                    </div>
-                    <div className="detail-box">
-                    <h5>
-                        Sit amet consectetur adipisicing elit
-                    </h5>
-                    <p>
-                        Alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                    </p>
-                    <a href="">
-                        <span>
-                        Read More
-                        </span>
-                        <i className="fa" aria-hidden="true"></i>
-                    </a>
-                    </div>
-                </div>
-                </div>
-                <div className="col-md-6">
-                <div className="box">
-                    <div className="img-box">
-                    <img src={homePageCarrouselCase2} alt=""/>
-                    </div>
-                    <div className="detail-box">
-                    <h5>
-                        Excepturi placeat nihil eos maxime
-                    </h5>
-                    <p>
-                        Alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                    </p>
-                    <a href="">
-                        <span>
-                        Read More
-                        </span>
-                        <i className="fa" aria-hidden="true"></i>
-                    </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </section>
+            <h1 id='home-title-separator'>Contacto</h1>
 
-        <section className="client_section ">
-            <div className="container">
-            <div className="heading_container heading_center">
-                <h2>
-                Testimonial
-                </h2>
+            <div className='home-contact'>
+                
             </div>
-            </div>
-            <div id="customCarousel2" className="carousel slide" data-ride="carousel">
-            <div className="carousel-inner">
-                <div className="carousel-item active">
-                <div className="container">
-                    <div className="row">
-                    <div className="col-md-10 mx-auto">
-                        <div className="box">
-                        <div className="img-box">
-                            <img src={homePageCarrouselClient} alt=""/>
-                        </div>
-                        <div className="detail-box">
-                            <div className="client_info">
-                            <div className="client_name">
-                                <h5>
-                                Morojink
-                                </h5>
-                                <h6>
-                                Customer
-                                </h6>
-                            </div>
-                            <i className="fa" aria-hidden="true"></i>
-                            </div>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum
-                            dolore eu fugia
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div className="carousel-item">
-                <div className="container">
-                    <div className="row">
-                    <div className="col-md-10 mx-auto">
-                        <div className="box">
-                        <div className="img-box">
-                            <img src={homePageCarrouselClient} alt=""/>
-                        </div>
-                        <div className="detail-box">
-                            <div className="client_info">
-                            <div className="client_name">
-                                <h5>
-                                Morojink
-                                </h5>
-                                <h6>
-                                Customer
-                                </h6>
-                            </div>
-                            <i className="fa" aria-hidden="true"></i>
-                            </div>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum
-                            dolore eu fugia
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div className="carousel-item">
-                <div className="container">
-                    <div className="row">
-                    <div className="col-md-10 mx-auto">
-                        <div className="box">
-                        <div className="img-box">
-                            <img src={homePageCarrouselClient} alt=""/>
-                        </div>
-                        <div className="detail-box">
-                            <div className="client_info">
-                            <div className="client_name">
-                                <h5>
-                                Morojink
-                                </h5>
-                                <h6>
-                                Customer
-                                </h6>
-                            </div>
-                            <i className="fa" aria-hidden="true"></i>
-                            </div>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum
-                            dolore eu fugia
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            {/* <ol className="carousel-indicators">
-                <li data-target="#customCarousel2" data-slide-to="0" className="active"></li>
-                <li data-target="#customCarousel2" data-slide-to="1"></li>
-                <li data-target="#customCarousel2" data-slide-to="2"></li>
-            </ol> */}
-            </div>
-        </section>
 
-
-        <section className="contact_section layout_padding">
-            <div className="container-fluid">
-            <div className="row">
-                <div className="col-md-5 col-lg-4 offset-md-1">
-                <div className="form_container">
-                    <div className="heading_container">
-                    <h2>
-                        Request A Call back
-                    </h2>
-                    </div>
-                    <form action="">
-                    <div>
-                        <input type="text" placeholder="Full Name " />
-                    </div>
-                    <div>
-                        <input type="email" placeholder="Email" />
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Phone number" />
-                    </div>
-                    <div>
-                        <input type="text" className="message-box" placeholder="Message" />
-                    </div>
-                    <div className="d-flex ">
-                        <button>
-                        SEND
-                        </button>
-                    </div>
-                    </form>
-                </div>
-                </div>
-                <div className="col-md-6 col-lg-7 px-0">
-                <div className="map_container">
-                    <div className="map">
-                    <div id="googleMap"></div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </section>
-
-
-    </body>
+        </body>
     )
 }
 
