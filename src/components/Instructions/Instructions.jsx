@@ -7,7 +7,7 @@ import bienes from '../../assets/bienes.png';
 function Instructions(){
     return(
         <div className='instructions_wrapper'>
-            <span className='display_title'>¿Cómo funciona?</span>
+            {/* <span className='display_title'>¿Cómo funciona?</span> */}
             <div className="instructions">
                 <div className='instructions_item'>
                     <div className='instructions_item_number'>1</div>

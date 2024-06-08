@@ -55,7 +55,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
         if(!errorBool){
             console.log('Bien');
             sendAdminEmail();
-            sendClientEmail();
+            // sendClientEmail();
             uploadSupabaseBucket();
         }
         else{
@@ -194,7 +194,7 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                     </div>
                     <span className='form_faq'>* obligatorio</span>
                     <button onClick={handleSubmit}>Enviar</button>
-                    <span className='form_faq'>Si tienes alguna duda acerca de tu impresión, haz click <a onClick={navigateFaq}>aquí</a></span>
+                    {/* <span className='form_faq'>Si tienes alguna duda acerca de tu impresión, haz click <a onClick={navigateFaq}>aquí</a></span> */}
                 </form>
             </div>
         </div>

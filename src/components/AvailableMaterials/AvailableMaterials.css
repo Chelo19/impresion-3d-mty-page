@@ -85,7 +85,7 @@
 @media (max-width: 440px) {
 
     .available_materials{
-        width: 100vw;
+        width: calc(100vw - 40px);
         display: flex;
         flex-direction: column;
         align-items: center;

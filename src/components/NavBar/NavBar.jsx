@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './NavBar.css'
 
-import impresion3dLogo from '../../assets/impresion-3d-logo.png';
+import impresion3dLogo from '../../assets/impresion-3d-logo-simple.png';
 
 function NavBar(){
     return(

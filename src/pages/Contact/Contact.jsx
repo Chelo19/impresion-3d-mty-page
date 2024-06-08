@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
-import './Contact.css'
+import './Contact.css';
 
 import messenger from '../../assets/messenger_color.png';
 import instagram from '../../assets/instagram_color.png';
 import whatsapp from '../../assets/whatsapp_color.png';
 import gmail_color from '../../assets/gmail_color.png';
+import Contact2 from './Contact2';
 
 function Contact(){
     return(
         <div className="contact">
-            <div className='instructions_wrapper'>
+            <div className='instructions_wrapper' style={{"gap": "60px"}}>
                 <span className='display_title'>Contacto</span>
+                <Contact2/>
+                <span className='display_title'>Otros medios de contacto</span>
                 <div className="instructions" id='contact_wrapper'>
                     <div className='instructions_item'>
                         <img className='instructions_item_img' src={messenger} alt='350px X 232px'/>

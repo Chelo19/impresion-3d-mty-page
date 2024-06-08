@@ -1,6 +1,11 @@
 import './HomePage2.css'
 import './bootstrap.css'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+
+import Contact2 from '../Contact/Contact2';
+import Instructions from '../../components/Instructions/Instructions';
+import WhySection from '../../components/WhySection/WhySection';
 
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselImg1 from '../../assets/homePage/p1s-farm.png';
@@ -21,12 +26,13 @@ import Client2 from '../../assets/homePage/clients/maquinso.png';
 import Client3 from '../../assets/homePage/clients/otomatiqa.jpg';
 import Client4 from '../../assets/homePage/clients/hemaq.jpg';
 import Client5 from '../../assets/homePage/clients/sertecpro.png';
-import HomeClientsBg from '../../assets/homePage/bg.jpg';
+import Client6 from '../../assets/homePage/clients/rodarasesores.png';
+import Gallery from '../../components/Gallery/Gallery';
+import AvailableMaterials from '../../components/AvailableMaterials/AvailableMaterials';
 
-
-// import home_img from '../../assets/homePage/p1s-farm.png';
 
 function HomePage2(){
+
     return (
         <body className='home'>
             <div className='home-carousel'>
@@ -39,7 +45,7 @@ function HomePage2(){
                         />
                         <Carousel.Caption>
                         <h3>Impresión 3D Monterrey</h3>
-                        <p>Servicio de impresión 3d en diversos materiales como PLA, ABS, PETG, PETG-CF y TPU.</p>
+                        <p>Servicio de impresión 3d en Monterrey en diversos materiales como PLA, ABS, PETG, PETG-CF y TPU.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -69,10 +75,21 @@ function HomePage2(){
                 </Carousel>
             </div>
 
+            <h1 id='home-title-separator'>¿Cómo Funciona?</h1>
+
+            <Instructions/>
+            <br/>
+            <br/>
+            <WhySection/>
+
+            <h1 id='home-title-separator'>Nuestro Trabajo</h1>
+
+            <Gallery/>
+
             <h1 id='home-title-separator'>Nuestros materiales</h1>
 
             <div className='home-materials'>
-                <Row xs={1} md={2} className="g-4">
+                <Row xs={1} sm={1} md={1} className="g-4 home-materials-container">
                     <Col>
                         <Card>
                             <Card.Img variant="top" src={MaterialDisplay1} />
@@ -131,24 +148,35 @@ function HomePage2(){
                 </Row>
             </div>
 
+            <AvailableMaterials/>
+
             <h1 id='home-title-separator'>Nuestros clientes</h1>
 
             <div className='home-clients'>
-                <div id='home-clients-bg'/>
-                <div className='home-clients-container'>
+                <div className='home-clients-img-container'>
                     <img src={Client1}/>
+                </div>
+                <div className='home-clients-img-container'>
                     <img src={Client2}/>
+                </div>
+                <div className='home-clients-img-container'>
                     <img src={Client3}/>
+                </div>
+                <div className='home-clients-img-container'>
                     <img src={Client4}/>
+                </div>
+                <div className='home-clients-img-container'>
                     <img src={Client5}/>
+                </div>
+                <div className='home-clients-img-container'>
+                    <img src={Client6}/>
                 </div>
             </div>
 
             <h1 id='home-title-separator'>Contacto</h1>
 
-            <div className='home-contact'>
-                
-            </div>
+            <Contact2/>
+
 
         </body>
     )

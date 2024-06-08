@@ -19,8 +19,8 @@
 }
 
 .why_section_left img{
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
 }
 
 .why_section_list{
@@ -70,7 +70,7 @@
 @media (max-width: 440px) {
 
     .why_section{
-        width: 100%;
+        width: calc(100vw - 40px);
         flex-direction: column;
         gap: 40px;
     }

@@ -26,6 +26,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    gap: 10px;
     font-size: 40px;
     text-decoration: none;
     color: rgba(var(--text_color), 1);

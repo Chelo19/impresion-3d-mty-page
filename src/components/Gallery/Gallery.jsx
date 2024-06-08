@@ -9,7 +9,7 @@ import galleryImg6 from '../../assets/gallery_img_6.jpg';
 function Gallery(){
     return(
         <div className='gallery'>
-            <span className='gallery_title'>Nuestro trabajo</span>
+            {/* <span className='gallery_title'>Nuestro trabajo</span> */}
             <div className='gallery_container'>
                 <div className='gallery_item'>
                     <img src={galleryImg1}/>

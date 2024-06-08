@@ -22,7 +22,7 @@ export default function AvailableMaterials(){
         {
             specs ?
             <div className='available_materials'>
-                <span className='available_materials_title'>Materiales Disponibles</span>
+                {/* <span className='available_materials_title'>Materiales Disponibles</span> */}
                 {
                     specs.map((specs) => {
                         return(

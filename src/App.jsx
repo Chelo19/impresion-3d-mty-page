@@ -39,7 +39,7 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<HomePage />}/>
+          <Route path="/" element={<HomePage2 />}/>
           <Route path="/home" element={<HomePage2 />}/>
           <Route path="/impresion-3d-mty-page/" element={<HomePage />}/>
           <Route path="/contact" element={<Contact />}/>
