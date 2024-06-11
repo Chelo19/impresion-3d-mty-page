@@ -37,6 +37,11 @@ function FileInput({stlFiles, setStlFiles}) {
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
         const filesWithDimensions = [];
+        console.log(selectedFiles[0].size);
+        if(selectedFiles[0].size > 500000){
+            alert('Tamaño de archivo supera el máximo (50mb)');
+            return;
+        }
 
         selectedFiles.forEach((selectedFile) => {
             const loader = new STLLoader();

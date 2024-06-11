@@ -10,6 +10,10 @@ import { supabase } from '../../supabase/client';
 
 import impresion3dLogo from '../../assets/impresion-3d-logo.png';
 
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
+
 function RequestForm({stlFiles, material, isSanded, infill, color}){
     const navigate = useNavigate();
 
@@ -20,47 +24,24 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
     const [userPhone, setUserPhone] = useState('');
     const [userComments, setUserComments] = useState('');
     
-    const [inputNameStyle, setInputNameStyle] = useState({color: 'inherit'});
-    const [inputEmailStyle, setInputEmailStyle] = useState({color: 'inherit'});
-    const [inputPhoneStyle, setInputPhoneStyle] = useState({color: 'inherit'});
+    const [validated, setValidated] = useState(false);
+    const [alertVariant, setAlertVariant] = useState(null);
+    const [alertText, setAlertText] = useState('');
 
-    const handlePhoneNumberChange = (e) => {
-        const inputValue = e.target.value;    
-        const numericValue = inputValue.replace(/[^0-9]/g, '');
-        setUserPhone(numericValue);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setInputNameStyle({color: 'inherit'});
-        setInputEmailStyle({color: 'inherit'});
-        setInputPhoneStyle({color: 'inherit'});
-        let errorBool = false;
-        if(!userName){
-            console.log('1');
-            setInputNameStyle({color: '#e35d6a'});
-            let errorBool = false;
-            errorBool = true;
-        }
-        if(!userEmail.includes("@")){
-            console.log('2');
-            setInputEmailStyle({color: '#e35d6a'});
-            errorBool = true;
-        }
-        if(!userPhone){
-            console.log('3');
-            setInputPhoneStyle({color: '#e35d6a'});
-            errorBool = true;
-        }
-        if(!errorBool){
-            console.log('Bien');
-            sendAdminEmail();
-            // sendClientEmail();
-            uploadSupabaseBucket();
+    const handleSubmit = (event) => {
+        // // sendClientEmail();
+        event.preventDefault();
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
         }
         else{
-            alert('Favor de corregir los datos');
+            sendAdminEmail();
+            uploadSupabaseBucket();
         }
+        setValidated(true);
+        return false;
     };
 
     const sendAdminEmail = async () => {
@@ -78,8 +59,17 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
         'k27Yr9noc7Y8QOyoC')
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
+            setAlertVariant('success');
+            setAlertText(
+            <>
+                Mensaje enviado correctamente, {userName.split(' ')[0]}. En breve le contactaremos para darle seguimiento a su proyecto.
+                <br/><strong><Link to="/">Regresar</Link></strong>
+            </>
+            );
         }, function(error) {
             console.log('FAILED...', error);
+            setAlertVariant('danger');
+            setAlertText('Hubo un error al procesar su solicitud. Intente de nuevo.');
         });
     }
 
@@ -111,8 +101,6 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
             if(error) console.log(error);
             else{
                 console.log(data);
-                alert('¡Revisa tu email!');
-                navigate('/');
             }
         });
     }
@@ -175,27 +163,50 @@ function RequestForm({stlFiles, material, isSanded, infill, color}){
                 : <></>}
             </div>
             <div className='request_form_personal_data'>
-                <form className='form_container'>
-                    <div className='form_wrapper'>
-                        <span style={inputNameStyle}>Nombre *</span>
-                        <input value={userName} id='form_input' type='text' onChange={(e) => setUserName(e.target.value)} maxLength={255}/>
-                    </div>
-                    <div className='form_wrapper'>
-                        <span style={inputEmailStyle}>Email *</span>
-                        <input value={userEmail} id='form_input' type='email' onChange={(e) => setUserEmail(e.target.value)} maxLength={100}/>
-                    </div>
-                    <div className='form_wrapper'>
-                        <span style={inputPhoneStyle}>Teléfono *</span>
-                        <input value={userPhone} id='form_input' type='text' onChange={handlePhoneNumberChange} maxLength={10}/>
-                    </div>
-                    <div className='form_wrapper'>
-                        <span>Comentarios</span>
-                        <textarea value={userComments} id='form_input' placeholder='(Comentarios, solicitudes, etc...)' onChange={(e) => setUserComments(e.target.value)}/>
-                    </div>
-                    <span className='form_faq'>* obligatorio</span>
-                    <button onClick={handleSubmit}>Enviar</button>
-                    {/* <span className='form_faq'>Si tienes alguna duda acerca de tu impresión, haz click <a onClick={navigateFaq}>aquí</a></span> */}
-                </form>
+                <Form className='request-form' noValidate validated={validated} onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Correo electrónico de contacto</Form.Label>
+                        <Form.Control type="email" placeholder="correo@ejemplo.com" onChange={(e) => setUserEmail(e.target.value)} required/>
+                        <Form.Control.Feedback type="invalid">
+                            Escriba un correo electrónico válido.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Nombre</Form.Label>
+                        <Form.Control type="text" placeholder="Nombre" onChange={(e) => setUserName(e.target.value)} required/>
+                        <Form.Control.Feedback type="invalid">
+                            Escriba un nombre de contacto.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Teléfono</Form.Label>
+                        <Form.Control type="tel" placeholder="Ej. 8120515415" onChange={(e) => setUserPhone(e.target.value)} pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required/>
+                        <Form.Control.Feedback type="invalid">
+                            Escriba un número de teléfono válido sin espacios ni guiones.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                        <Form.Label>Comentarios</Form.Label>
+                        <Form.Control as="textarea" rows={3} onChange={(e) => setUserMessage(e.target.value)} required/>
+                        <Form.Control.Feedback type="invalid">
+                            Cuéntenos un poco acerca de su proyecto.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    {
+                        alertVariant != 'success' &&
+                        <>
+                            <Button id='home-contact-form-btn-submit' as="input" type="submit" value="Enviar"/>{' '}
+                        </>
+                    }
+                </Form>
+                {
+                    alertVariant &&
+                    <>
+                        <Alert id='request-form-alert' key={alertVariant} variant={alertVariant}>
+                            {alertText}
+                        </Alert>
+                    </>
+                }
             </div>
         </div>
     )

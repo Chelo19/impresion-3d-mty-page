@@ -13,6 +13,9 @@
     color: var(--text_color);
     /* color: rgba(var(--primary_color), 0.2); */
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .request_form_display{
@@ -107,6 +110,19 @@
     background-color: #fff;
     border-radius: 100%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.request-form{
+    width: 100%;
+}
+
+#request-form-alert{
+    width: 100%;
+}
+
+#request-form-alert a{
+    color: #155724;
+    border-bottom: dashed 2px #155724;
 }
 
 @media (max-width: 440px) {

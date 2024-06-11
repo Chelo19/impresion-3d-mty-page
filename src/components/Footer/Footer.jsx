@@ -32,7 +32,7 @@ function Footer(){
                 </div>
                 <div className='footer_botom_links'>
                     <div className='footer_botom_links_wrapper'>
-                        <Link>2023</Link>
+                        <Link>2023-2024</Link>
                         <Link>Impresión 3D Monterrey</Link>
                         <Link>Monterrey</Link>
                         <Link>Nuevo León</Link>
