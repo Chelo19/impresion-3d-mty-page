@@ -101,9 +101,13 @@
 
 @media (max-width: 440px) {
 
-    .home-contact-container{
-        flex-direction: column;
+    .home-contact{
         align-items: center;
+    }
+
+    .home-contact-container{
+        align-items: center;
+        flex-direction: column-reverse;
     }
 
     .home-contact-form{
@@ -117,5 +121,9 @@
 
     .home-contact-info-bg{
         transform: scale(.8);
+    }
+
+    .alert{
+        width: calc(100% - 80px);
     }
 }

@@ -1,6 +1,6 @@
 import './HomePage2.css'
 import './bootstrap.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 import Contact2 from '../Contact/Contact2';
@@ -11,6 +11,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import CarouselImg1 from '../../assets/homePage/p1s-farm.png';
 import CarouselImg2 from '../../assets/homePage/p1s-inside.jpg';
 import CarouselImg3 from '../../assets/homePage/carousel3.jpg';
+import Button from 'react-bootstrap/Button';
 
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -33,6 +34,8 @@ import AvailableMaterials from '../../components/AvailableMaterials/AvailableMat
 
 function HomePage2(){
 
+    const navigate = useNavigate();
+
     return (
         <body className='home'>
             <div className='home-carousel'>
@@ -44,8 +47,16 @@ function HomePage2(){
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                        <h3>Impresión 3D Monterrey</h3>
-                        <p>Servicio de impresión 3d en Monterrey en diversos materiales como PLA, ABS, PETG, PETG-CF y TPU.</p>
+                            <div className='home-carousel-buttons'>
+                                <Button variant="secondary" onClick={() => navigate("/contact")}>
+                                    Contáctanos
+                                </Button>
+                                <Button variant="primary" id='home-contact-form-btn-submit' onClick={() => navigate("/upload-file")}>
+                                    Imprime ya
+                                </Button>
+                            </div>
+                            <h3>Impresión 3D Monterrey</h3>
+                            <p>Servicio de impresión 3d en Monterrey en diversos materiales como PLA, ABS, PETG, PETG-CF y TPU.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -55,8 +66,16 @@ function HomePage2(){
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                        <h3>Servicio personalizado</h3>
-                        <p>Ofrecemos un servicio personalizado y rápido.</p>
+                            <div className='home-carousel-buttons'>
+                                <Button variant="secondary" onClick={() => navigate("/contact")}>
+                                    Contáctanos
+                                </Button>
+                                <Button variant="primary" id='home-contact-form-btn-submit' onClick={() => navigate("/upload-file")}>
+                                    Imprime ya
+                                </Button>
+                            </div>
+                            <h3>Servicio personalizado</h3>
+                            <p>Ofrecemos un servicio personalizado y rápido.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -66,10 +85,18 @@ function HomePage2(){
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                        <h3>Orgullosamente Regios</h3>
-                        <p>
-                            Negocio 100% Regio, orgullosos de ser de Monterrey, Nuevo León, México.
-                        </p>
+                            <div className='home-carousel-buttons'>
+                                <Button variant="secondary" onClick={() => navigate("/contact")}>
+                                    Contáctanos
+                                </Button>
+                                <Button variant="primary" id='home-contact-form-btn-submit' onClick={() => navigate("/upload-file")}>
+                                    Imprime ya
+                                </Button>
+                            </div>
+                            <h3>Orgullosamente Regios</h3>
+                            <p>
+                                Negocio 100% Regio, orgullosos de ser de Monterrey, Nuevo León, México.
+                            </p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

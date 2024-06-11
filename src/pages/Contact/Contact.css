@@ -66,6 +66,10 @@
         margin: calc(var(--nav_bar_height) + 40px) 0;
     }
 
+    #contact_title{
+        font-size: 60px;
+    }
+
     .instructions_wrapper{
         width: 100%;
     }

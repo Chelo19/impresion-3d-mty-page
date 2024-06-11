@@ -20,6 +20,7 @@ function Contact2(){
     const [userMessage, setUserMessage] = useState('');
 
     const [alertVariant, setAlertVariant] = useState(null);
+    const [alertText, setAlertText] = useState('');
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
@@ -46,9 +47,11 @@ function Contact2(){
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             setAlertVariant('success');
+            setAlertText(`Mensaje enviado correctamente, ${userName.split(' ')[0]}. En breve le contactaremos para darle seguimiento a su proyecto.`);
         }, function(error) {
             console.log('FAILED...', error);
             setAlertVariant('danger');
+            setAlertText('Hubo un error al procesar su solicitud. Intente de nuevo.');
         });
         event.preventDefault();
     };
@@ -100,20 +103,11 @@ function Contact2(){
                     </div>
                 </div>
                 {
-                    alertVariant == 'success' ?
+                    alertVariant &&
                     <>
                         <Alert key={alertVariant} variant={alertVariant}>
-                            Mensaje enviado correctamente, {userName.split(' ')[0]}. En breve le contactaremos para darle seguimiento a su proyecto.
+                            {alertText}
                         </Alert>
-                    </>
-                    : alertVariant ?
-                    <>
-                        <Alert key={alertVariant} variant={alertVariant}>
-                            Hubo un error al procesar su solicitud. Intente de nuevo.
-                        </Alert>
-                    </>
-                    :
-                    <>
                     </>
                 }
             </div>

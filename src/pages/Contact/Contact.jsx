@@ -10,8 +10,8 @@ import Contact2 from './Contact2';
 function Contact(){
     return(
         <div className="contact">
-            <div className='instructions_wrapper' style={{"gap": "60px"}}>
-                <span className='display_title'>Contacto</span>
+            <div className='instructions_wrapper' style={{"gap": "40px"}}>
+                <span className='display_title' id='contact_title'>Contáctanos</span>
                 <Contact2/>
                 <span className='display_title'>Otros medios de contacto</span>
                 <div className="instructions" id='contact_wrapper'>
