@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import HomePage from './pages/HomePage/HomePage.jsx';
 import Materials from './pages/Materials/Materials.jsx';
 import IndividualMaterial from './pages/IndividualMaterial/IndividualMaterial.jsx';
@@ -14,6 +15,8 @@ import Contact from './pages/Contact/Contact';
 import FAQ from './pages/FAQ/FAQ';
 import NotFound from './pages/NotFound/NotFound';
 import HomePage2 from './pages/HomePage2/HomePage2.jsx';
+
+import p1sFarm from './assets/homePage/p1s-farm.png';
 
 function App() {
 
@@ -36,6 +39,9 @@ function App() {
 
   return (
     <div className='main_app'>
+      <Helmet>
+        <meta property="og:image" content={p1sFarm} />
+      </Helmet>
       <BrowserRouter>
         <NavBar/>
         <Routes>
