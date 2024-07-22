@@ -10,6 +10,7 @@ import gear from '../../assets/gear.png';
 import escultura from '../../assets/escultura.png';
 import llaveInglesa from '../../assets/llave-inglesa.png';
 import mancha from '../../assets/mancha.png';
+import Hero from '../HomePage2/HeroSectionThreeJs/Hero';
 
 
 function Display(){
@@ -47,13 +48,14 @@ function Display(){
                     {/* <Link className='display_button_second'>Try it Now</Link> */}
                 </div>
             </div>
-            <div className='display_gallery'>
+            <Hero/>
+            {/* <div className='display_gallery'> */}
                 {/* <img className='display_bg' src={mancha}/> */}
-                <div className='display_bg'></div>
-                {displayActive == 1 && <img src={tubeImg}/>}
-                {displayActive == 2 && <img src={figureImg}/>}
-                {displayActive == 3 && <img src={screwImg}/>}
-            </div>
+                {/* <div className='display_bg'></div> */}
+                {/* {displayActive == 1 && <img src={tubeImg}/>} */}
+                {/* {displayActive == 2 && <img src={figureImg}/>} */}
+                {/* {displayActive == 3 && <img src={screwImg}/>} */}
+            {/* </div> */}
             <div className='display_features'>
                 <Link className={`${display1Class}`} onClick={() => selectDisplay(1)}><img src={gear}/><span>Piezas de ingeniería</span></Link>
                 <Link className={`${display2Class}`} onClick={() => selectDisplay(2)}><img src={escultura}/><span>Figuras y modelos</span></Link>

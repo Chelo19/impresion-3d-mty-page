@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound/NotFound';
 import HomePage2 from './pages/HomePage2/HomePage2.jsx';
 
 import p1sFarm from './assets/homePage/p1s-farm.png';
+import Hero from './components/HomePage2/HeroSectionThreeJs/Hero.jsx';
 
 function App() {
 
@@ -47,7 +48,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage2 />}/>
           <Route path="/home" element={<HomePage2 />}/>
-          <Route path="/impresion-3d-mty-page/" element={<HomePage />}/>
+          <Route path="/impresion-3d-mty-page/" element={<HomePage2 />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/contacto" element={<Contact />}/>
           <Route path="/not-found" element={<NotFound />}/>

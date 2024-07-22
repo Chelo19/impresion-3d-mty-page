@@ -14,7 +14,10 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@react-three/drei": "^9.108.4",
+    "@react-three/fiber": "^8.16.8",
     "@supabase/supabase-js": "^2.41.1",
+    "@types/three": "^0.166.0",
     "aws-sdk": "^2.1460.0",
     "bootstrap": "^5.3.3",
     "emailjs-com": "^3.2.0",
@@ -25,6 +28,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.16.0",
+    "sharp": "^0.33.4",
     "three": "^0.156.1"
   },
   "devDependencies": {

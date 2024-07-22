@@ -30,6 +30,9 @@ import Client5 from '../../assets/homePage/clients/sertecpro.png';
 import Client6 from '../../assets/homePage/clients/rodarasesores.png';
 import Gallery from '../../components/Gallery/Gallery';
 import AvailableMaterials from '../../components/AvailableMaterials/AvailableMaterials';
+import { Canvas } from '@react-three/fiber';
+import Presentation from '../../components/Presentation/Presentation';
+import Display from '../../components/Display/Display';
 
 
 function HomePage2(){
@@ -38,7 +41,7 @@ function HomePage2(){
 
     return (
         <body className='home'>
-            <div className='home-carousel'>
+            {/* <div className='home-carousel'>
                 <Carousel fade>
                     <Carousel.Item>
                         <img
@@ -100,7 +103,11 @@ function HomePage2(){
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-            </div>
+            </div> */}
+            <Presentation/>
+            <Display/>
+
+
 
             <h1 id='home-title-separator'>¿Cómo Funciona?</h1>
 
