@@ -9,6 +9,7 @@ import materials_before_petg from '../../assets/materials_before_petg.jpg';
 import materials_after_petg from '../../assets/materials_after_petg.png';
 import materials_before_petgcf from '../../assets/materials_before_petgcf.jpg';
 import materials_after_petgcf from '../../assets/materials_after_petgcf.png';
+import materials_before_pa6cf from '../../assets/materials_before_pa6cf.jpg';
 import materials_before_tpu from '../../assets/materials_before_tpu.jpg';
 import materials_after_tpu from '../../assets/materials_after_tpu.png';
 
@@ -54,6 +55,16 @@ function Materials(){
                             <img src={materials_before_petgcf} class="materials_cover_image" />
                         </div>
                         <span class='materials_title'>PETG CF</span>
+                        <img src={materials_after_petgcf} class="materials_character" />
+                        <a className='materials_see_more'>Ver más</a>
+                    </div>
+                </Link>
+                <Link to={`/materiales/pa6-cf`} alt="PA6-CF" target="_blank">
+                    <div class="materials_card">
+                        <div class="materials_wrapper">
+                            <img src={materials_before_pa6cf} class="materials_cover_image" />
+                        </div>
+                        <span class='materials_title'>PA6 CF</span>
                         <img src={materials_after_petgcf} class="materials_character" />
                         <a className='materials_see_more'>Ver más</a>
                     </div>
