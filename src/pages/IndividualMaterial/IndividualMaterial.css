@@ -9,7 +9,6 @@
 .individual_material_title{
     font-size: 160px;
     font-weight: 600;
-    margin-bottom: -0px;
     background: linear-gradient(
         to right,
         #5dc6ff 20%,
@@ -196,8 +195,10 @@ button {
     .individual_material{
         align-items: center;
         justify-content: center;
+        gap: 30px;
     }
     .individual_material_title{
+        font-size: 100px;
         margin-bottom: -30px;
     }
     .individual_material_item{

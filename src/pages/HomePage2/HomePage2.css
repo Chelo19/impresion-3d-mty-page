@@ -65,6 +65,10 @@
     font-size: 40px;
 }
 
+.contact-button{
+    animation: shrinkButtonNavBar 2s infinite;
+}
+
 /* Materiales */
 
 .home-materials{
@@ -160,4 +164,17 @@
         height: 350px;
     }
 
+}
+
+@keyframes shrinkButtonNavBar {
+
+    0% {
+        transform: translateX(2px) rotate(2deg);
+    }
+    50% {
+        transform: translateX(-2px) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(2px) rotate(2deg);
+    }
 }

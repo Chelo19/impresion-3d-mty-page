@@ -48,15 +48,15 @@ function HomePage2(){
                         />
                         <Carousel.Caption>
                             <div className='home-carousel-buttons'>
-                                <Button variant="secondary" onClick={() => navigate("/contact")}>
+                                <Button variant="primary" className='contact-button' id='home-contact-form-btn-submit' onClick={() => navigate("/contact")}>
                                     Contáctanos
                                 </Button>
-                                <Button variant="primary" id='home-contact-form-btn-submit' onClick={() => navigate("/upload-file")}>
+                                <Button variant="secondary" onClick={() => navigate("/upload-file")}>
                                     Imprime ya
                                 </Button>
                             </div>
                             <h3>Impresión 3D Monterrey</h3>
-                            <p>Servicio de impresión 3d en Monterrey en diversos materiales como PLA, ABS, PETG, PETG-CF y TPU.</p>
+                            <p>Servicio de impresión 3d en Monterrey en diversos materiales como PLA, ABS, PETG, PETG-CF, PA6-CF y TPU.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -67,10 +67,10 @@ function HomePage2(){
                         />
                         <Carousel.Caption>
                             <div className='home-carousel-buttons'>
-                                <Button variant="secondary" onClick={() => navigate("/contact")}>
+                                <Button variant="primary" className='contact-button' id='home-contact-form-btn-submit' onClick={() => navigate("/contact")}>
                                     Contáctanos
                                 </Button>
-                                <Button variant="primary" id='home-contact-form-btn-submit' onClick={() => navigate("/upload-file")}>
+                                <Button variant="secondary" onClick={() => navigate("/upload-file")}>
                                     Imprime ya
                                 </Button>
                             </div>
@@ -86,10 +86,10 @@ function HomePage2(){
                         />
                         <Carousel.Caption>
                             <div className='home-carousel-buttons'>
-                                <Button variant="secondary" onClick={() => navigate("/contact")}>
+                                <Button variant="primary" className='contact-button' id='home-contact-form-btn-submit' onClick={() => navigate("/contact")}>
                                     Contáctanos
                                 </Button>
-                                <Button variant="primary" id='home-contact-form-btn-submit' onClick={() => navigate("/upload-file")}>
+                                <Button variant="secondary" onClick={() => navigate("/upload-file")}>
                                     Imprime ya
                                 </Button>
                             </div>

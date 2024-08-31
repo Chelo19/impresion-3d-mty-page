@@ -16,7 +16,7 @@
     padding: 100px 0;
     width: 1400px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 70px;
     overflow: scroll;
 }
