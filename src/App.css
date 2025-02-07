@@ -10,12 +10,8 @@
 }
 
 body{
-  margin: 0;
-}
-
-.main_app{
-  /* font-family: Inter,sans-serif; */
   font-family: "League Spartan", sans-serif;
+  margin: 0;
 }
 
 .overlay{
@@ -28,6 +24,14 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.utility-wrapper{
+  min-height: calc(100vh - var(--nav_bar_height));
+  margin-top: var(--nav_bar_height);
+  width: 800px;
+  align-self: center;
+  justify-self: center;
 }
 
 @media (max-width: 440px) {

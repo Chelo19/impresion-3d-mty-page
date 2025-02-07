@@ -37,7 +37,7 @@ function HomePage2(){
     const navigate = useNavigate();
 
     return (
-        <body className='home'>
+        <div className='home'>
             <div className='home-carousel'>
                 <Carousel fade>
                     <Carousel.Item>
@@ -205,7 +205,7 @@ function HomePage2(){
             <Contact2/>
 
 
-        </body>
+        </div>
     )
 }
 

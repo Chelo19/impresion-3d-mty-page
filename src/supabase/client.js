@@ -1,7 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
-import { REACT_APP_SUPABASE_URL, REACT_APP_SUPABASE_ANON_KEY } from './credentials';
 
-export const supabase = createClient(
-    REACT_APP_SUPABASE_URL,
-    REACT_APP_SUPABASE_ANON_KEY
-);
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Missing Supabase URL or Anon Key');
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);

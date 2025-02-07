@@ -28,3 +28,5 @@ credentials.js
 supabase/
 
 constants.js
+
+.env

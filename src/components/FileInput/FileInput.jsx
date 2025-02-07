@@ -10,7 +10,7 @@ import scale from '../../assets/scale.png';
 import close from '../../assets/close.png';
 import impresion3dLogo from '../../assets/impresion-3d-logo.png';
 
-function FileInput({stlFiles, setStlFiles}) {
+const FileInput = ({stlFiles, setStlFiles}) => {
     const navigate = useNavigate();
     const fileInputRef = React.createRef();
     const [nextId, setNextId] = useState(1);
@@ -314,7 +314,7 @@ function FileInput({stlFiles, setStlFiles}) {
                         })}
                     </div>
                 }
-                <button onClick={checkLength} className='display_button_main'>Continuar</button>
+                {/* <button onClick={checkLength} className='display_button_main'>Continuar</button> */}
             </div>
             {isOverlay && 
                 <div className='overlay'>
