@@ -5,10 +5,20 @@ export const QuoteContext = createContext();
 
 export const QuoteProvider = ({ children }) => {
   const [stlFiles, setStlFiles] = useState([]);
-  const [material, setMaterial] = useState("");
+  const [selectedMaterial, setSelectedMaterial] = useState("");
+  const [selectedColor, setSelectedColor] = useState(null);
 
   return (
-    <QuoteContext.Provider value={{ stlFiles, setStlFiles }}>
+    <QuoteContext.Provider
+      value={{
+        stlFiles,
+        setStlFiles,
+        selectedMaterial,
+        setSelectedMaterial,
+        selectedColor,
+        setSelectedColor
+      }}
+    >
       {children}
     </QuoteContext.Provider>
   );

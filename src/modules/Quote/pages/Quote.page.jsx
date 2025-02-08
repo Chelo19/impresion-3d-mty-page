@@ -1,32 +1,17 @@
-import React, { useContext, useState } from "react";
-import FileInput from "../../../components/FileInput/FileInput";
-import QuoteStepper from "../components/QuoteStepper";
-import { QuoteContext, QuoteProvider } from "../context/QuoteContext";
-import SelectFiles from "../components/SelectFiles";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { QuoteProvider } from "../context/QuoteContext";
 
 export function Quote() {
-  const { stlFiles, setStlFiles } = useContext(QuoteContext);
-  const [activeStep, setActiveStep] = useState(0);
 
-  const isNextEnabled = () => {
-    if (activeStep === 0 && stlFiles.length > 0) return true;
-    if (activeStep === 1) return true;
-    return false;
-  };
+  const navigate = useNavigate();
 
-  const stepContent = [
-    <FileInput stlFiles={stlFiles} setStlFiles={setStlFiles} />,
-    <div>Step 2</div>,
-    <div>Step 3</div>,
-  ];
   return (
     <QuoteProvider>
-      <QuoteStepper
-        stepContent={stepContent}
-        isNextEnabled={isNextEnabled()}
-        activeStep={activeStep}
-        setActiveStep={setActiveStep}
-      />
+      <button onClick={() => navigate('print-quote')} >Impresion</button>
+      <br/>
+      <br/>
+      <button onClick={() => navigate('service-quote')} >Servicio</button>
     </QuoteProvider>
   );
 }

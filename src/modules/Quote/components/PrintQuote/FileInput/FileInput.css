@@ -1,0 +1,405 @@
+.file_input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 150px; */
+}
+
+.file_input_container{
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+    gap: 50px;
+}
+
+.file_input_presentation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.file_input_presentation_title{
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 40px;
+    color: var(--text_color);
+}
+
+.file_input_presentation_description{
+    font-weight: 400;
+    font-size: 14px;
+    color: #747892;
+}
+
+.file_input_presentation_description a{
+    text-decoration: none;
+    color: #747892;
+    border-bottom: 2px solid #747892;
+}
+
+
+.file_input_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.file_input_button{
+    border: 2px dashed rgb(var(--primary_color));
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 15px;
+    text-align: left;
+    color: #747892;
+}
+
+.file_input_button span{
+    color: rgb(var(--primary_color));
+}
+
+.file_input_button span:hover{
+    transition: 0.1s;
+    border-bottom: 1px solid rgb(var(--primary_color));
+}
+
+.file_input_gallery{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 30px;
+}
+
+.file_input_item{
+    width: calc(100% - 30px);
+    min-height: calc(100px - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 15px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.15), 0 0 15px 0 rgba(0,0,0,.05);
+    gap: 15px;
+}
+
+.file_input_item_top_belt{
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file_input_item_icon{
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.file_input_item_icon:hover{
+    transition: 0.5s;
+    background-color: rgba(0,0,0,.15);
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.file_input_item_icon img{
+    width: 20px;
+}
+
+.file_input_item_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.file_input_item_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file_input_item_all{
+    display: flex;
+    gap: 10px;
+}
+
+.file_input_item_all img{
+    width: 80px;
+    height: 80px;
+}
+
+.file_input_item_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    color: var(--text_color);
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 22.4px;
+    font-size: 16px;
+    gap: 6px;
+    padding: 5px 0;
+}
+
+.file_input_item_dimensions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 14px;
+    color: #747892;
+    gap: 10px;
+}
+
+.file_input_item_counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0,0,0,.6);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.file_input_item_counter:hover button{
+    transition: 0.5s;
+    border-top: 1px solid rgba(var(--primary_color), 1);
+    border-bottom: 1px solid rgba(var(--primary_color), 1);
+}
+
+.file_input_item_counter:hover button:first-child{
+    transition: 0.5s;
+    border-left: 1px solid rgba(var(--primary_color), 1);
+}
+
+.file_input_item_counter:hover button:last-child{
+    transition: 0.5s;
+    border-right: 1px solid rgba(var(--primary_color), 1);
+}
+
+.file_input_item_counter:hover input{
+    transition: 0.5s;
+    border: 1px solid rgba(var(--primary_color), 1);
+}
+
+.file_input_item_counter button{
+    transition: 0.5s;
+    padding: 0 10px;
+    height: 22px;
+    border-top: 1px solid rgba(var(--primary_color), 0.5);
+    border-bottom: 1px solid rgba(var(--primary_color), 0.5);
+    color: var(--text_color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.file_input_item_counter button:first-child{
+    transition: 0.5s;
+    border-left: 1px solid rgba(var(--primary_color), 0.5);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.file_input_item_counter button:last-child{
+    transition: 0.5s;
+    border-right: 1px solid rgba(var(--primary_color), 0.5);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.file_input_item_counter input{
+    transition: 0.5s;
+    width: 40px;
+    height: 22px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(var(--primary_color), 0.5);
+}
+
+.file_input_item_counter input:focus{
+    outline: none;
+}
+
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.file_input_overlay{
+    width: 700px;
+    height: 300px;
+    background-color: var(--background_color);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.file_input_overlay_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file_input_overlay_title{
+    width: 100%;
+    padding: 30px;
+    font-size: 30px;
+    height: 100px;
+}
+
+.file_input_overlay_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 100px;
+}
+
+.file_input_overlay_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+.file_input_overlay_item input{
+    transition: 0.5s;
+    width: 80px;
+    padding: 0 10px;
+    text-align: center;
+    border-bottom: 1px solid rgb(var(--primary_color));
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    font-weight: 600;
+    outline: 0;
+}
+
+.file_input_overlay_item input:focus{
+    transition: 0.5s;
+    border-bottom: 1px solid rgba(var(--primary_color), 0.3);
+}
+
+.file_input_overlay_buttons{
+    width: 100%;
+    padding: 30px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.file_input_overlay_button{
+    transition: 0.5s;
+    min-width: 100px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    background-color: transparent;
+}
+
+.file_input_overlay_button:hover{
+    transition: 0.5s;
+    opacity: 0.5;
+}
+
+#file_input_overlay_button_send{
+    border: 1px solid var(--background_color);
+    color: var(--background_color);
+    background-color: rgb(var(--primary_color));
+}
+
+@media (max-width: 440px) {
+
+    .file_input{
+        margin-top: 60px;
+    }
+
+    .file_input_container{
+        width: 80%;
+    }
+
+    .file_input_gallery{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file_input_item_all img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .file_input_item{
+        width: 320px;
+    }
+    
+    .file_input_item_all{
+        width: 100%;
+    }
+
+    .file_input_item_content{
+        width: 100%;
+        font-size: 14px;
+        overflow: scroll;
+    }
+
+    .file_input_item_dimensions{
+        width: 100%;
+        gap: 3px;
+    }
+
+    .file_input_overlay{
+        width: calc(100% - 100px);
+        height: auto;
+        margin-bottom: 140px;
+        overflow: hidden;
+    }
+
+    .file_input_overlay_container{
+        gap: 20px;
+    }
+
+    .file_input_overlay_title{
+        height: auto;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .file_input_overlay_wrapper{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .file_input_overlay_buttons{
+        justify-content: center;
+    }
+}

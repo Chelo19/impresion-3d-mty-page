@@ -1,0 +1,11 @@
+.quote-stepper-stepper{
+    display: flex;
+    gap: 10px;
+}
+
+.quote-stepper-step-label{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+}

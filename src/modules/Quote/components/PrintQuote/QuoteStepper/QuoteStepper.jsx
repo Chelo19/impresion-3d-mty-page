@@ -5,18 +5,26 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
-import React, { useEffect } from "react";
-import "../styles/Quote.css";
+import React, { useContext, useEffect } from "react";
+import "../../../styles/Quote.css";
+import "./QuoteStepper.css";
+import { QuoteContext } from "../../../context/QuoteContext";
 
-const steps = [
-  "Seleccionar archivos",
-  "Seleccionar material",
-  "Seleccionar configuración",
-  "Datos de contacto",
-  "Revisar cotización",
-];
 
 export default function QuoteStepper({ stepContent, isNextEnabled, activeStep, setActiveStep }) {
+    const { stlFiles, selectedMaterial } = useContext(QuoteContext);
+  
+    useEffect(() => {
+      console.log('selectedMaterial:', selectedMaterial);
+      
+    }, [])
+  const steps = [
+    stlFiles.length <= 0 ? "Seleccionar archivos": `${stlFiles.length} archivo(s) seleccionado(s)`,
+    !selectedMaterial ? "Seleccionar material" : `Material Seleccionado: ${selectedMaterial.material}`,
+    "Seleccionar configuración",
+    "Datos de contacto",
+    "Revisar cotización",
+  ];
   const [skipped, setSkipped] = React.useState(new Set());
 
   const isStepOptional = (step) => {
@@ -61,7 +69,7 @@ export default function QuoteStepper({ stepContent, isNextEnabled, activeStep, s
 
   return (
     <Box sx={{ width: "100%" }} className="quote-stepper">
-      <Stepper activeStep={activeStep}>
+      <Stepper activeStep={activeStep} className="quote-stepper-stepper">
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
@@ -74,8 +82,8 @@ export default function QuoteStepper({ stepContent, isNextEnabled, activeStep, s
             stepProps.completed = false;
           }
           return (
-            <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
+            <Step key={label} {...stepProps} className="quote-stepper-step">
+              <StepLabel {...labelProps} className="quote-stepper-step-label">{label}</StepLabel>
             </Step>
           );
         })}
