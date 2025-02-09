@@ -7,6 +7,8 @@ export const QuoteProvider = ({ children }) => {
   const [stlFiles, setStlFiles] = useState([]);
   const [selectedMaterial, setSelectedMaterial] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedInfill, setSelectedInfill] = useState(null);
+  const [selectedLayerHeight, setSelectedLayerHeight] = useState(null);
 
   return (
     <QuoteContext.Provider
@@ -16,7 +18,11 @@ export const QuoteProvider = ({ children }) => {
         selectedMaterial,
         setSelectedMaterial,
         selectedColor,
-        setSelectedColor
+        setSelectedColor,
+        selectedInfill,
+        setSelectedInfill,
+        selectedLayerHeight,
+        setSelectedLayerHeight
       }}
     >
       {children}
