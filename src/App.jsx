@@ -37,8 +37,8 @@ function App() {
         </Helmet>
         <BrowserRouter>
           <NavBar />
-          {/* <div className="utility-wrapper"> */}
-          <Container maxWidth="md" sx={{ mt: 14 }}>
+          <div className="utility-wrapper">
+          {/* <Container maxWidth="md" sx={{ mt: 14 }}> */}
               <Routes>
                 <Route path="/" element={<HomePage2 />} />
                 <Route path="/home" element={<HomePage2 />} />
@@ -52,8 +52,8 @@ function App() {
                 <Route path="/preguntas-frecuentes" element={<FAQ />} />
                 <Route path="/cotizador/*" element={<QuoteRouter />} />
               </Routes>
-          </Container>
-          {/* </div> */}
+          {/* </Container> */}
+          </div>
           <Footer />
         </BrowserRouter>
       </QuoteProvider>

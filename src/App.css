@@ -1,43 +1,65 @@
-:root{
+:root {
   --primary_color: 0, 119, 182;
   --secondary_color: 0, 180, 216;
   --terciary_color: 144, 224, 239;
+  --success_color: 0, 166, 81;
   --background_color: #fff;
   --text_color: 29, 41, 57;
   --nav_bar_height: 80px;
+  --nav_bar_mobile_height: 80px;
   --mobile_width: 440px;
   background-color: var(--background_color);
 }
 
-body{
-  font-family: "League Spartan", sans-serif;
+@font-face {
+  font-family: "CodecPro";
+  src: local("CodecPro"), url(./fonts/CodecPro-Regular.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "TTInterphasesPro";
+  src: local("TTInterphasesPro"),
+    url(./fonts/TTInterphasesProTrialMedium.ttf) format("opentype");
+}
+
+body {
+  /* font-family: "League Spartan", sans-serif !important; */
+  /* font-family: "Codec Pro", sans-serif !important; */
+  font-family: "TTInterphasesPro", sans-serif !important;
   margin: 0;
 }
 
-.overlay{
+.overlay {
   position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.utility-wrapper{
+.utility-wrapper {
   min-height: calc(100vh - var(--nav_bar_height));
-  margin-top: var(--nav_bar_height);
+  margin-top: calc(var(--nav_bar_height) + 20px);
   width: 800px;
   align-self: center;
   justify-self: center;
 }
 
 @media (max-width: 440px) {
-  .overlay{
+  .overlay {
     width: 100vw;
-    height: calc(100vh - var(--nav_bar_height));
-    top: var(--nav_bar_height);
+    height: calc(100vh - var(--nav_bar_mobile_height));
+    top: var(--nav_bar_mobile_height);
+  }
+
+  .utility-wrapper {
+    width: 100vw;
+    min-height: calc(100vh - var(--nav_bar_mobile_height));
+    margin-top: var(--nav_bar_mobile_height);
+    padding: 0 30px;
   }
 }

@@ -9,3 +9,14 @@
     flex-direction: column;
     text-align: center;
 }
+
+@media screen and (max-width: 440px){
+    .quote-stepper{
+        min-height: 600px !important;
+    }
+    .quote-stepper-stepper{
+        display: none !important;
+        width: 0px;
+    }
+    
+}

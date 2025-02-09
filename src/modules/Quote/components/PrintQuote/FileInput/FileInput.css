@@ -340,7 +340,6 @@ button {
 @media (max-width: 440px) {
 
     .file_input{
-        margin-top: 60px;
     }
 
     .file_input_container{

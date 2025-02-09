@@ -6,8 +6,7 @@ import SelectMaterials from "./SelectMaterials/SelectMaterials";
 import SelectConfiguration from "./SelectConfiguration/SelectConfiguration";
 
 export function PrintQuote() {
-  const { stlFiles, setStlFiles, selectedMaterial, setSelectedMaterial } = useContext(QuoteContext);
-  const [activeStep, setActiveStep] = useState(0);
+  const { stlFiles, setStlFiles, selectedMaterial, setSelectedMaterial, activeStep, setActiveStep } = useContext(QuoteContext);
 
   const isNextEnabled = () => {
     // if (activeStep === 0 && stlFiles.length > 0) return true;

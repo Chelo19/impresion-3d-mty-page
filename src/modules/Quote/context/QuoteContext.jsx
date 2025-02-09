@@ -9,10 +9,13 @@ export const QuoteProvider = ({ children }) => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedInfill, setSelectedInfill] = useState(null);
   const [selectedLayerHeight, setSelectedLayerHeight] = useState(null);
+  const [activeStep, setActiveStep] = useState(0);
 
   return (
     <QuoteContext.Provider
       value={{
+        activeStep,
+        setActiveStep,
         stlFiles,
         setStlFiles,
         selectedMaterial,

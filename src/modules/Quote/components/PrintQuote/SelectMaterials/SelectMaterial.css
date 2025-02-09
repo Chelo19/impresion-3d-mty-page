@@ -4,4 +4,44 @@
     justify-content: space-between;
     flex-direction: column;
     margin-top: 20px;
+    width: 100%;
+    gap: 40px;
+}
+
+.select-material-toolbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.select-material-order-by{
+    justify-self: flex-end;
+    width: 200px;
+}
+
+.select-material-order{
+    font-size: 20px;
+    color: rgba(var(--text_color), 0.8);
+}
+
+.select-material-order-select{
+    border: none;
+    color: rgba(var(--text_color), 0.8);
+}
+
+.select-material-order-select:focus{
+    outline: none;
+}
+
+@media screen and (max-width: 440px){
+    .select-material-toolbar{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .select-material-container{
+        margin: 0;
+    }
+    
 }
