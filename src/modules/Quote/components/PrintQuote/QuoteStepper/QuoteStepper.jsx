@@ -21,7 +21,7 @@ export default function QuoteStepper({ stepContent, isNextEnabled, activeStep, s
   const steps = [
     stlFiles.length <= 0 ? "Seleccionar archivos": `${stlFiles.length} archivo(s) seleccionado(s)`,
     !selectedMaterial ? "Seleccionar material" : `Material Seleccionado: ${selectedMaterial.material}`,
-    "Seleccionar configuración",
+    "Configuración",
     "Datos de contacto",
     "Revisar cotización",
   ];

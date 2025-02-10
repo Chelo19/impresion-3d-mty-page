@@ -1,9 +1,8 @@
 // filepath: /c:/Users/mdeleon/OneDrive - Entidad Controladora SA de CV/Documentos/Marcelo/impresion-3d-mty-page/src/modules/Quote/components/PrintQuote/SelectMaterials/SelectMaterials.jsx
 import { useEffect, useState } from "react";
 import { supabase } from "../../../../../supabase/client";
-import "./SelectMaterial.css";
 import MaterialCard from "../../MaterialCard/MaterialCard";
-import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import "./SelectMaterial.css";
 
 export default function SelectMaterials({
   selectedMaterial,
@@ -64,12 +63,16 @@ export default function SelectMaterials({
     : [];
 
   return (
-    <div className="select-material-container">
-      <div className="select-material-toolbar">
+    <div className="select-component-container">
+      <div className="select-component-toolbar">
         <span className="step-title">Seleccionar Material</span>
         <div>
-        <span className="select-material-order">Ordenar por: </span>
-          <select onChange={handleSortOrderChange} value={sortOrder} className="select-material-order-select">
+          <span className="select-material-order">Ordenar por: </span>
+          <select
+            onChange={handleSortOrderChange}
+            value={sortOrder}
+            className="select-material-order-select"
+          >
             <option value="cpu-asc">CPU ascendente</option>
             <option value="cpu-desc">CPU descendente</option>
             <option value="name-asc">Nombre A-Z</option>

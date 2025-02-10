@@ -3,6 +3,7 @@
   --secondary_color: 0, 180, 216;
   --terciary_color: 144, 224, 239;
   --success_color: 0, 166, 81;
+  --success_color_light: 144, 238, 192;
   --background_color: #fff;
   --text_color: 29, 41, 57;
   --nav_bar_height: 80px;
@@ -47,6 +48,60 @@ body {
   width: 800px;
   align-self: center;
   justify-self: center;
+}
+
+h1 {
+  width: 100%;
+  text-align: left;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text_color);
+  margin: 0 !important;
+}
+
+h2 {
+  width: 100%;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text_color);
+  margin: 0 !important;
+}
+
+h3 {
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text_color);
+  margin: 0 !important;
+}
+
+h4 {
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text_color);
+  margin: 0 !important;
+}
+
+h5	{
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text_color);
+  margin: 0 !important;
+}
+
+h6 {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text_color);
+  margin: 0 !important;
 }
 
 @media (max-width: 440px) {
