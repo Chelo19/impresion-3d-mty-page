@@ -1,7 +1,7 @@
 // filepath: /c:/Users/mdeleon/OneDrive - Entidad Controladora SA de CV/Documentos/Marcelo/impresion-3d-mty-page/src/modules/Quote/components/PrintQuote/SelectMaterials/SelectMaterials.jsx
 import { useEffect, useState } from "react";
 import { supabase } from "../../../../../supabase/client";
-import MaterialCard from "../../MaterialCard/MaterialCard";
+import MaterialCard from "../MaterialCard/MaterialCard";
 import "./SelectMaterial.css";
 
 export default function SelectMaterials({

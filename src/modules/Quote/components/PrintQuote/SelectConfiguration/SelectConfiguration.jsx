@@ -78,7 +78,7 @@ export default function SelectConfiguration() {
   const getContrastColor = (rgbColor) => {
     const [r, g, b] = rgbColor.split(",").map(Number);
     const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-    return brightness > 160 ? "black" : "white";
+    return brightness > 160 ? "rgba(0,0,0,0.6)" : "white";
   };
 
   return (
@@ -151,6 +151,10 @@ export default function SelectConfiguration() {
               <span>{"<"}- Menos resistencia</span>
               <span>Más resistencia -{">"}</span>
             </div>
+            <div className="select-configuration-legends" style={{marginTop: "-5px"}}>
+              <span>{"<"}- Menor costo</span>
+              <span>Mayor costo -{">"}</span>
+            </div>
           </>
         )}
       </div>
@@ -193,6 +197,10 @@ export default function SelectConfiguration() {
             <div className="select-configuration-legends">
               <span>{"<"}- Líneas de capa menos visibles</span>
               <span>Líneas de capa más visibles -{">"}</span>
+            </div>
+            <div className="select-configuration-legends" style={{marginTop: "-5px"}}>
+              <span>{"<"}- Mayor costo</span>
+              <span>Menor costo -{">"}</span>
             </div>
           </>
         )}

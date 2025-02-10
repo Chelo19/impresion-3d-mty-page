@@ -1,128 +1,65 @@
-// filepath: /c:/Users/mdeleon/OneDrive - Entidad Controladora SA de CV/Documentos/Marcelo/impresion-3d-mty-page/src/modules/Quote/components/QuoteStepper.jsx
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import Stepper from "@mui/material/Stepper";
-import Typography from "@mui/material/Typography";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { QuoteContext } from "../../../context/QuoteContext";
 import "../../../styles/Quote.css";
 import "./QuoteStepper.css";
-import { QuoteContext } from "../../../context/QuoteContext";
+import CustomStepper from "../../CustomStepper/CustomStepper";
+import CustomButton from "../../../../components/CustomButton/CustomButton";
 
+export default function QuoteStepper({ stepContent, isNextEnabled, handleSubmit }) {
+  const { stlFiles, selectedMaterial, steps, isFinished, setIsFinished, activeStep, setActiveStep } = useContext(QuoteContext);
 
-export default function QuoteStepper({ stepContent, isNextEnabled, activeStep, setActiveStep }) {
-    const { stlFiles, selectedMaterial } = useContext(QuoteContext);
-  
-    useEffect(() => {
-      console.log('selectedMaterial:', selectedMaterial);
-      
-    }, [])
-  const steps = [
-    stlFiles.length <= 0 ? "Seleccionar archivos": `${stlFiles.length} archivo(s) seleccionado(s)`,
-    !selectedMaterial ? "Seleccionar material" : `Material Seleccionado: ${selectedMaterial.material}`,
-    "Configuración",
-    "Datos de contacto",
-    "Revisar cotización",
-  ];
-  const [skipped, setSkipped] = React.useState(new Set());
-
-  const isStepOptional = (step) => {
-    // return step === 1;
-  };
-
-  const isStepSkipped = (step) => {
-    return skipped.has(step);
-  };
+  useEffect(() => {
+    console.log('selectedMaterial:', selectedMaterial);
+  }, []);
 
   const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
-    }
+    console.log('activeStep:', activeStep);
 
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
+    if (activeStep === steps.length - 1) {
+      if (handleSubmit()) {
+        setIsFinished(true);
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      }
+    } else {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      throw new Error("You can't skip a step that isn't optional.");
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
-
   const handleReset = () => {
     setActiveStep(0);
+    setIsFinished(false);
   };
 
   return (
-    <Box sx={{ width: "100%" }} className="quote-stepper">
-      <Stepper activeStep={activeStep} className="quote-stepper-stepper">
-        {steps.map((label, index) => {
-          const stepProps = {};
-          const labelProps = {};
-          if (isStepOptional(index)) {
-            labelProps.optional = (
-              <Typography variant="caption">Optional</Typography>
-            );
-          }
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
-          return (
-            <Step key={label} {...stepProps} className="quote-stepper-step">
-              <StepLabel {...labelProps} className="quote-stepper-step-label">{label}</StepLabel>
-            </Step>
-          );
-        })}
-      </Stepper>
-      {activeStep === steps.length ? (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Reset</Button>
-          </Box>
-        </React.Fragment>
+    <div className="quote-stepper">
+      <CustomStepper steps={steps} activeStep={activeStep} />
+      {isFinished ? (
+        <div>
+          <p>All steps completed - you're finished</p>
+          <div>
+            <CustomButton type="secondary" onClick={handleReset}>Reset</CustomButton>
+          </div>
+        </div>
       ) : (
-        <React.Fragment>
+        <>
           <br />
           {stepContent[activeStep]}
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Button
-              color="inherit"
+          <div className="quote-stepper-actions">
+            <CustomButton type="secondary"
               disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: "1 1 auto" }} />
-            {isStepOptional(activeStep) && (
-              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                Skip
-              </Button>
-            )}
-            <Button onClick={handleNext} disabled={!isNextEnabled}>
-              {activeStep === steps.length - 1 ? "Finish" : "Next"}
-            </Button>
-          </Box>
-        </React.Fragment>
+              onClick={handleBack}>
+              Regresar
+            </CustomButton>
+            <CustomButton type="primary" onClick={handleNext} disabled={!isNextEnabled}>
+              {activeStep === steps.length - 1 ? "Finalizar" : "Siguiente"}
+            </CustomButton>
+          </div>
+        </>
       )}
-    </Box>
+    </div>
   );
 }

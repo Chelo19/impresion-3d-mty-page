@@ -1,4 +1,3 @@
-// filepath: /c:/Users/mdeleon/OneDrive - Entidad Controladora SA de CV/Documentos/Marcelo/impresion-3d-mty-page/src/modules/Quote/context/QuoteContext.jsx
 import React, { createContext, useEffect, useState } from "react";
 
 export const QuoteContext = createContext();
@@ -10,10 +9,24 @@ export const QuoteProvider = ({ children }) => {
   const [selectedInfill, setSelectedInfill] = useState(null);
   const [selectedLayerHeight, setSelectedLayerHeight] = useState(null);
   const [activeStep, setActiveStep] = useState(0);
+  const [formData, setFormData] = useState({
+    userName: '',
+    userEmail: '',
+    userPhone: '',
+    userComments: ''
+  });
+  const steps = [
+    stlFiles.length <= 0 ? "Seleccionar archivos" : `${stlFiles.length} archivo(s) seleccionado(s)`,
+    !selectedMaterial ? "Seleccionar material" : `Material Seleccionado: ${selectedMaterial.material}`,
+    "Seleccionar Configuración",
+    "Revisar Solicitud"
+  ];
+  const [isFinished, setIsFinished] = useState(false);
 
   return (
     <QuoteContext.Provider
       value={{
+        steps,
         activeStep,
         setActiveStep,
         stlFiles,
@@ -25,7 +38,11 @@ export const QuoteProvider = ({ children }) => {
         selectedInfill,
         setSelectedInfill,
         selectedLayerHeight,
-        setSelectedLayerHeight
+        setSelectedLayerHeight,
+        formData,
+        setFormData,
+        isFinished,
+        setIsFinished
       }}
     >
       {children}

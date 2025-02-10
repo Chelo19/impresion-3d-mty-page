@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
 import "./MaterialCard.css";
 import { Button } from "@mui/material";
-import { QuoteContext } from "../../context/QuoteContext";
+import { QuoteContext } from "../../../context/QuoteContext";
+import CustomButton from "../../../../components/CustomButton/CustomButton";
 // import CheckIcon from '@mui/icons-material/Check';
 
 export default function MaterialCard({ material, colors }) {
@@ -69,17 +70,12 @@ export default function MaterialCard({ material, colors }) {
           <strong>${material.cpu}</strong>
           <span style={{ fontSize: "18px" }}> mxn/g</span>
         </span>
-        <button
-          onClick={() => handleMaterialSelection(material)}
-          variant="contained"
-          color="primary"
-          className="material-card-select-button-primary"
-        >
+        <CustomButton type="primary" onClick={() => handleMaterialSelection(material)}>
           Seleccionar
-        </button>
-        <button variant="outlined" color="primary" className="material-card-select-button-alt">
-          Mas
-        </button>
+        </CustomButton>
+        <CustomButton type="secondary" outlined>
+          Más
+        </CustomButton>
         {selectedMaterial.id === material.id && (
           <div className="material-card-selected">Seleccionado</div>
         )}
