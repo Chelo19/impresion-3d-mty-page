@@ -1,16 +1,15 @@
 // filepath: /c:/Users/mdeleon/OneDrive - Entidad Controladora SA de CV/Documentos/Marcelo/impresion-3d-mty-page/src/modules/Quote/components/PrintQuote/SelectMaterials/SelectMaterials.jsx
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { supabase } from "../../../../../supabase/client";
 import MaterialCard from "../MaterialCard/MaterialCard";
 import "./SelectMaterial.css";
+import { QuoteContext } from "../../../context/QuoteContext";
 
-export default function SelectMaterials({
-  selectedMaterial,
-  setSelectedMaterial,
-}) {
+export default function SelectMaterials({}) {
   const [materials, setMaterials] = useState(null);
   const [colors, setColors] = useState(null);
   const [sortOrder, setSortOrder] = useState("cpu-asc");
+  const { selectedMaterial } = useContext(QuoteContext);
 
   useEffect(() => {
     getMaterials();

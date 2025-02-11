@@ -7,14 +7,14 @@ import SelectConfiguration from "./SelectConfiguration/SelectConfiguration";
 import OrderOverview from "./OrderOverview/OrderOverview";
 
 export function PrintQuote() {
-  const { stlFiles, setStlFiles, selectedMaterial, setSelectedMaterial, activeStep, setActiveStep } = useContext(QuoteContext);
+  const { stlFiles, setStlFiles, selectedMaterial, setSelectedMaterial, selectedColor, selectedInfill, selectedLayerHeight, activeStep, setActiveStep, isFinished } = useContext(QuoteContext);
   const orderOverviewRef = useRef();
 
   const isNextEnabled = () => {
-    if (activeStep === 0) return true;
-    if (activeStep === 1) return true;
-    if (activeStep === 2) return true;
-    if (activeStep === 3) return true;
+    if (activeStep === 0 && stlFiles.length > 0) return true;
+    if (activeStep === 1 && selectedMaterial) return true;
+    if (activeStep === 2 && selectedColor && selectedInfill && selectedLayerHeight) return true;
+    if (activeStep === 3 && isFinished) return true;
     return false;
   };
 
@@ -26,8 +26,8 @@ export function PrintQuote() {
   };
 
   const stepContent = [
-    <FileInput stlFiles={stlFiles} setStlFiles={setStlFiles} />,
-    <SelectMaterials selectedMaterial={selectedMaterial} setSelectedMaterial={setSelectedMaterial} />,
+    <FileInput />,
+    <SelectMaterials/>,
     <SelectConfiguration />,
     <OrderOverview ref={orderOverviewRef} />
   ];

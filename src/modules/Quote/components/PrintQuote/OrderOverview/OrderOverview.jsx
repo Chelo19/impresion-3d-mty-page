@@ -1,6 +1,6 @@
 import { forwardRef, useContext } from "react";
 import { QuoteContext } from "../../../context/QuoteContext";
-import ContactForm from "../../ContactForm/ContactForm";
+import ContactForm from "../ContactForm/ContactForm";
 import "./OrderOverview.css";
 
 const OrderOverview = forwardRef((props, ref) => {

@@ -6,7 +6,7 @@ import CustomStepper from "../../CustomStepper/CustomStepper";
 import CustomButton from "../../../../components/CustomButton/CustomButton";
 
 export default function QuoteStepper({ stepContent, isNextEnabled, handleSubmit }) {
-  const { stlFiles, selectedMaterial, steps, isFinished, setIsFinished, activeStep, setActiveStep } = useContext(QuoteContext);
+  const { setSelectedColor, setStlFiles, selectedMaterial, setSelectedMaterial, setSelectedInfill, setSelectedLayerHeight, steps, isFinished, setIsFinished, activeStep, setActiveStep } = useContext(QuoteContext);
 
   useEffect(() => {
     console.log('selectedMaterial:', selectedMaterial);
@@ -32,6 +32,11 @@ export default function QuoteStepper({ stepContent, isNextEnabled, handleSubmit 
   const handleReset = () => {
     setActiveStep(0);
     setIsFinished(false);
+    setSelectedInfill(null);
+    setSelectedLayerHeight(null);
+    setSelectedMaterial("");
+    setSelectedColor(null);
+    setStlFiles([]);
   };
 
   return (
@@ -39,8 +44,8 @@ export default function QuoteStepper({ stepContent, isNextEnabled, handleSubmit 
       <CustomStepper steps={steps} activeStep={activeStep} />
       {isFinished ? (
         <div>
-          <p>All steps completed - you're finished</p>
-          <div>
+          <p>Gracias por tu solicitud, seras contactado por un vendedor</p>
+          <div className="quote-stepper-actions">
             <CustomButton type="secondary" onClick={handleReset}>Reset</CustomButton>
           </div>
         </div>
@@ -54,9 +59,12 @@ export default function QuoteStepper({ stepContent, isNextEnabled, handleSubmit 
               onClick={handleBack}>
               Regresar
             </CustomButton>
-            <CustomButton type="primary" onClick={handleNext} disabled={!isNextEnabled}>
-              {activeStep === steps.length - 1 ? "Finalizar" : "Siguiente"}
-            </CustomButton>
+            {activeStep !== steps.length - 1 && (
+              <CustomButton type="primary" onClick={handleNext} disabled={!isNextEnabled}>
+                {activeStep === steps.length - 1 ? "Finalizar" : "Siguiente"}
+              </CustomButton>
+
+            )}
           </div>
         </>
       )}
