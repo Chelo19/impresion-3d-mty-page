@@ -7,8 +7,8 @@ export const QuoteRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Quote />} />
-      <Route path="/print-quote" element={<PrintQuote />} />
-      <Route path="/service-quote" element={<ServiceQuote />} />
+      <Route path="/cotizar-impresion" element={<PrintQuote />} />
+      <Route path="/cotizar-servicio" element={<ServiceQuote />} />
     </Routes>
   );
 };
