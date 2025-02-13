@@ -1,6 +1,6 @@
 :root {
-  --primary_color: 0, 119, 182;
-  --secondary_color: 0, 180, 216;
+  --primary_color: 30, 104, 172;
+  --secondary_color: 7, 118, 182;
   --terciary_color: 144, 224, 239;
   --success_color: 0, 166, 81;
   --success_color_light: 144, 238, 192;
@@ -108,4 +108,5 @@ body h6 {
     margin-top: var(--nav_bar_mobile_height);
     padding: 0 30px;
   }
+
 }

@@ -8,19 +8,36 @@ export default function ApplicationsSection() {
   return (
     <div className="applications-section">
       <div className="applications-section-item">
-        <span className="applications-section-item-title">Electrónica</span>
         <div className="applications-section-item-img">
           <img src={galleryImg1} />
         </div>
+        
+        <div className="applications-section-item-text">
+          <span className="applications-section-item-title">Electronica</span>
+          <span className="applications-section-item-description">
+            Electronica
+          </span>
+        </div>
       </div>
       <div className="applications-section-item">
-        <span className="applications-section-item-title">Fixtures</span>
+        <div className="applications-section-item-text">
+          <span className="applications-section-item-title">Fixtures</span>
+          <span className="applications-section-item-description">
+            Fixtures
+          </span>
+        </div>
         <div className="applications-section-item-img">
           <img src={galleryImg2} />
         </div>
       </div>
       <div className="applications-section-item">
-        <span className="applications-section-item-title">Carcasas</span>
+        
+      <div className="applications-section-item-text">
+          <span className="applications-section-item-title">Carcasas</span>
+          <span className="applications-section-item-description">
+            Carcasas
+          </span>
+        </div>
         <div className="applications-section-item-img">
           <img src={galleryImg3} />
         </div>

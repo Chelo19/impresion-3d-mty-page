@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import CustomButton from "../../../components/CustomButton/CustomButton";
 import "./HeroSection.css";
 
+import fixture from "../../../../assets/homePage/HeroSection/fixtures.png";
+
 export default function HeroSection() {
   const navigate = useNavigate();
   return (
@@ -66,6 +68,9 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="hero-section-img">
+        <img src={fixture} alt="fixture" />
       </div>
     </div>
   );

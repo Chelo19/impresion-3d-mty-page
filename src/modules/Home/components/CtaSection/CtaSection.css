@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: black;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 37%, rgba(7,118,182,1) 75%, rgba(0,212,255,1) 100%);
 }
 
 .cta-section-title{
@@ -22,4 +22,21 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     gap: 20px;
+}
+
+@media (max-width: 440px){
+    .cta-section{
+        width: 100vw;
+    }
+
+    .cta-section-title{
+        width: 80%;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .cta-section-buttons{
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -27,16 +27,7 @@
 
 @media (max-width: 440px) {
     .gallery{
-        width: 100%;
-    }
-
-    .gallery_container{
-        width: calc(100vw - 40px);
-        flex-direction: column;
-    }
-
-    .gallery_item{
-        width: calc(100% - 40px);
-        height: auto;
+        width: 100vw;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
