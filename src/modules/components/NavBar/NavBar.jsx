@@ -14,7 +14,7 @@ function NavBar() {
         <Link to={"/materiales"}>Materiales</Link>
         <Link to={"/contacto"}>Contáctanos</Link>
         <Link to={"/cotizador/cotizar-impresion"} id="nav_bar_print">
-          Imprime ya
+          Cotizar ya
         </Link>
       </div>
     </div>

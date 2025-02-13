@@ -1,6 +1,7 @@
 import './WhySection.css';
 
 import impresion3dLogo from '../../../../assets/impresion-3d-logo.png';
+import { Link } from 'react-router-dom';
 
 function WhySection(){
     return(
@@ -13,19 +14,19 @@ function WhySection(){
                 <li className='why_section_list_item'>
                     <div className='why_section_list_item_content'>
                         <span className='why_section_list_item_title'>Entregas rápidas y seguras</span>
-                        <span className='why_section_list_item_description'>Tu pedido será creado y entregado de la manera más profesional y eficiente posible.</span>
+                        <span className='why_section_list_item_description'>Tu proyecto será trabajado de la manera más profesional y eficiente posible.</span>
                     </div>
                 </li>
                 <li className='why_section_list_item'>
                     <div className='why_section_list_item_content'>
                         <span className='why_section_list_item_title'>Servicio personalizado</span>
-                        <span className='why_section_list_item_description'>En la sección de comentarios puedes agregar cualquier solicitud a tu gusto para tus piezas.</span>
+                        <span className='why_section_list_item_description'>Durante las primeras etapas de tu proyecto podrás solicitar modificaciones y adiciones.</span>
                     </div>
                 </li>
                 <li className='why_section_list_item'>
                     <div className='why_section_list_item_content'>
                         <span className='why_section_list_item_title'>Gran soporte</span>
-                        <span className='why_section_list_item_description'>Contamos con una línea de chat de messenger para poder contestar todas tus dudas relacionadas a tu pedido.</span>
+                        <span className='why_section_list_item_description'>Contamos con una <Link to={"https://wa.me/8120515415"}>línea de chat de WhatsApp</Link> para poder contestar todas tus dudas relacionadas a tu pedido.</span>
                     </div>
                 </li>
             </ol>

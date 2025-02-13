@@ -69,6 +69,11 @@
     color: #667085;
 }
 
+.why_section a{
+    text-decoration: none;
+    color: rgba(var(--secondary_color), 1);
+}
+
 @media (max-width: 440px) {
 
     .why_section{

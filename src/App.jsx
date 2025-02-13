@@ -7,7 +7,6 @@ import "./styles/bootstrap.css";
 import Footer from "./modules/components/Footer/Footer.jsx";
 import NavBar from "./modules/components/NavBar/NavBar.jsx";
 import { QuoteProvider } from "./modules/Quote/context/QuoteContext.jsx";
-import Contact from "./pages/Contact/Contact";
 import FAQ from "./pages/FAQ/FAQ";
 import IndividualMaterial from "./pages/IndividualMaterial/IndividualMaterial.jsx";
 import Materials from "./modules/Materials/pages/Materials/Materials.jsx";
@@ -17,6 +16,7 @@ import p1sFarm from "./assets/homePage/p1s-farm.png";
 import { QuoteRouter } from "./modules/Quote/Quote.router.jsx";
 import { Box, Container } from "@mui/material";
 import Home from "./modules/Home/pages/Home.jsx";
+import Contact from "./modules/Contact/pages/Contact.jsx";
 
 function App() {
   useEffect(() => {
