@@ -3,9 +3,11 @@ import "./MaterialCard.css";
 import { Button } from "@mui/material";
 import { QuoteContext } from "../../../context/QuoteContext";
 import CustomButton from "../../../../components/CustomButton/CustomButton";
+import { useNavigate } from "react-router-dom";
 // import CheckIcon from '@mui/icons-material/Check';
 
 export default function MaterialCard({ material, colors }) {
+  const navigate = useNavigate();
   const { selectedMaterial, setSelectedMaterial, activeStep, setActiveStep } = useContext(QuoteContext);
   const handleMaterialSelection = (material) => {
     console.log("Material selected:", material);
@@ -66,14 +68,21 @@ export default function MaterialCard({ material, colors }) {
         )}
       </div>
       <div className="material-card-last-column">
-        <span className="material-card-cpu">
-          <strong>${material.cpu}</strong>
-          <span style={{ fontSize: "18px" }}> mxn/g</span>
-        </span>
+        <div className="material-card-prices">
+
+          <span className="material-card-cpu">
+            <strong>${material.cpu}</strong>
+            <span style={{ fontSize: "14px" }}> mxn/g</span>
+          </span>
+          <span className="material-card-cpu">
+            <strong>${material.cph}</strong>
+            <span style={{ fontSize: "14px" }}> mxn/h</span>
+          </span>
+        </div>
         <CustomButton type="primary" onClick={() => handleMaterialSelection(material)}>
           Seleccionar
         </CustomButton>
-        <CustomButton type="secondary" outlined>
+        <CustomButton type="secondary" outlined onClick={() => navigate(`/materiales/${material.material}`)} target='_blank'>
           Más
         </CustomButton>
         {selectedMaterial.id === material.id && (

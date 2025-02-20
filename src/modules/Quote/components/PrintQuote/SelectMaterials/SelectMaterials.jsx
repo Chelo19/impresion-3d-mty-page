@@ -72,8 +72,8 @@ export default function SelectMaterials({}) {
             value={sortOrder}
             className="select-material-order-select"
           >
-            <option value="cpu-asc">CPU ascendente</option>
-            <option value="cpu-desc">CPU descendente</option>
+            <option value="cpu-asc">mxn/G ascendente</option>
+            <option value="cpu-desc">mxn/G descendente</option>
             <option value="name-asc">Nombre A-Z</option>
             <option value="name-desc">Nombre Z-A</option>
           </select>

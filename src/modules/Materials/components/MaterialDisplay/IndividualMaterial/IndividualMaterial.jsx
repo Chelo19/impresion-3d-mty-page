@@ -209,7 +209,7 @@ function IndividualMaterial(){
             <div className='individual_material_description'>
                 {materialSpecs.description}
             </div>
-            <Link to={'/upload-file'} className='individual_material_button'>
+            <Link to={'/cotizador/cotizar-impresion'} className='individual_material_button'>
                     Imprime Ya
             </Link>
         </div>

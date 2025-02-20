@@ -79,6 +79,12 @@
   width: 100%;
 }
 
+.material-card-prices{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
 .material-card-selected{
     background-color: rgba(var(--success_color), 0.2);
     border-radius: 50px;

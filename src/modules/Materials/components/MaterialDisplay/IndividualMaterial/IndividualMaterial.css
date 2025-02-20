@@ -90,7 +90,7 @@
 .individual_material_spec {
     width: max-content;
     max-width: 600px;
-    font-size: 25px;
+    font-size: 22px;
     color: rgba(var(--text_color), 0.9);
 }
 
