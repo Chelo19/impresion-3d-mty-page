@@ -1,11 +1,11 @@
-.applications-section{
+.applications-section {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-.applications-section-item{
+.applications-section-item {
     width: 100%;
     border-radius: 10px;
     display: flex;
@@ -13,7 +13,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.applications-section-item-text{
+.applications-section-item-text {
     grid-row: 5 / 6;
     display: flex;
     flex-direction: column;
@@ -21,16 +21,17 @@
     padding: 10px 20px 20px 20px;
 }
 
-.applications-section-item-title{
+.applications-section-item-title {
     font-size: 26px;
     color: rgba(var(--text_color), 0.8);
 }
-.applications-section-item-description{
+
+.applications-section-item-description {
     font-size: 18px;
     color: rgba(var(--text_color), 0.6);
 }
 
-.applications-section-item-img{
+.applications-section-item-img {
     padding: 10px;
     width: 390px;
     height: 280px;
@@ -39,7 +40,7 @@
     border-radius: 10px;
 }
 
-.applications-section-item-img img{
+.applications-section-item-img img {
     transition: 0.5s;
     width: 100%;
     height: 100%;
@@ -47,13 +48,13 @@
     border-radius: 10px;
 }
 
-.applications-section-item-img img:hover{
+.applications-section-item-img img:hover {
     transition: 0.5s;
     transform: scale(1.1);
     border-radius: 10px;
 }
 
-.applications-section-item-feature{
+.applications-section-item-feature {
     transition: 0.5s;
     width: fit-content;
     align-self: flex-end;
@@ -64,26 +65,30 @@
     background-color: rgba(var(--primary_color), 0.8);
 }
 
-.applications-section-item-feature:hover{
+.applications-section-item-feature:hover {
     cursor: default;
     transition: 0.5s;
     background-color: rgba(var(--primary_color), 1);
 }
 
-@media (max-width: 440px){
-    .applications-section{
-        grid-template-columns: repeat(1, 1fr);
+@media (max-width: 440px) {
+    .applications-section {
+        display: flex;
+        flex-direction: column;
     }
 
-    .applications-section-item{
-        aspect-ratio: 3 / 4;
-    }
+    .applications-section-item {}
 
-    .applications-section-item-title{
+    .applications-section-item-title {
         font-size: 42px;
     }
 
-    .applications-section-item-img img:hover{
+    .applications-section-item-img {
+        width: 100%;
+        height: 280px;
+    }
+
+    .applications-section-item-img img:hover {
         transform: scale(1);
     }
 }

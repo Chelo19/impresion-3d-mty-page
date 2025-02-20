@@ -66,7 +66,7 @@
     text-decoration: none;
     color: rgba(var(--text_color), 0.6);
     border: 1px transparent;
-    padding: 5px 15px;
+    padding: 5px 10px;
     font-weight: 400;
     border-radius: 10px;
     text-wrap: nowrap;
@@ -83,7 +83,6 @@
     color: var(--background_color);
     background-color: rgba(var(--primary_color), 1);
     border: 1px solid rgba(var(--primary_color), 1);
-    /* animation: shrinkButtonNavBar 2s infinite; */
 }
 
 #nav_bar_print:hover{
@@ -120,7 +119,7 @@
     }
 
     .nav_bar_right a{
-        font-size: 12px;
+        font-size: 14px;
         height: 40px;
         display: flex;
         justify-content: center;

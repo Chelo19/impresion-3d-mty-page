@@ -47,3 +47,9 @@
 .step.completed .step-separator {
   background-color: rgba(var(--success_color), 1);
 }
+
+@media (max-width: 440px) {
+  .custom-stepper {
+    display: none;
+  }
+}

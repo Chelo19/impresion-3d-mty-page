@@ -1,9 +1,7 @@
-
 .contact-page{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    padding-top: 60px;
 }
 
 .contact-page-form{
@@ -95,19 +93,14 @@
 
     .contact-page{
         align-items: center;
-    }
-
-    .contact-page-container{
-        align-items: center;
-        flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column;
     }
 
     .contact-page-form{
-        width: calc(100% - 80px);
     }
 
     .contact-page-info{
-        width: calc(100% - 80px);
         padding: 20px;
     }
 
@@ -116,6 +109,5 @@
     }
 
     .alert{
-        width: calc(100% - 80px);
     }
 }
