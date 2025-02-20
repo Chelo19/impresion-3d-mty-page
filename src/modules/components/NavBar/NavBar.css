@@ -83,7 +83,7 @@
     color: var(--background_color);
     background-color: rgba(var(--primary_color), 1);
     border: 1px solid rgba(var(--primary_color), 1);
-    animation: shrinkButtonNavBar 2s infinite;
+    /* animation: shrinkButtonNavBar 2s infinite; */
 }
 
 #nav_bar_print:hover{

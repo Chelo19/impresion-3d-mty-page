@@ -8,7 +8,7 @@ import Footer from "./modules/components/Footer/Footer.jsx";
 import NavBar from "./modules/components/NavBar/NavBar.jsx";
 import { QuoteProvider } from "./modules/Quote/context/QuoteContext.jsx";
 import FAQ from "./pages/FAQ/FAQ";
-import IndividualMaterial from "./pages/IndividualMaterial/IndividualMaterial.jsx";
+import IndividualMaterial from "./modules/Materials/components/MaterialDisplay/IndividualMaterial/IndividualMaterial.jsx";
 import Materials from "./modules/Materials/pages/Materials/Materials.jsx";
 import NotFound from "./pages/NotFound/NotFound";
 

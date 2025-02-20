@@ -29,13 +29,13 @@ export default function Home(){
     return (
         <div className='home'>
             <HeroSection/>
-            <h1 className='home-title'>Aplicaciones</h1>
-            <ApplicationsSection/>
-            <h1 className='home-title'>Nuestro trabajo</h1>
-            <Gallery imgArray={jobGallery}/>
             <h1 className='home-title'>¿Cómo funciona una cotización con nosotros?</h1>
             <Instructions/>
             <WhySection/>
+            <h1 className='home-title'>Nuestro trabajo</h1>
+            <Gallery imgArray={jobGallery}/>
+            <h1 className='home-title'>Aplicaciones</h1>
+            <ApplicationsSection/>
             <CtaSection/>
             {/* <Gallery imgArray={clientGallery}/> */}
         </div>

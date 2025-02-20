@@ -18,11 +18,14 @@ function Contact() {
   const [userEmail, setUserEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [userCompany, setUserCompany] = useState("");
+  const [userPhone, setUserPhone] = useState("");
   const [userMessage, setUserMessage] = useState("");
 
   const [alertVariant, setAlertVariant] = useState(null);
   const [alertText, setAlertText] = useState("");
   const [validated, setValidated] = useState(false);
+
+  const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -46,6 +49,7 @@ function Contact() {
           user_email: userEmail,
           user_company: userCompany,
           user_message: userMessage,
+          user_phone: userPhone
         },
         "k27Yr9noc7Y8QOyoC"
       )
@@ -54,10 +58,10 @@ function Contact() {
           console.log("SUCCESS!", response.status, response.text);
           setAlertVariant("success");
           setAlertText(
-            `Mensaje enviado correctamente, ${
-              userName.split(" ")[0]
+            `Mensaje enviado correctamente, ${userName.split(" ")[0]
             }. En breve le contactaremos para darle seguimiento a su proyecto.`
           );
+          setIsSent(true);
         },
         function (error) {
           console.log("FAILED...", error);
@@ -93,7 +97,19 @@ function Contact() {
         onSubmit={handleSubmit}
       >
         <h1>Contáctanos para trabajar en tu proyecto</h1>
-        <br/>
+        <br />
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label>Nombre</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Nombre"
+            onChange={(e) => setUserName(e.target.value)}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Escriba un nombre de contacto.
+          </Form.Control.Feedback>
+        </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Correo electrónico de contacto</Form.Label>
           <Form.Control
@@ -107,15 +123,16 @@ function Contact() {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Nombre</Form.Label>
+          <Form.Label>Número de teléfono</Form.Label>
           <Form.Control
-            type="text"
-            placeholder="Nombre"
-            onChange={(e) => setUserName(e.target.value)}
+            type="phone"
+            placeholder="Ej. 8120515415"
+            onChange={(e) => setUserPhone(e.target.value)}
+            pattern="[0-9]{10}"
             required
           />
           <Form.Control.Feedback type="invalid">
-            Escriba un nombre de contacto.
+            Escriba un número de teléfono válido.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -130,6 +147,7 @@ function Contact() {
             Escriba la empresa a la que pertenece.
           </Form.Control.Feedback>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Label>Mensaje</Form.Label>
           <Form.Control
@@ -142,12 +160,16 @@ function Contact() {
             Cuéntenos un poco acerca de su proyecto.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button
-          id="contact-page-form-btn-submit"
-          as="input"
-          type="submit"
-          value="Enviar"
-        />{" "}
+        {!isSent && (
+          <>
+            <Button
+              id="contact-page-form-btn-submit"
+              as="input"
+              type="submit"
+              value="Enviar"
+            />{" "}
+          </>
+        )}
       </Form>
       <div className="contact-page-info">
         <img className="contact-page-info-bg" src={Logo} />
