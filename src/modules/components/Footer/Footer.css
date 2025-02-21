@@ -139,9 +139,14 @@
         background-color: transparent;
     }
 
+    .footer_item{
+        width: 100%;
+    }
+
     .footer_container{
         flex-direction: column;
         gap: 50px;
+        width: 100%;
     }
 
     .footer_botom_links{
@@ -154,5 +159,6 @@
         gap: 10px;
         font-size: 16px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 }

@@ -23,8 +23,8 @@ function Footer(){
                         </div>
                         <div className='footer_item'>
                             <span className='footer_item_title'>Redes sociales</span>
-                            <div className='footer_item_wrapper'><img src={messenger}/><Link to={'https://www.facebook.com/people/Impresión-3D-Monterrey/100094563984724/'} target='_blank'>Impresión 3D Monterrey</Link></div>
-                            <div className='footer_item_wrapper'><img src={instagram}/><Link to={'https://www.instagram.com/3dprintmty/'} target='_blank'>impresion_3d_mty</Link></div>
+                            <div className='footer_item_wrapper'><img src={messenger}/><Link to={'https://www.facebook.com/profile.php?id=61563777674355'} target='_blank'>Impresión 3D Monterrey - 3dprintmty</Link></div>
+                            <div className='footer_item_wrapper'><img src={instagram}/><Link to={'https://www.instagram.com/3dprintmty/'} target='_blank'>3dprintmty</Link></div>
                             <div className='footer_item_wrapper'><img src={whatsapp}/><Link to={'https://wa.me/8120515415'} target='_blank'>+52 (81) 20515415</Link></div>
                             <div className='footer_item_wrapper'><img src={email}/><Link>cotizaciones@3dprintmty.com</Link></div>
                         </div>
@@ -38,7 +38,7 @@ function Footer(){
                         <Link>Nuevo León</Link>
                         <Link>México</Link>
                     </div>
-                    <span>Desarrollado por <Link to={'https://github.com/Chelo19'} target='_blank' id='developer'>Swifttek</Link></span>
+                    <span>Desarrollado por <Link to={'https://www.instagram.com/swifttek.com.mx/'} target='_blank' id='developer'>Swifttek</Link></span>
                 </div>
             </div>
         </div>
