@@ -1,0 +1,63 @@
+.custom-button {
+  padding: 5px 10px;
+  height: 100%;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:focus {
+  outline: none;
+}
+
+.custom-button.primary {
+  background-color: rgba(var(--primary_color), 1);
+  color: var(--background_color);
+  border: 1px solid transparent;
+}
+
+.custom-button.primary:hover {
+  background-color: rgba(var(--primary_color), 0.8);
+}
+
+.custom-button.secondary {
+  background-color: rgba(var(--secondary_color), 1);
+  color: var(--background_color);
+}
+
+.custom-button.secondary:hover {
+  background-color: rgba(var(--secondary_color), 0.8);
+}
+
+.custom-button.disabled {
+  background-color: rgba(var(--disabled_color), 0.4);
+  color: rgba(var(--disabled_color), 1);
+  cursor: not-allowed;
+}
+
+.custom-button.disabled:hover {
+  background-color: rgba(var(--disabled_color), 0.4);
+  color: rgba(var(--disabled_color), 1);
+  cursor: not-allowed;
+}
+
+.custom-button.primary.outlined {
+  background-color: transparent;
+  border: 1px solid rgba(var(--primary_color), 1);
+  color: rgba(var(--primary_color), 1);
+}
+
+.custom-button.primary.outlined:hover {
+  background-color: rgba(var(--primary_color), 0.1);
+}
+
+.custom-button.secondary.outlined {
+  background-color: transparent;
+  border: 1px solid rgba(var(--secondary_color), 1);
+  color: rgba(var(--secondary_color), 1);
+}
+
+.custom-button.secondary.outlined:hover {
+  background-color: rgba(var(--secondary_color), 0.1);
+}

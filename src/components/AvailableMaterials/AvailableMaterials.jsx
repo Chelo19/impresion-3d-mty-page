@@ -21,13 +21,13 @@ export default function AvailableMaterials(){
         <>
         {
             specs ?
-            <div className='available_materials'>
+            <div className='available_materials' key={specs.id}>
                 {/* <span className='available_materials_title'>Materiales Disponibles</span> */}
                 {
                     specs.map((specs) => {
                         return(
                             <>
-                                <div className='available_materials_spec_item'>
+                                <div className='available_materials_spec_item' key={specs.id}>
                                     <div className='available_materials_specs_description'>
                                         <strong>{specs.material}:&nbsp;</strong>
                                         {specs.description}

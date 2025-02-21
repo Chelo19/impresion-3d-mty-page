@@ -1,68 +1,64 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Helmet } from 'react-helmet';
-import HomePage from './pages/HomePage/HomePage.jsx';
-import Materials from './pages/Materials/Materials.jsx';
-import IndividualMaterial from './pages/IndividualMaterial/IndividualMaterial.jsx';
-import UploadFile from './pages/UploadFile/UploadFile.jsx';
-import NavBar from './components/NavBar/NavBar';
-import Footer from './components/Footer/Footer';
-import SelectMaterial from './pages/SelectMaterial/SelectMaterial';
-import RequestUpload from './pages/RequestUpload/RequestUpload';
-import SelectInfill from './pages/SelectInfill/SelectInfill';
-import Contact from './pages/Contact/Contact';
-import FAQ from './pages/FAQ/FAQ';
-import NotFound from './pages/NotFound/NotFound';
-import HomePage2 from './pages/HomePage2/HomePage2.jsx';
+// filepath: /c:/Users/mdeleon/OneDrive - Entidad Controladora SA de CV/Documentos/Marcelo/impresion-3d-mty-page/src/App.jsx
+import { useEffect } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import "./styles/bootstrap.css";
+import Footer from "./modules/components/Footer/Footer.jsx";
+import NavBar from "./modules/components/NavBar/NavBar.jsx";
+import { QuoteProvider } from "./modules/Quote/context/QuoteContext.jsx";
+import FAQ from "./pages/FAQ/FAQ";
+import IndividualMaterial from "./modules/Materials/components/MaterialDisplay/IndividualMaterial/IndividualMaterial.jsx";
+import Materials from "./modules/Materials/pages/Materials/Materials.jsx";
+import NotFound from "./pages/NotFound/NotFound";
 
-import p1sFarm from './assets/homePage/p1s-farm.png';
+import p1sFarm from "./assets/homePage/p1s-farm.png";
+import { QuoteRouter } from "./modules/Quote/Quote.router.jsx";
+import { Box, Container } from "@mui/material";
+import Home from "./modules/Home/pages/Home.jsx";
+import Contact from "./modules/Contact/pages/Contact.jsx";
 
 function App() {
-
-  const [stlFiles, setStlFiles] = useState([]);
-  const [material, setMaterial] = useState('');
-  const [isSanded, setIsSanded] = useState(false);
-  const [infill, setInfill] = useState('');
-  const [color, setColor] = useState('');
-
   useEffect(() => {
     const beforeUnloadHandler = (e) => {
       e.preventDefault();
       e.returnValue = true;
-    }
+    };
     window.addEventListener("beforeunload", beforeUnloadHandler);
     return () => {
       window.removeEventListener("beforeunload", beforeUnloadHandler);
-    }
+    };
   }, []);
 
   return (
-    <div className='main_app'>
-      <Helmet>
-        <meta property="og:image" content={p1sFarm} />
-      </Helmet>
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route path="/" element={<HomePage2 />}/>
-          <Route path="/home" element={<HomePage2 />}/>
-          <Route path="/impresion-3d-mty-page/" element={<HomePage />}/>
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="/contacto" element={<Contact />}/>
-          <Route path="/not-found" element={<NotFound />}/>
-          <Route path="/materiales" element={<Materials />}/>
-          <Route path="/materiales/:material" element={<IndividualMaterial />}/>
-          <Route path="/preguntas-frecuentes" element={<FAQ />}/>
-          <Route path="/upload-file" element={<UploadFile stlFiles={stlFiles} setStlFiles={setStlFiles} />}/>
-          <Route path="/select-material" element={<SelectMaterial stlFiles={stlFiles} setMaterial={setMaterial}/>}/>
-          <Route path="/select-finish" element={<SelectInfill material={material} stlFiles={stlFiles} setIsSanded={setIsSanded} setInfill={setInfill} setColor={setColor}/>}/>
-          <Route path="/request-upload" element={<RequestUpload stlFiles={stlFiles} material={material} isSanded={isSanded} infill={infill} color={color}/>}/>
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
-    </div>
-  )
+    <HelmetProvider>
+      <QuoteProvider>
+        <Helmet>
+          <meta property="og:image" content={p1sFarm} />
+        </Helmet>
+        <BrowserRouter>
+          <NavBar />
+          <div className="utility-wrapper">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/contacto" element={<Contact />} />
+              <Route path="/not-found" element={<NotFound />} />
+              <Route path="/materiales" element={<Materials />} />
+              <Route
+                path="/materiales/:material"
+                element={<IndividualMaterial />}
+              />
+              <Route path="/preguntas-frecuentes" element={<FAQ />} />
+              <Route path="/cotizador/*" element={<QuoteRouter />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </QuoteProvider>
+    </HelmetProvider>
+  );
 }
 
-export default App
+export default App;

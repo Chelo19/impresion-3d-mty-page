@@ -1,0 +1,35 @@
+.quote-stepper-stepper{
+    display: flex;
+    gap: 10px;
+}
+
+.quote-stepper-step-label{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.quote-stepper-actions{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    margin-top: 40px;
+    height: 50px;
+}
+
+.quote-stepper-actions button{
+    width: 200px;
+}
+
+@media screen and (max-width: 440px){
+    .quote-stepper{
+        min-height: 600px !important;
+    }
+    .quote-stepper-stepper{
+        display: none !important;
+        width: 0px;
+    }
+    
+}
