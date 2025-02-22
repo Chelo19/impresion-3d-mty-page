@@ -23,6 +23,7 @@
 
 .applications-section-item-title {
     font-size: 26px;
+    line-height: 32px;
     color: rgba(var(--text_color), 0.8);
 }
 
@@ -77,10 +78,9 @@
         flex-direction: column;
     }
 
-    .applications-section-item {}
-
     .applications-section-item-title {
         font-size: 42px;
+        line-height: 46px;
     }
 
     .applications-section-item-img {

@@ -95,6 +95,19 @@ body h6 {
   margin: 0 !important;
 }
 
+.overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(100vh - var(--nav_bar_height));
+  top: var(--nav_bar_height);
+  left: 0;
+  background-color: rgba(var(--background_color_rgb), 0.8);
+  z-index: 1000;
+}
+
 @media (max-width: 440px) {
   .overlay {
     width: 100vw;
