@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import emailjs from "emailjs-com";
 import "./Contact.css";
+import { supabase } from "../../../supabase/client";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -49,7 +50,7 @@ function Contact() {
           user_email: userEmail,
           user_company: userCompany,
           user_message: userMessage,
-          user_phone: userPhone
+          user_phone: userPhone,
         },
         "k27Yr9noc7Y8QOyoC"
       )
@@ -58,9 +59,11 @@ function Contact() {
           console.log("SUCCESS!", response.status, response.text);
           setAlertVariant("success");
           setAlertText(
-            `Mensaje enviado correctamente, ${userName.split(" ")[0]
+            `Mensaje enviado correctamente, ${
+              userName.split(" ")[0]
             }. En breve le contactaremos para darle seguimiento a su proyecto.`
           );
+          formDbFill();
           setIsSent(true);
         },
         function (error) {
@@ -72,6 +75,23 @@ function Contact() {
         }
       );
     event.preventDefault();
+  };
+
+  const formDbFill = async () => {
+    const { data, error } = await supabase
+      .from("contact_forms")
+      .insert({
+        name: userName,
+        email: userEmail,
+        phone: userPhone,
+        company: userCompany,
+        message: userMessage,
+        origin: "CONTACT"
+      });
+
+    if (error) {
+      console.error("Error inserting data:", error);
+    }
   };
 
   return (

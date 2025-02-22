@@ -64,11 +64,12 @@ export default function ContactForm({ formData, handleChange }) {
           console.log("SUCCESS!", response.status, response.text);
           setAlertText(
             <>
-              Mensaje enviado correctamente, {formData.userName.split(" ")[0]}. En breve
-              le contactaremos para darle seguimiento a su proyecto.
+              Mensaje enviado correctamente, {formData.userName.split(" ")[0]}.
+              En breve le contactaremos para darle seguimiento a su proyecto.
             </>
           );
           setActiveStep((prevActiveStep) => prevActiveStep + 1);
+          formDbFill();
           setIsFinished(true);
           setIsSending(false);
         },
@@ -129,6 +130,20 @@ export default function ContactForm({ formData, handleChange }) {
   function timeout(number) {
     return new Promise((res) => setTimeout(res, number));
   }
+
+  const formDbFill = async () => {
+    const { data, error } = await supabase.from("contact_forms").insert({
+      name: formData.userName,
+      email: formData.userEmail,
+      phone: formData.userPhone,
+      message: formData.userComments,
+      origin: "PRINT-QUOTE",
+    });
+
+    if (error) {
+      console.error("Error inserting data:", error);
+    }
+  };
 
   return (
     <div>
@@ -197,7 +212,7 @@ export default function ContactForm({ formData, handleChange }) {
             Cuéntenos un poco acerca de su proyecto.
           </Form.Control.Feedback>
         </Form.Group>
-        {(alertVariant !== "success" && isSending === false)  && (
+        {alertVariant !== "success" && isSending === false && (
           <CustomButton type="primary">Enviar</CustomButton>
         )}
       </Form>

@@ -44,9 +44,9 @@ export default function QuoteStepper({ stepContent, isNextEnabled, handleSubmit 
       <CustomStepper steps={steps} activeStep={activeStep} />
       {isFinished ? (
         <div>
-          <p>Gracias por tu solicitud, seras contactado por un vendedor</p>
+          <p className="quote-stepper-finish-text">¡Gracias por tu solicitud, seras contactado por un vendedor!</p>
           <div className="quote-stepper-actions">
-            <CustomButton type="secondary" onClick={handleReset}>Reset</CustomButton>
+            <CustomButton type="secondary" onClick={handleReset}>Regresar</CustomButton>
           </div>
         </div>
       ) : (
