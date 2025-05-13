@@ -19,16 +19,16 @@
   src: local("CodecPro"), url(./fonts/CodecPro-Regular.ttf) format("opentype");
 }
 
-@font-face {
+/* @font-face {
   font-family: "TTInterphasesPro";
   src: local("TTInterphasesPro"),
     url(./fonts/TTInterphasesProTrialMedium.ttf) format("opentype");
-}
+} */
 
 body {
-  /* font-family: "League Spartan", sans-serif !important; */
+  font-family: "League Spartan", sans-serif !important;
   /* font-family: "Codec Pro", sans-serif !important; */
-  font-family: "TTInterphasesPro", sans-serif !important;
+  /* font-family: "TTInterphasesPro", sans-serif !important; */
   margin: 0;
   padding: 0;
 }
